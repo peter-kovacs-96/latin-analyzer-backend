@@ -1,4 +1,5 @@
 import asyncio
+import logging
 import time
 from typing import Any
 from urllib.parse import quote
@@ -8,8 +9,10 @@ import httpx
 from app.cache import TTLCache, UpstashCache
 from app.config import Settings
 from app.models import DownstreamDiagnostic, DownstreamResult, DownstreamStatus
+from app import span as _span
 
 _DEFAULT_UDPIPE_MODEL = "latin"
+_log = logging.getLogger(__name__)
 
 
 class DownstreamClient:
@@ -148,6 +151,7 @@ class LatinWordNetClient:
     async def lemmatize(self, form: str) -> DownstreamResult:
         cached = self.cache.get(form)
         if cached is not None:
+            _log.info("span=%s wordnet form=%r status=ok cached=L1", _span.current(), form)
             return DownstreamResult(
                 data=cached,
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
@@ -160,6 +164,7 @@ class LatinWordNetClient:
             elif isinstance(result.data, dict):
                 data = result.data.get("results", [])
             else:
+                _log.info("span=%s wordnet form=%r status=invalid_response", _span.current(), form)
                 return DownstreamResult(
                     diagnostic=DownstreamDiagnostic(
                         status=DownstreamStatus.INVALID_RESPONSE,
@@ -168,6 +173,7 @@ class LatinWordNetClient:
                     )
                 )
             if not data:
+                _log.info("span=%s wordnet form=%r status=not_found ms=%s", _span.current(), form, result.diagnostic.latency_ms)
                 return DownstreamResult(
                     data=[],
                     diagnostic=DownstreamDiagnostic(
@@ -178,7 +184,9 @@ class LatinWordNetClient:
                     ),
                 )
             self.cache.set(form, data)
+            _log.info("span=%s wordnet form=%r status=ok hits=%d ms=%s", _span.current(), form, len(data), result.diagnostic.latency_ms)
             return DownstreamResult(data=data, diagnostic=result.diagnostic)
+        _log.info("span=%s wordnet form=%r status=%s ms=%s", _span.current(), form, result.diagnostic.status, result.diagnostic.latency_ms)
         return result
 
 
@@ -193,6 +201,7 @@ class UDPipeClient:
     async def process(self, text: str) -> DownstreamResult:
         cached = self.cache.get(text)
         if cached is not None:
+            _log.info("span=%s udpipe status=ok cached=L1 text_len=%d", _span.current(), len(text))
             return DownstreamResult(
                 data=cached,
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
@@ -223,6 +232,9 @@ class UDPipeClient:
             conllu = result.data.get("result", "")
             result.data = conllu
             self.cache.set(text, conllu)
+            _log.info("span=%s udpipe status=ok model=%s ms=%s text_len=%d", _span.current(), model, result.diagnostic.latency_ms, len(text))
+        else:
+            _log.info("span=%s udpipe status=%s ms=%s", _span.current(), result.diagnostic.status, result.diagnostic.latency_ms)
         return result
 
 
@@ -257,6 +269,7 @@ class MorpheusClient:
     async def lemmatize(self, form: str) -> DownstreamResult:
         cached = self.cache.get(form)
         if cached is not None:
+            _log.info("span=%s morpheus form=%r status=ok cached=L1 lemmata=%r", _span.current(), form, cached)
             return DownstreamResult(
                 data=cached,
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
@@ -266,7 +279,9 @@ class MorpheusClient:
         if result.diagnostic.status == DownstreamStatus.OK:
             lemmata = _parse_morpheus_response(result.data)
             self.cache.set(form, lemmata)
+            _log.info("span=%s morpheus form=%r status=ok lemmata=%r ms=%s", _span.current(), form, lemmata, result.diagnostic.latency_ms)
             return DownstreamResult(data=lemmata, diagnostic=result.diagnostic)
+        _log.info("span=%s morpheus form=%r status=%s ms=%s", _span.current(), form, result.diagnostic.status, result.diagnostic.latency_ms)
         return result
 
 
@@ -294,9 +309,12 @@ class LatinIsSimpleClient:
             await self._upstash.close()
 
     async def search(self, lemma: str) -> DownstreamResult:
+        sid = _span.current()
+
         # L1: in-memory
         cached = self.cache.get(lemma)
         if cached is not None:
+            _log.info("span=%s lis form=%r status=ok cached=L1", sid, lemma)
             return DownstreamResult(
                 data=cached,
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
@@ -307,6 +325,7 @@ class LatinIsSimpleClient:
             cached = await self._upstash.get(f"lis:{lemma}")
             if cached is not None:
                 self.cache.set(lemma, cached)
+                _log.info("span=%s lis form=%r status=ok cached=L2", sid, lemma)
                 return DownstreamResult(
                     data=cached,
                     diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
@@ -314,6 +333,7 @@ class LatinIsSimpleClient:
 
         params = {"query": lemma, "forms_only": "true", "format": "json"}
         direct_url = f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}"
+        _log.info("span=%s lis form=%r direct_request", sid, lemma)
         result = await self.http.get_json(
             self.service_name,
             direct_url,
@@ -324,6 +344,7 @@ class LatinIsSimpleClient:
             and result.diagnostic.http_status == 403
             and self.settings.zenrows_api_key
         ):
+            _log.info("span=%s lis form=%r direct_403 zenrows_fallback", sid, lemma)
             zenrows_url = (
                 f"https://api.zenrows.com/v1/"
                 f"?apikey={self.settings.zenrows_api_key}"
@@ -336,6 +357,7 @@ class LatinIsSimpleClient:
             if self._upstash is not None:
                 await self._upstash.set(f"lis:{lemma}", result.data)
             if isinstance(result.data, list) and not result.data:
+                _log.info("span=%s lis form=%r status=not_found ms=%s", sid, lemma, result.diagnostic.latency_ms)
                 return DownstreamResult(
                     data=[],
                     diagnostic=DownstreamDiagnostic(
@@ -345,5 +367,8 @@ class LatinIsSimpleClient:
                         latency_ms=result.diagnostic.latency_ms,
                     ),
                 )
+            _log.info("span=%s lis form=%r status=ok hits=%d ms=%s", sid, lemma, len(result.data) if isinstance(result.data, list) else -1, result.diagnostic.latency_ms)
+        else:
+            _log.info("span=%s lis form=%r status=%s http=%s ms=%s", sid, lemma, result.diagnostic.status, result.diagnostic.http_status, result.diagnostic.latency_ms)
         return result
 

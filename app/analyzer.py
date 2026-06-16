@@ -1,8 +1,12 @@
 import asyncio
+import logging
 import uuid
 from typing import NamedTuple
 
 from app.clients import LatinIsSimpleClient, LatinWordNetClient, MorpheusClient, UDPipeClient
+from app import span as _span
+
+_log = logging.getLogger(__name__)
 from app.latin import (
     extract_lis_fullname,
     extract_lis_meaning,
@@ -248,6 +252,17 @@ class AnalyzerService:
                     ),
                     words=line_rows,
                 ))
+
+        sid = _span.current()
+        for resp in responses:
+            if resp.words:
+                full = sum(1 for w in resp.words if w.confidence == WordConfidence.FULL)
+                no_m = sum(1 for w in resp.words if w.confidence == WordConfidence.NO_MEANING)
+                form_only = sum(1 for w in resp.words if w.confidence == WordConfidence.FORM_ONLY)
+                _log.info(
+                    "span=%s sentence words=%d full=%d no_meaning=%d form_only=%d partial=%s",
+                    sid, len(resp.words), full, no_m, form_only, resp.summary.partial_failure,
+                )
 
         return responses
 

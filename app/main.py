@@ -1,4 +1,5 @@
 import json as _json
+import logging
 from contextlib import asynccontextmanager
 
 import httpx
@@ -11,6 +12,11 @@ from app.clients import DownstreamClient, LatinIsSimpleClient, LatinWordNetClien
 from app.config import get_settings
 from app.i18n import translate_response_dict
 from app.latin import split_into_sentence_groups
+from app import span as _span
+from app.logging_setup import setup as _setup_logging
+
+_setup_logging()
+_log = logging.getLogger(__name__)
 
 settings = get_settings()
 http_client = DownstreamClient(settings)
@@ -128,6 +134,9 @@ async def analyze_stream_endpoint(
     text = body.decode("utf-8", errors="replace")
 
     async def generate():
+        sid = _span.new()
+        _log.info("span=%s analyze_start mode=%s lang=%s chars=%d", sid, mode, lang, len(text))
+
         lines = text.splitlines()
         groups = split_into_sentence_groups(lines, mode=mode)
 
@@ -164,5 +173,7 @@ async def analyze_stream_endpoint(
                     {"sentence_number": sentence_counter, "lines": sentence_lines},
                     ensure_ascii=False,
                 ) + "\n"
+
+        _log.info("span=%s analyze_done sentences=%d", sid, sentence_counter)
 
     return StreamingResponse(generate(), media_type="application/x-ndjson")
