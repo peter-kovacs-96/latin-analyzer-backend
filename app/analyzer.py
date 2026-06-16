@@ -2,7 +2,7 @@ import asyncio
 import uuid
 from typing import NamedTuple
 
-from app.clients import LatinIsSimpleClient, LatinWordNetClient, UDPipeClient
+from app.clients import LatinIsSimpleClient, LatinWordNetClient, MorpheusClient, UDPipeClient
 from app.latin import (
     extract_lis_fullname,
     extract_lis_meaning,
@@ -70,10 +70,11 @@ def _confidence(source: str, wn_status: DownstreamStatus, lis_status: Downstream
 
 
 class AnalyzerService:
-    def __init__(self, wordnet: LatinWordNetClient, udpipe: UDPipeClient, latin_is_simple: LatinIsSimpleClient) -> None:
+    def __init__(self, wordnet: LatinWordNetClient, udpipe: UDPipeClient, latin_is_simple: LatinIsSimpleClient, morpheus: MorpheusClient) -> None:
         self.wordnet = wordnet
         self.udpipe = udpipe
         self.latin_is_simple = latin_is_simple
+        self.morpheus = morpheus
 
     async def analyze(self, text: str) -> AnalysisResponse:
         return (await self.analyze_group([text]))[0]
@@ -125,6 +126,26 @@ class AnalyzerService:
                     source=_Source.NONE,
                     ud_diag=ud_diag,
                 ))
+
+        # Morpheus cross-validation: correct UDPipe lemmata where Morpheus disagrees.
+        udpipe_forms = list(dict.fromkeys(e.form for e in preliminary if e.source == _Source.UDPIPE))
+        if udpipe_forms:
+            morpheus_results = await self._load_morpheus(udpipe_forms)
+            preliminary = [
+                (
+                    entry._replace(internal_lemma=morph.data[0])
+                    if (
+                        entry.source == _Source.UDPIPE
+                        and (morph := morpheus_results.get(entry.form)) is not None
+                        and morph.diagnostic.status == DownstreamStatus.OK
+                        and isinstance(morph.data, list)
+                        and morph.data
+                        and entry.internal_lemma not in morph.data
+                    )
+                    else entry
+                )
+                for entry in preliminary
+            ]
 
         # Look up WordNet and LIS for all unique lemmas in parallel.
         internal_lemmas = list(dict.fromkeys(e.internal_lemma for e in preliminary if e.internal_lemma))
@@ -225,6 +246,10 @@ class AnalyzerService:
                 ))
 
         return responses
+
+    async def _load_morpheus(self, forms: list[str]) -> dict[str, DownstreamResult]:
+        results = await asyncio.gather(*(self.morpheus.lemmatize(form) for form in forms))
+        return dict(zip(forms, results, strict=True))
 
     async def _load_wordnet(self, words: list[str]) -> dict[str, DownstreamResult]:
         results = await asyncio.gather(*(self.wordnet.lemmatize(word) for word in words))

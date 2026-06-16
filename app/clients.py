@@ -226,6 +226,50 @@ class UDPipeClient:
         return result
 
 
+def _parse_morpheus_response(data: Any) -> list[str]:
+    """Extract unique lemmata from Morpheus RDF JSON response."""
+    if not isinstance(data, dict):
+        return []
+    body = data.get("RDF", {}).get("Annotation", {}).get("Body", {})
+    bodies = body if isinstance(body, list) else ([body] if body else [])
+    lemmata: list[str] = []
+    for b in bodies:
+        if not isinstance(b, dict):
+            continue
+        hdwd = b.get("rest", {}).get("entry", {}).get("dict", {}).get("hdwd", {})
+        if isinstance(hdwd, dict):
+            lemma = hdwd.get("$", "")
+            if lemma and lemma not in lemmata:
+                lemmata.append(lemma)
+    return lemmata
+
+
+class MorpheusClient:
+    """Perseids Morpheus morphological analysis — used to cross-validate UDPipe lemmata."""
+    service_name = "morpheus"
+    _BASE = "https://morph.perseids.org/analysis/word"
+
+    def __init__(self, http: DownstreamClient, settings: Settings) -> None:
+        self.http = http
+        self.settings = settings
+        self.cache: TTLCache[str, Any] = TTLCache(settings.cache_max_items, settings.cache_ttl_seconds)
+
+    async def lemmatize(self, form: str) -> DownstreamResult:
+        cached = self.cache.get(form)
+        if cached is not None:
+            return DownstreamResult(
+                data=cached,
+                diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
+            )
+        url = f"{self._BASE}?lang=lat&engine=morpheuslat&word={quote(form)}"
+        result = await self.http.get_json(self.service_name, url)
+        if result.diagnostic.status == DownstreamStatus.OK:
+            lemmata = _parse_morpheus_response(result.data)
+            self.cache.set(form, lemmata)
+            return DownstreamResult(data=lemmata, diagnostic=result.diagnostic)
+        return result
+
+
 _LIS_HEADERS = {
     "Origin": "https://www.latin-is-simple.com",
     "Referer": "https://www.latin-is-simple.com/",

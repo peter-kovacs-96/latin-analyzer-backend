@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
 from app.analyzer import AnalyzerService
-from app.clients import DownstreamClient, LatinIsSimpleClient, LatinWordNetClient, UDPipeClient
+from app.clients import DownstreamClient, LatinIsSimpleClient, LatinWordNetClient, MorpheusClient, UDPipeClient
 from app.config import get_settings
 from app.i18n import translate_response_dict
 from app.latin import split_into_sentence_groups
@@ -17,7 +17,8 @@ http_client = DownstreamClient(settings)
 wordnet_client = LatinWordNetClient(http_client, settings)
 udpipe_client = UDPipeClient(http_client, settings)
 latin_is_simple_client = LatinIsSimpleClient(http_client, settings)
-analyzer = AnalyzerService(wordnet_client, udpipe_client, latin_is_simple_client)
+morpheus_client = MorpheusClient(http_client, settings)
+analyzer = AnalyzerService(wordnet_client, udpipe_client, latin_is_simple_client, morpheus_client)
 
 
 @asynccontextmanager
