@@ -238,7 +238,7 @@ def _parse_morpheus_response(data: Any) -> list[str]:
             continue
         hdwd = b.get("rest", {}).get("entry", {}).get("dict", {}).get("hdwd", {})
         if isinstance(hdwd, dict):
-            lemma = hdwd.get("$", "")
+            lemma = hdwd.get("$", "").rstrip("0123456789")  # strip disambiguation suffixes e.g. opus1 → opus
             if lemma and lemma not in lemmata:
                 lemmata.append(lemma)
     return lemmata
