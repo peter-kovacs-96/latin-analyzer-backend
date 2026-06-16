@@ -13,7 +13,7 @@ from app.config import Settings
 from app.models import DownstreamDiagnostic, DownstreamResult, DownstreamStatus
 from app import span as _span
 
-_LIS_IMPERSONATE = "chrome136"
+_LIS_IMPERSONATE = "chrome110"
 
 _DEFAULT_UDPIPE_MODEL = "latin"
 _log = logging.getLogger(__name__)
