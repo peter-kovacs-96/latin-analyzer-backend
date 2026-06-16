@@ -5,11 +5,15 @@ from typing import Any
 from urllib.parse import quote
 
 import httpx
+from curl_cffi.requests import AsyncSession as _CffiSession
+from curl_cffi.requests import exceptions as _cffi_exc
 
 from app.cache import TTLCache, UpstashCache
 from app.config import Settings
 from app.models import DownstreamDiagnostic, DownstreamResult, DownstreamStatus
 from app import span as _span
+
+_LIS_IMPERSONATE = "chrome136"
 
 _DEFAULT_UDPIPE_MODEL = "latin"
 _log = logging.getLogger(__name__)
@@ -292,6 +296,12 @@ _LIS_HEADERS = {
 
 
 class LatinIsSimpleClient:
+    """Latin is Simple vocabulary client.
+
+    Uses curl-cffi with Chrome TLS impersonation to bypass Cloudflare's
+    TLS-fingerprint check, which blocks plain httpx/requests calls with HTTP 403.
+    No paid proxy service required.
+    """
     service_name = "latin_is_simple"
 
     def __init__(self, http: DownstreamClient, settings: Settings) -> None:
@@ -303,8 +313,11 @@ class LatinIsSimpleClient:
             if settings.upstash_redis_url and settings.upstash_redis_token
             else None
         )
+        # Persistent session reuses connections across concurrent requests.
+        self._session = _CffiSession()
 
     async def close(self) -> None:
+        await self._session.close()
         if self._upstash:
             await self._upstash.close()
 
@@ -331,44 +344,98 @@ class LatinIsSimpleClient:
                     diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
                 )
 
+        # Live request via curl-cffi (bypasses Cloudflare TLS fingerprint check)
         params = {"query": lemma, "forms_only": "true", "format": "json"}
-        direct_url = f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}"
-        _log.info("span=%s lis form=%r direct_request", sid, lemma)
-        result = await self.http.get_json(
-            self.service_name,
-            direct_url,
-            extra_headers=_LIS_HEADERS,
-        )
-        if (
-            result.diagnostic.status == DownstreamStatus.HTTP_ERROR
-            and result.diagnostic.http_status == 403
-            and self.settings.zenrows_api_key
-        ):
-            _log.info("span=%s lis form=%r direct_403 zenrows_fallback", sid, lemma)
-            zenrows_url = (
-                f"https://api.zenrows.com/v1/"
-                f"?apikey={self.settings.zenrows_api_key}"
-                f"&url={quote(direct_url)}"
-                f"&js_render=true"
+        url = f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}"
+        _log.info("span=%s lis form=%r live_request", sid, lemma)
+        start = time.perf_counter()
+        try:
+            response = await self._session.get(
+                url,
+                impersonate=_LIS_IMPERSONATE,
+                headers=_LIS_HEADERS,
+                timeout=self.settings.downstream_timeout_seconds,
+                verify=self.settings.verify_tls,
             )
-            result = await self.http.get_json(self.service_name, zenrows_url)
-        if result.diagnostic.status == DownstreamStatus.OK:
-            self.cache.set(lemma, result.data)
-            if self._upstash is not None:
-                await self._upstash.set(f"lis:{lemma}", result.data)
-            if isinstance(result.data, list) and not result.data:
-                _log.info("span=%s lis form=%r status=not_found ms=%s", sid, lemma, result.diagnostic.latency_ms)
-                return DownstreamResult(
-                    data=[],
-                    diagnostic=DownstreamDiagnostic(
-                        status=DownstreamStatus.NOT_FOUND,
-                        reason="LIS_LEMMA_NOT_FOUND",
-                        message=f"{self.service_name} has no entry for this lemma",
-                        latency_ms=result.diagnostic.latency_ms,
-                    ),
+            latency_ms = int((time.perf_counter() - start) * 1000)
+        except _cffi_exc.Timeout:
+            latency_ms = int((time.perf_counter() - start) * 1000)
+            _log.info("span=%s lis form=%r status=timeout ms=%d", sid, lemma, latency_ms)
+            return DownstreamResult(
+                diagnostic=DownstreamDiagnostic(
+                    status=DownstreamStatus.TIMEOUT,
+                    reason="LIS_TIMEOUT",
+                    message=f"{self.service_name} timed out",
+                    latency_ms=latency_ms,
                 )
-            _log.info("span=%s lis form=%r status=ok hits=%d ms=%s", sid, lemma, len(result.data) if isinstance(result.data, list) else -1, result.diagnostic.latency_ms)
-        else:
-            _log.info("span=%s lis form=%r status=%s http=%s ms=%s", sid, lemma, result.diagnostic.status, result.diagnostic.http_status, result.diagnostic.latency_ms)
-        return result
+            )
+        except _cffi_exc.ConnectionError as exc:
+            latency_ms = int((time.perf_counter() - start) * 1000)
+            _log.info("span=%s lis form=%r status=network_error ms=%d err=%r", sid, lemma, latency_ms, str(exc)[:80])
+            return DownstreamResult(
+                diagnostic=DownstreamDiagnostic(
+                    status=DownstreamStatus.NETWORK_ERROR,
+                    reason="LIS_NETWORK_ERROR",
+                    message=str(exc),
+                    latency_ms=latency_ms,
+                )
+            )
+        except Exception as exc:
+            latency_ms = int((time.perf_counter() - start) * 1000)
+            _log.info("span=%s lis form=%r status=unknown_error ms=%d err=%r", sid, lemma, latency_ms, str(exc)[:80])
+            return DownstreamResult(
+                diagnostic=DownstreamDiagnostic(
+                    status=DownstreamStatus.UNKNOWN_ERROR,
+                    reason="LIS_REQUEST_ERROR",
+                    message=str(exc),
+                    latency_ms=latency_ms,
+                )
+            )
+
+        if response.status_code >= 400:
+            _log.info("span=%s lis form=%r status=http_error http=%d ms=%d", sid, lemma, response.status_code, latency_ms)
+            return DownstreamResult(
+                diagnostic=DownstreamDiagnostic(
+                    status=DownstreamStatus.HTTP_ERROR,
+                    reason="LIS_HTTP_ERROR",
+                    message=f"{self.service_name} returned HTTP {response.status_code}",
+                    http_status=response.status_code,
+                    latency_ms=latency_ms,
+                )
+            )
+
+        try:
+            data = response.json()
+        except Exception:
+            _log.info("span=%s lis form=%r status=invalid_response ms=%d", sid, lemma, latency_ms)
+            return DownstreamResult(
+                diagnostic=DownstreamDiagnostic(
+                    status=DownstreamStatus.INVALID_RESPONSE,
+                    reason="INVALID_JSON",
+                    message=f"{self.service_name} returned invalid JSON",
+                    latency_ms=latency_ms,
+                )
+            )
+
+        self.cache.set(lemma, data)
+        if self._upstash is not None:
+            await self._upstash.set(f"lis:{lemma}", data)
+
+        if isinstance(data, list) and not data:
+            _log.info("span=%s lis form=%r status=not_found ms=%d", sid, lemma, latency_ms)
+            return DownstreamResult(
+                data=[],
+                diagnostic=DownstreamDiagnostic(
+                    status=DownstreamStatus.NOT_FOUND,
+                    reason="LIS_LEMMA_NOT_FOUND",
+                    message=f"{self.service_name} has no entry for this lemma",
+                    latency_ms=latency_ms,
+                ),
+            )
+
+        _log.info("span=%s lis form=%r status=ok hits=%d ms=%d", sid, lemma, len(data) if isinstance(data, list) else -1, latency_ms)
+        return DownstreamResult(
+            data=data,
+            diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, latency_ms=latency_ms),
+        )
 
