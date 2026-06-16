@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+from urllib.parse import quote
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -270,6 +271,26 @@ def extract_lis_fullname(result: list | dict | str | None, lemma: str = "", upos
         if best:
             return best.get("full_name", "")
     return result[0].get("full_name", "") if result else ""
+
+
+_LIS_SITE = "https://www.latin-is-simple.com"
+
+
+def extract_lis_url(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
+    """Return the Latin is Simple page URL for the best matching entry."""
+    if not result or not isinstance(result, list):
+        return ""
+    best = find_lis_match(result, lemma, upos) if (lemma or upos) else (result[0] if result else None)
+    if not best:
+        return ""
+    entry_id = best.get("id") or best.get("pk")
+    intern_type = best.get("intern_type", "")
+    if not entry_id or not intern_type:
+        return ""
+    url = f"{_LIS_SITE}/en/vocabulary/{intern_type}/{entry_id}/"
+    if form:
+        url += f"?h={quote(form)}"
+    return url
 
 
 # ---------------------------------------------------------------------------

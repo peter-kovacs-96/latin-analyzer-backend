@@ -6,6 +6,7 @@ from app.clients import LatinIsSimpleClient, LatinWordNetClient, UDPipeClient
 from app.latin import (
     extract_lis_fullname,
     extract_lis_meaning,
+    extract_lis_url,
     extract_wordnet_lemma,
     extract_wordnet_morpho,
     parse_conllu,
@@ -180,6 +181,7 @@ class AnalyzerService:
                 syntactic_role=syntactic_role,
                 dictionary_form=extract_lis_fullname(lis_data, entry.internal_lemma, entry.upos),
                 meaning=extract_lis_meaning(lis_data, entry.internal_lemma, entry.upos),
+                lis_url=extract_lis_url(lis_data, entry.internal_lemma, entry.upos, entry.form),
                 confidence=confidence,
                 source=source,
                 downstreams={

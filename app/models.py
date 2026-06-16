@@ -104,6 +104,10 @@ class WordAnalysis(BaseModel):
     # lemma was not found in the dictionary.
     meaning: str = ""
 
+    # Direct URL to the Latin is Simple vocabulary page for this entry.
+    # Empty when the LIS entry id/type could not be determined.
+    lis_url: str = ""
+
     # Overall reliability of this word's analysis (see WordConfidence enum).
     confidence: WordConfidence
 
