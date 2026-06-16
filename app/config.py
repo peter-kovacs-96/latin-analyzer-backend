@@ -24,6 +24,9 @@ class Settings(BaseSettings):
 
     zenrows_api_key: str = ""
 
+    upstash_redis_url: str = ""
+    upstash_redis_token: str = ""
+
     model_config = SettingsConfigDict(env_prefix="LATIN_ANALYZER_")
 
 

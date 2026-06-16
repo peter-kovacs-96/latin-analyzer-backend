@@ -25,6 +25,7 @@ async def lifespan(app: FastAPI):
     await http_client.start()
     yield
     await http_client.close()
+    await latin_is_simple_client.close()
 
 
 app = FastAPI(title=settings.app_name, lifespan=lifespan)

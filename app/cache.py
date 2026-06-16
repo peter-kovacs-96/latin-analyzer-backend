@@ -1,7 +1,10 @@
+import json
 import time
 from collections import OrderedDict
 from dataclasses import dataclass
-from typing import Generic, TypeVar
+from typing import Any, Generic, TypeVar
+
+import httpx
 
 K = TypeVar("K")
 V = TypeVar("V")
@@ -37,3 +40,36 @@ class TTLCache(Generic[K, V]):
 
     def clear(self) -> None:
         self._items.clear()
+
+
+class UpstashCache:
+    """Persistent L2 cache backed by Upstash Redis REST API."""
+
+    def __init__(self, url: str, token: str, ttl_seconds: int) -> None:
+        self.ttl_seconds = ttl_seconds
+        self._client = httpx.AsyncClient(
+            base_url=url.rstrip("/"),
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=3.0,
+        )
+
+    async def get(self, key: str) -> Any | None:
+        try:
+            r = await self._client.post("/", json=["GET", key])
+            result = r.json().get("result")
+            if result is not None:
+                return json.loads(result)
+        except Exception:
+            pass
+        return None
+
+    async def set(self, key: str, value: Any) -> None:
+        try:
+            await self._client.post(
+                "/", json=["SETEX", key, self.ttl_seconds, json.dumps(value, ensure_ascii=False)]
+            )
+        except Exception:
+            pass
+
+    async def close(self) -> None:
+        await self._client.aclose()

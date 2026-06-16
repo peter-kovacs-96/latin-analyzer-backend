@@ -5,7 +5,7 @@ from urllib.parse import quote
 
 import httpx
 
-from app.cache import TTLCache
+from app.cache import TTLCache, UpstashCache
 from app.config import Settings
 from app.models import DownstreamDiagnostic, DownstreamResult, DownstreamStatus
 
@@ -239,14 +239,35 @@ class LatinIsSimpleClient:
         self.http = http
         self.settings = settings
         self.cache: TTLCache[str, Any] = TTLCache(settings.cache_max_items, settings.cache_ttl_seconds)
+        self._upstash = (
+            UpstashCache(settings.upstash_redis_url, settings.upstash_redis_token, settings.cache_ttl_seconds)
+            if settings.upstash_redis_url and settings.upstash_redis_token
+            else None
+        )
+
+    async def close(self) -> None:
+        if self._upstash:
+            await self._upstash.close()
 
     async def search(self, lemma: str) -> DownstreamResult:
+        # L1: in-memory
         cached = self.cache.get(lemma)
         if cached is not None:
             return DownstreamResult(
                 data=cached,
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
             )
+
+        # L2: Upstash Redis (persistent across restarts)
+        if self._upstash is not None:
+            cached = await self._upstash.get(f"lis:{lemma}")
+            if cached is not None:
+                self.cache.set(lemma, cached)
+                return DownstreamResult(
+                    data=cached,
+                    diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
+                )
+
         params = {"query": lemma, "forms_only": "true", "format": "json"}
         direct_url = f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}"
         result = await self.http.get_json(
@@ -278,4 +299,6 @@ class LatinIsSimpleClient:
                     ),
                 )
             self.cache.set(lemma, result.data)
+            if self._upstash is not None:
+                await self._upstash.set(f"lis:{lemma}", result.data)
         return result
