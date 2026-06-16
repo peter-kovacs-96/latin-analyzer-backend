@@ -288,6 +288,9 @@ class LatinIsSimpleClient:
             )
             result = await self.http.get_json(self.service_name, zenrows_url)
         if result.diagnostic.status == DownstreamStatus.OK:
+            self.cache.set(lemma, result.data)
+            if self._upstash is not None:
+                await self._upstash.set(f"lis:{lemma}", result.data)
             if isinstance(result.data, list) and not result.data:
                 return DownstreamResult(
                     data=[],
@@ -298,7 +301,5 @@ class LatinIsSimpleClient:
                         latency_ms=result.diagnostic.latency_ms,
                     ),
                 )
-            self.cache.set(lemma, result.data)
-            if self._upstash is not None:
-                await self._upstash.set(f"lis:{lemma}", result.data)
         return result
+
