@@ -105,7 +105,7 @@ Returns `{"ok": true}`.
 |---|---|---|
 | UDPipe | ✅ Reliable | Always processes text; best model for classical Latin: `latin-ittb-ud-2.17-251125`. Disambiguates context-dependent forms within a sentence group. |
 | Latin WordNet `/api/lemmas/{lemma}/` | ✅ Reliable | Stable endpoint; returns `count:0` for unknown lemmas. Handles v/u orthographic variants (`vinco`→`uinco`). The `/lemmatize/` endpoint is broken. |
-| Latin is Simple (forms_only=true) | ✅ Good | Returns form-based matches. Must filter by exact lemma in `short_name` or first token of `full_name`. |
+| Latin is Simple (forms_only=true) | ✅ Good | Returns form-based matches. Must filter by exact lemma in `short_name` or first token of `full_name`. Cloudflare blocks direct server-to-server requests with a JS challenge (HTTP 403); see ADR-0008 for the ZenRows workaround. |
 | Latin is Simple (forms_only=false) | ❌ Unreliable | Full-text search: returns entries whose translations *contain* the query word as a substring (e.g. querying `malum` returns `morbus` because German for morbus includes "Malum"). |
 
 ## Downstream statuses
@@ -155,11 +155,22 @@ pytest tests/e2e/test_analyze_e2e.py -v
 
 ## Deployment
 
-`render.yaml` included for Render free-tier deployment.
+`render.yaml` and `.github/workflows/docker-publish.yml` included.
+Push to `main` → GitHub Actions builds and pushes the Docker image to `ghcr.io` → Render deploys automatically via deploy hook.
+
+Required environment variables on Render:
+
+| Variable | Description |
+|---|---|
+| `LATIN_ANALYZER_ZENROWS_API_KEY` | ZenRows API key — bypasses Cloudflare JS challenge on LIS requests |
+| `LATIN_ANALYZER_UPSTASH_REDIS_URL` | Upstash Redis REST URL — persistent L2 cache for LIS results |
+| `LATIN_ANALYZER_UPSTASH_REDIS_TOKEN` | Upstash Redis REST token |
+| `RENDER_DEPLOY_HOOK_URL` | Render deploy hook URL (set as GitHub secret) |
 
 ## Notes
 
-- In-memory TTL cache only (6 h TTL, 5 000 items per service).
+- Two-layer cache for Latin is Simple: L1 in-memory TTL cache (6 h, 5 000 items), L2 Upstash Redis (persistent across restarts). ZenRows is only called on a true miss in both layers.
+- WordNet and UDPipe use in-memory TTL cache only (no paid external services involved).
 - Async downstream calls with bounded concurrency (default 10).
 - TLS verification intentionally disabled (`verify_tls: false`).
 - Per-word downstream diagnostics included in every response.
