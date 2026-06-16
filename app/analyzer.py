@@ -152,16 +152,17 @@ class AnalyzerService:
                 for entry in preliminary
             ]
 
-        # Look up WordNet and LIS in parallel, both keyed by lemma.
-        # LIS form-based search caused misses for irregular inflections (e.g.
-        # "eiusdem" → LIS entry short_name="eiusdem", but find_lis_match looks
-        # for short_name matching the UDPipe lemma "idem"). Searching by lemma
-        # directly avoids this mismatch.
+        # Look up WordNet (by lemma) and LIS (by surface form) in parallel.
+        # LIS is keyed by surface form so that irregular inflections with
+        # form-based LIS entries (e.g. "eiusdem", "volucris") are found in
+        # cache.  find_lis_match then matches the result against the UDPipe
+        # lemma first and falls back to the surface form when lemmata differ.
         internal_lemmas = list(dict.fromkeys(e.internal_lemma for e in preliminary if e.internal_lemma and e.upos != "PUNCT"))
-        if internal_lemmas:
+        lis_forms = list(dict.fromkeys(e.form for e in preliminary if e.form and e.upos != "PUNCT"))
+        if internal_lemmas or lis_forms:
             wordnet_results, meaning_results = await asyncio.gather(
                 self._load_wordnet(internal_lemmas),
-                self._load_meanings(internal_lemmas),
+                self._load_meanings(lis_forms),
             )
         else:
             wordnet_results, meaning_results = {}, {}
@@ -195,7 +196,7 @@ class AnalyzerService:
                     morphology = wn_to_morphology(extract_wordnet_morpho(cands[0]))
                     source = _Source.WORDNET
 
-            meaning_result = meaning_results.get(entry.internal_lemma)
+            meaning_result = meaning_results.get(entry.form)
             lis_diag = meaning_result.diagnostic if meaning_result else _SKIPPED_NO_LEMMA
             lis_data = (
                 meaning_result.data
@@ -205,7 +206,7 @@ class AnalyzerService:
 
             # Derive effective LIS status from whether we actually extracted a
             # meaning: HTTP 200 with no matching entry still means no translation.
-            lis_meaning = extract_lis_meaning(lis_data, entry.internal_lemma, entry.upos)
+            lis_meaning = extract_lis_meaning(lis_data, entry.internal_lemma, entry.upos, entry.form)
             lis_effective_status = (
                 DownstreamStatus.NOT_FOUND
                 if lis_diag.status == DownstreamStatus.OK and not lis_meaning
@@ -226,7 +227,7 @@ class AnalyzerService:
                 upos=entry.upos,
                 morphology=morphology,
                 syntactic_role=syntactic_role,
-                dictionary_form=extract_lis_fullname(lis_data, entry.internal_lemma, entry.upos),
+                dictionary_form=extract_lis_fullname(lis_data, entry.internal_lemma, entry.upos, entry.form),
                 meaning=lis_meaning,
                 lis_url=extract_lis_url(lis_data, entry.internal_lemma, entry.upos, entry.form),
                 confidence=confidence,

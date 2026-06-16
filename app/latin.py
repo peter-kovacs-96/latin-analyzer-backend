@@ -199,12 +199,16 @@ def _en_translation(item: dict) -> str:
     return translations or ""
 
 
-def find_lis_match(results: list, lemma: str, upos: str = "") -> dict | None:
+def find_lis_match(results: list, lemma: str, upos: str = "", form: str = "") -> dict | None:
     """Return the best-matching LIS entry for *lemma* given a UDPipe UPOS tag.
 
     Scoring:
-      +10  short_name == lemma (exact match)
+      +10  short_name == lemma (exact lemma match)
       +8   first token of full_name == lemma (e.g. "vinco" in "vinco, vincis…")
+      +6   short_name == form (surface-form fallback: handles irregular inflections
+           where UDPipe lemma differs from LIS short_name, e.g. "volucris"→"volucra",
+           or form-based LIS entries like "eiusdem")
+      +4   first token of full_name == form
       +5   intern_type matches expected LIS type for *upos*
       skip entries with "still in translation" or empty English text
     """
@@ -212,6 +216,7 @@ def find_lis_match(results: list, lemma: str, upos: str = "") -> dict | None:
         return None
 
     lemma_lc = lemma.lower()
+    form_lc = form.lower() if form else ""
     expected_type = UPOS_TO_LIS_TYPE.get(upos, "")
 
     best_score = -1
@@ -229,6 +234,10 @@ def find_lis_match(results: list, lemma: str, upos: str = "") -> dict | None:
             form_score = 10
         elif fn_first == lemma_lc:
             form_score = 8
+        elif form_lc and sn == form_lc:
+            form_score = 6
+        elif form_lc and fn_first == form_lc:
+            form_score = 4
         else:
             continue  # no form match at all
 
@@ -242,25 +251,25 @@ def find_lis_match(results: list, lemma: str, upos: str = "") -> dict | None:
     return best_item
 
 
-def extract_lis_meaning(result: list | dict | str | None, lemma: str = "", upos: str = "") -> str:
+def extract_lis_meaning(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
     """Return the English meaning for a LIS search result.
 
     Requires a form-match via find_lis_match; returns "" when no entry
-    can be confidently matched to the given lemma/upos.  This prevents
+    can be confidently matched to the given lemma/upos/form.  This prevents
     showing a wrong meaning just because LIS happened to return results
     for the surface form (e.g. enclitics like -que).
     """
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos)
+    best = find_lis_match(result, lemma, upos, form)
     return _en_translation(best) if best else ""
 
 
-def extract_lis_fullname(result: list | dict | str | None, lemma: str = "", upos: str = "") -> str:
+def extract_lis_fullname(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
     """Return the dictionary full_name (e.g. 'amor, amoris [m.] C') from LIS."""
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos)
+    best = find_lis_match(result, lemma, upos, form)
     return best.get("full_name", "") if best else ""
 
 
@@ -268,7 +277,7 @@ def extract_lis_url(result: list | dict | str | None, lemma: str = "", upos: str
     """Return the Latin is Simple page URL for the best matching entry."""
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos)
+    best = find_lis_match(result, lemma, upos, form)
     if not best:
         return ""
     url = best.get("url", "")
