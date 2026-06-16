@@ -18,10 +18,13 @@ For each sentence group:
    - Syntactic dependency role (subject, object, modifier…)
    - Context resolves ambiguous forms: same surface form → different lemmas based on sentence structure.
 
-2. **Latin WordNet** (`/api/lemmas/{lemma}/`) — validates the lemma and provides the morpho code.
+2. **Morpheus** (`morph.perseids.org` — Perseids/Tufts University) — cross-validates UDPipe's lemma against the full set of morphological candidates for the surface form. If UDPipe's lemma is not among Morpheus's candidates, Morpheus's first candidate is used instead.
+   Example: *ferit* → UDPipe gives *fero* (wrong), Morpheus corrects to *ferio* (to strike).
+
+3. **Latin WordNet** (`/api/lemmas/{lemma}/`) — validates the lemma and provides the morpho code.
    Returns `not_found` when a lemma is absent from the lexicon (non-Latin or very rare word).
 
-3. **Latin is Simple** (`/api/vocabulary/search/?forms_only=true`) — looks up the English meaning.
+4. **Latin is Simple** (`/api/vocabulary/search/?forms_only=true`) — looks up the English meaning.
    - `forms_only=true` matches by actual Latin form, not by full-text search (the default `false` is unreliable — it returns results whose *German* translation contains the query word).
    - Smart matching: among all hits for a lemma, picks the entry where `short_name == lemma` **or** the first token of `full_name == lemma`, then breaks ties by UDPipe POS (`NOUN→noun`, `VERB→verb`, `ADJ→adjective`…).
 
@@ -104,6 +107,7 @@ Returns `{"ok": true}`.
 | Service | Status | Notes |
 |---|---|---|
 | UDPipe | ✅ Reliable | Always processes text; best model for classical Latin: `latin-ittb-ud-2.17-251125`. Disambiguates context-dependent forms within a sentence group. |
+| Morpheus (`morph.perseids.org`) | ✅ Reliable | Free JSON API. Returns candidate lemmata for a surface form. Used to correct UDPipe lemmatisation errors where the form is unambiguous. |
 | Latin WordNet `/api/lemmas/{lemma}/` | ✅ Reliable | Stable endpoint; returns `count:0` for unknown lemmas. Handles v/u orthographic variants (`vinco`→`uinco`). The `/lemmatize/` endpoint is broken. |
 | Latin is Simple (forms_only=true) | ✅ Good | Returns form-based matches. Must filter by exact lemma in `short_name` or first token of `full_name`. Cloudflare blocks direct server-to-server requests with a JS challenge (HTTP 403); see ADR-0008 for the ZenRows workaround. |
 | Latin is Simple (forms_only=false) | ❌ Unreliable | Full-text search: returns entries whose translations *contain* the query word as a substring (e.g. querying `malum` returns `morbus` because German for morbus includes "Malum"). |
@@ -170,7 +174,7 @@ Required environment variables on Render:
 ## Notes
 
 - Two-layer cache for Latin is Simple: L1 in-memory TTL cache (6 h, 5 000 items), L2 Upstash Redis (persistent across restarts). ZenRows is only called on a true miss in both layers.
-- WordNet and UDPipe use in-memory TTL cache only (no paid external services involved).
+- WordNet, UDPipe, and Morpheus use in-memory TTL cache only (no paid external services involved).
 - Async downstream calls with bounded concurrency (default 10).
 - TLS verification intentionally disabled (`verify_tls: false`).
 - Per-word downstream diagnostics included in every response.
