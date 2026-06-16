@@ -1,6 +1,7 @@
 import json as _json
 from contextlib import asynccontextmanager
 
+import httpx
 from fastapi import FastAPI, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -38,6 +39,30 @@ app.add_middleware(
 @app.get("/health")
 async def health() -> dict[str, bool]:
     return {"ok": True}
+
+
+@app.get("/debug/lis")
+async def debug_lis(word: str = Query(default="amor")) -> dict:
+    """Debug endpoint: makes a raw LIS request and returns full response details."""
+    url = f"{settings.latin_is_simple_base_url}/api/vocabulary/search/?query={word}&forms_only=true&format=json"
+    headers = {
+        "Accept": "application/json",
+        "User-Agent": settings.user_agent,
+        "Origin": "https://www.latin-is-simple.com",
+        "Referer": "https://www.latin-is-simple.com/",
+    }
+    try:
+        async with httpx.AsyncClient(verify=False) as client:
+            response = await client.get(url, headers=headers, timeout=10)
+        return {
+            "url": url,
+            "request_headers": dict(headers),
+            "status_code": response.status_code,
+            "response_headers": dict(response.headers),
+            "body_preview": response.text[:500],
+        }
+    except Exception as exc:
+        return {"error": str(exc)}
 
 
 @app.post("/analyze/stream")
