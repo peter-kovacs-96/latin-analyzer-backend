@@ -7,6 +7,7 @@ on:
 env:
   IMAGE: ghcr.io/peter-kovacs-96/latin-analyzer-backend
   RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-and-push:
