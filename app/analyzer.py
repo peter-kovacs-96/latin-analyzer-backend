@@ -133,6 +133,7 @@ class AnalyzerService:
 
         # Morpheus cross-validation: correct UDPipe lemmata where Morpheus disagrees.
         udpipe_forms = list(dict.fromkeys(e.form for e in preliminary if e.source == _Source.UDPIPE))
+        morpheus_results: dict[str, DownstreamResult] = {}
         if udpipe_forms:
             morpheus_results = await self._load_morpheus(udpipe_forms)
             preliminary = [
@@ -217,6 +218,7 @@ class AnalyzerService:
                     UDPipeClient.service_name:        entry.ud_diag,
                     LatinWordNetClient.service_name:  wn_diag,
                     LatinIsSimpleClient.service_name: lis_diag,
+                    MorpheusClient.service_name:      morpheus_results[entry.form].diagnostic if entry.form in morpheus_results else _SKIPPED_NO_UD_TOKEN,
                 },
             ))
 
