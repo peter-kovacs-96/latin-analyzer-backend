@@ -43,26 +43,65 @@ async def health() -> dict[str, bool]:
 
 @app.get("/debug/lis")
 async def debug_lis(word: str = Query(default="amor")) -> dict:
-    """Debug endpoint: makes a raw LIS request and returns full response details."""
+    """Debug endpoint: tries multiple approaches to reach LIS and reports results."""
     url = f"{settings.latin_is_simple_base_url}/api/vocabulary/search/?query={word}&forms_only=true&format=json"
-    headers = {
-        "Accept": "application/json",
-        "User-Agent": settings.user_agent,
-        "Origin": "https://www.latin-is-simple.com",
-        "Referer": "https://www.latin-is-simple.com/",
-    }
+    results = {}
+
+    # Attempt 1: httpx with browser-like headers
     try:
-        async with httpx.AsyncClient(verify=False) as client:
+        headers = {
+            "Accept": "application/json, text/plain, */*",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Accept-Encoding": "gzip, deflate, br",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+            "Origin": "https://www.latin-is-simple.com",
+            "Referer": "https://www.latin-is-simple.com/",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Dest": "empty",
+            "Sec-CH-UA": '"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"',
+            "Sec-CH-UA-Mobile": "?0",
+            "Sec-CH-UA-Platform": '"Windows"',
+        }
+        async with httpx.AsyncClient(verify=False, http2=True) as client:
             response = await client.get(url, headers=headers, timeout=10)
-        return {
-            "url": url,
-            "request_headers": dict(headers),
+        results["httpx_full_headers"] = {
             "status_code": response.status_code,
-            "response_headers": dict(response.headers),
-            "body_preview": response.text[:500],
+            "cf_mitigated": response.headers.get("cf-mitigated"),
+            "body_preview": response.text[:200],
         }
     except Exception as exc:
-        return {"error": str(exc)}
+        results["httpx_full_headers"] = {"error": str(exc)}
+
+    # Attempt 2: curl-cffi Chrome impersonation
+    try:
+        from curl_cffi import requests as cffi_requests
+        response = cffi_requests.get(url, impersonate="chrome", timeout=10, verify=False)
+        results["curl_cffi_chrome"] = {
+            "status_code": response.status_code,
+            "cf_mitigated": response.headers.get("cf-mitigated"),
+            "body_preview": response.text[:200],
+        }
+    except ImportError:
+        results["curl_cffi_chrome"] = {"error": "curl-cffi not installed"}
+    except Exception as exc:
+        results["curl_cffi_chrome"] = {"error": str(exc)}
+
+    # Attempt 3: curl-cffi Firefox impersonation
+    try:
+        from curl_cffi import requests as cffi_requests
+        response = cffi_requests.get(url, impersonate="firefox", timeout=10, verify=False)
+        results["curl_cffi_firefox"] = {
+            "status_code": response.status_code,
+            "cf_mitigated": response.headers.get("cf-mitigated"),
+            "body_preview": response.text[:200],
+        }
+    except ImportError:
+        results["curl_cffi_firefox"] = {"error": "curl-cffi not installed"}
+    except Exception as exc:
+        results["curl_cffi_firefox"] = {"error": str(exc)}
+
+    return {"url": url, "results": results}
 
 
 @app.post("/analyze/stream")
