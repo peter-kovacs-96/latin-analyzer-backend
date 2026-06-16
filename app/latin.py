@@ -245,38 +245,30 @@ def find_lis_match(results: list, lemma: str, upos: str = "") -> dict | None:
 def extract_lis_meaning(result: list | dict | str | None, lemma: str = "", upos: str = "") -> str:
     """Return the English meaning for a LIS search result.
 
-    When *lemma* and/or *upos* are provided the best-matching entry is chosen
-    instead of always picking result[0].
+    Requires a form-match via find_lis_match; returns "" when no entry
+    can be confidently matched to the given lemma/upos.  This prevents
+    showing a wrong meaning just because LIS happened to return results
+    for the surface form (e.g. enclitics like -que).
     """
     if not result or not isinstance(result, list):
         return ""
-    if lemma or upos:
-        best = find_lis_match(result, lemma, upos)
-        if best:
-            return _en_translation(best)
-    for item in result:
-        en = _en_translation(item)
-        if en and "still in translation" not in en:
-            return en
-    return ""
+    best = find_lis_match(result, lemma, upos)
+    return _en_translation(best) if best else ""
 
 
 def extract_lis_fullname(result: list | dict | str | None, lemma: str = "", upos: str = "") -> str:
     """Return the dictionary full_name (e.g. 'amor, amoris [m.] C') from LIS."""
     if not result or not isinstance(result, list):
         return ""
-    if lemma or upos:
-        best = find_lis_match(result, lemma, upos)
-        if best:
-            return best.get("full_name", "")
-    return result[0].get("full_name", "") if result else ""
+    best = find_lis_match(result, lemma, upos)
+    return best.get("full_name", "") if best else ""
 
 
 def extract_lis_url(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
     """Return the Latin is Simple page URL for the best matching entry."""
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos) if (lemma or upos) else (result[0] if result else None)
+    best = find_lis_match(result, lemma, upos)
     if not best:
         return ""
     url = best.get("url", "")
