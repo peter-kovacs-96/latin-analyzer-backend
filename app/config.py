@@ -22,6 +22,8 @@ class Settings(BaseSettings):
     user_agent: str = "Mozilla/5.0"
     verify_tls: bool = False
 
+    zenrows_api_key: str = ""
+
     model_config = SettingsConfigDict(env_prefix="LATIN_ANALYZER_")
 
 

@@ -248,11 +248,24 @@ class LatinIsSimpleClient:
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
             )
         params = {"query": lemma, "forms_only": "true", "format": "json"}
+        direct_url = f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}"
         result = await self.http.get_json(
             self.service_name,
-            f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}",
+            direct_url,
             extra_headers=_LIS_HEADERS,
         )
+        if (
+            result.diagnostic.status == DownstreamStatus.HTTP_ERROR
+            and result.diagnostic.http_status == 403
+            and self.settings.zenrows_api_key
+        ):
+            zenrows_url = (
+                f"https://api.zenrows.com/v1/"
+                f"?apikey={self.settings.zenrows_api_key}"
+                f"&url={quote(direct_url)}"
+                f"&js_render=true"
+            )
+            result = await self.http.get_json(self.service_name, zenrows_url)
         if result.diagnostic.status == DownstreamStatus.OK:
             if isinstance(result.data, list) and not result.data:
                 return DownstreamResult(
