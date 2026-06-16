@@ -290,7 +290,8 @@ def extract_lis_url(result: list | dict | str | None, lemma: str = "", upos: str
 # ---------------------------------------------------------------------------
 
 def tokenize(text: str) -> list[str]:
-    return re.findall(r"[A-Za-zÀ-ÿ]+", text)
+    # Match Latin words OR individual punctuation characters
+    return re.findall(r"[A-Za-zÀ-ÿ]+|[^\w\s]", text)
 
 
 def _feats(value: str) -> dict[str, str]:
@@ -310,9 +311,8 @@ def parse_conllu(conllu: str) -> list[dict[str, str]]:
         if not line.strip() or line.startswith("#"):
             continue
         col = line.split("\t")
-        # Skip malformed rows, CoNLL-U multi-word tokens ("10-11"), empty nodes
-        # ("1.1"), and punctuation tokens — none contribute to morphological analysis.
-        if len(col) < 8 or not col[0].isdigit() or col[3] == "PUNCT":
+        # Skip malformed rows, CoNLL-U multi-word tokens ("10-11"), empty nodes ("1.1")
+        if len(col) < 8 or not col[0].isdigit():
             continue
         tokens.append({"form": col[1], "lemma": col[2], "upos": col[3], "feats": col[5], "deprel": col[7]})
     return tokens

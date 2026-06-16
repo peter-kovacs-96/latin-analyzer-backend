@@ -132,7 +132,7 @@ class AnalyzerService:
                 ))
 
         # Morpheus cross-validation: correct UDPipe lemmata where Morpheus disagrees.
-        udpipe_forms = list(dict.fromkeys(e.form for e in preliminary if e.source == _Source.UDPIPE))
+        udpipe_forms = list(dict.fromkeys(e.form for e in preliminary if e.source == _Source.UDPIPE and e.upos != "PUNCT"))
         morpheus_results: dict[str, DownstreamResult] = {}
         if udpipe_forms:
             morpheus_results = await self._load_morpheus(udpipe_forms)
@@ -156,8 +156,8 @@ class AnalyzerService:
         # LIS is searched by the original surface form so that e.g. "ferit" finds
         # "ferio, feris, ferire" (to strike) rather than an unrelated "feriare" entry
         # that also starts with "ferio".
-        internal_lemmas = list(dict.fromkeys(e.internal_lemma for e in preliminary if e.internal_lemma))
-        lis_forms = list(dict.fromkeys(e.form for e in preliminary if e.form))
+        internal_lemmas = list(dict.fromkeys(e.internal_lemma for e in preliminary if e.internal_lemma and e.upos != "PUNCT"))
+        lis_forms = list(dict.fromkeys(e.form for e in preliminary if e.form and e.upos != "PUNCT"))
         if internal_lemmas or lis_forms:
             wordnet_results, meaning_results = await asyncio.gather(
                 self._load_wordnet(internal_lemmas),
@@ -168,6 +168,16 @@ class AnalyzerService:
 
         all_rows: list[WordAnalysis] = []
         for entry in preliminary:
+            if entry.upos == "PUNCT" or not any(c.isalpha() for c in entry.form):
+                all_rows.append(WordAnalysis(
+                    form=entry.form,
+                    upos="PUNCT",
+                    confidence=WordConfidence.FULL,
+                    source=_Source.NONE,
+                    downstreams={},
+                ))
+                continue
+
             wn_result = wordnet_results.get(entry.internal_lemma)
             wn_diag = wn_result.diagnostic if wn_result else _SKIPPED_NO_LEMMA
 
