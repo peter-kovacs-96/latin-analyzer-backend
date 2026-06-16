@@ -144,7 +144,7 @@ class AnalyzerService:
                         and (morph := morpheus_results.get(entry.form)) is not None
                         and morph.diagnostic.status == DownstreamStatus.OK
                         and isinstance(morph.data, list)
-                        and len(morph.data) == 1  # only correct when Morpheus is unambiguous
+                        and morph.data
                         and entry.internal_lemma not in morph.data
                     )
                     else entry
