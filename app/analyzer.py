@@ -147,12 +147,16 @@ class AnalyzerService:
                 for entry in preliminary
             ]
 
-        # Look up WordNet and LIS for all unique lemmas in parallel.
+        # Look up WordNet (by lemma) and LIS (by form, forms_only=true) in parallel.
+        # LIS is searched by the original surface form so that e.g. "ferit" finds
+        # "ferio, feris, ferire" (to strike) rather than an unrelated "feriare" entry
+        # that also starts with "ferio".
         internal_lemmas = list(dict.fromkeys(e.internal_lemma for e in preliminary if e.internal_lemma))
-        if internal_lemmas:
+        lis_forms = list(dict.fromkeys(e.form for e in preliminary if e.form))
+        if internal_lemmas or lis_forms:
             wordnet_results, meaning_results = await asyncio.gather(
                 self._load_wordnet(internal_lemmas),
-                self._load_meanings(internal_lemmas),
+                self._load_meanings(lis_forms),
             )
         else:
             wordnet_results, meaning_results = {}, {}
@@ -176,8 +180,8 @@ class AnalyzerService:
                     morphology = wn_to_morphology(extract_wordnet_morpho(cands[0]))
                     source = _Source.WORDNET
 
-            # LIS lookup is keyed by internal_lemma (what was actually queried).
-            meaning_result = meaning_results.get(entry.internal_lemma)
+            # LIS lookup is keyed by surface form.
+            meaning_result = meaning_results.get(entry.form)
             lis_diag = meaning_result.diagnostic if meaning_result else _SKIPPED_NO_LEMMA
             lis_data = (
                 meaning_result.data
