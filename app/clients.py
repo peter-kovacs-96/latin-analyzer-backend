@@ -240,7 +240,7 @@ class LatinIsSimpleClient:
         self.settings = settings
         self.cache: TTLCache[str, Any] = TTLCache(settings.cache_max_items, settings.cache_ttl_seconds)
         self._upstash = (
-            UpstashCache(settings.upstash_redis_url, settings.upstash_redis_token, settings.cache_ttl_seconds)
+            UpstashCache(settings.upstash_redis_url, settings.upstash_redis_token)
             if settings.upstash_redis_url and settings.upstash_redis_token
             else None
         )

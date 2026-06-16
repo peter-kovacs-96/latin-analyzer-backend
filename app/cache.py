@@ -45,8 +45,7 @@ class TTLCache(Generic[K, V]):
 class UpstashCache:
     """Persistent L2 cache backed by Upstash Redis REST API."""
 
-    def __init__(self, url: str, token: str, ttl_seconds: int) -> None:
-        self.ttl_seconds = ttl_seconds
+    def __init__(self, url: str, token: str) -> None:
         self._client = httpx.AsyncClient(
             base_url=url.rstrip("/"),
             headers={"Authorization": f"Bearer {token}"},
@@ -66,7 +65,7 @@ class UpstashCache:
     async def set(self, key: str, value: Any) -> None:
         try:
             await self._client.post(
-                "/", json=["SETEX", key, self.ttl_seconds, json.dumps(value, ensure_ascii=False)]
+                "/", json=["SET", key, json.dumps(value, ensure_ascii=False)]
             )
         except Exception:
             pass
