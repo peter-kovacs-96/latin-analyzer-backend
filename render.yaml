@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: latin-analyzer-backend
+    env: docker
+    plan: free
+    image:
+      url: ghcr.io/peter-kovacs-96/latin-analyzer-backend:latest
+    healthCheckPath: /health
