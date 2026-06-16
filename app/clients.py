@@ -34,7 +34,7 @@ class DownstreamClient:
             await self._client.aclose()
             self._client = None
 
-    async def get_json(self, service: str, url: str) -> DownstreamResult:
+    async def get_json(self, service: str, url: str, extra_headers: dict[str, str] | None = None) -> DownstreamResult:
         if self._client is None:
             return DownstreamResult(
                 diagnostic=DownstreamDiagnostic(
@@ -51,7 +51,7 @@ class DownstreamClient:
         async with self._semaphore:
             for attempt in range(attempts):
                 try:
-                    response = await self._client.get(url)
+                    response = await self._client.get(url, headers=extra_headers)
                     latency_ms = int((time.perf_counter() - start) * 1000)
                     if response.status_code == 429:
                         last_result = DownstreamResult(
@@ -226,6 +226,12 @@ class UDPipeClient:
         return result
 
 
+_LIS_HEADERS = {
+    "Origin": "https://www.latin-is-simple.com",
+    "Referer": "https://www.latin-is-simple.com/",
+}
+
+
 class LatinIsSimpleClient:
     service_name = "latin_is_simple"
 
@@ -245,6 +251,7 @@ class LatinIsSimpleClient:
         result = await self.http.get_json(
             self.service_name,
             f"{self.settings.latin_is_simple_base_url}/api/vocabulary/search/?{httpx.QueryParams(params)}",
+            extra_headers=_LIS_HEADERS,
         )
         if result.diagnostic.status == DownstreamStatus.OK:
             if isinstance(result.data, list) and not result.data:
