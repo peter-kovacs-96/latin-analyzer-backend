@@ -96,8 +96,14 @@ SYLUAS = "Ibat venatum in syluas, telumque gerebat"
 HYEMS = "Friget hyems."
 MOUET = "Flatilis in venis spiritus, ora mouet."
 SCULPTUS = "Friget hyems. lapis haec sculptus, et illa lapis."
+TIBI = "Flens tandem dixit, non est tibi Caelia dispar;"
+TE = "Hanc volui, non te, parce, ferire deam."
+OBRIGUERE = "Palluit, utque silex obriguere comae."
 
-SENTENCES = [GREGESQUE, SURDIS, ACCIPE, FAUCIBUS, EIUSDEM, SYLUAS, HYEMS, MOUET, SCULPTUS]
+SENTENCES = [
+    GREGESQUE, SURDIS, ACCIPE, FAUCIBUS, EIUSDEM, SYLUAS, HYEMS, MOUET, SCULPTUS,
+    TIBI, TE, OBRIGUERE,
+]
 
 
 @pytest.fixture(scope="session")
@@ -254,3 +260,31 @@ def test_udpipe_pos_error_recovered_via_morpheus_lemma(analyses: dict) -> None:
     sculptus = _word(analyses, SCULPTUS, "sculptus")
     assert sculptus.confidence.value == "full"
     assert "carve" in sculptus.meaning.lower() or "engrave" in sculptus.meaning.lower()
+
+
+def test_second_person_pronoun_resolves_via_paradigm(analyses: dict) -> None:
+    """'tibi' (dative of 'tu') — LIS files the personal pronoun under the single
+    suppletive paradigm entry 'ego, tu, -'.  Matching a non-first principal part
+    lets 2nd/3rd-person forms resolve instead of staying form_only."""
+    tibi = _word(analyses, TIBI, "tibi")
+    assert tibi.lemma == "tu"
+    assert tibi.confidence.value == "full"
+    assert "pronoun" in tibi.meaning.lower() or "you" in tibi.meaning.lower()
+
+
+def test_te_keeps_its_own_specific_entry(analyses: dict) -> None:
+    """The paradigm match is the weakest tier, so 'te' (which has its own LIS
+    entry) still resolves to that specific entry rather than the generic
+    'ego, tu, -' paradigm."""
+    te = _word(analyses, TE, "te")
+    assert te.confidence.value == "full"
+    assert "you" in te.meaning.lower()
+
+
+def test_morpheus_hyphenated_lemma_is_stripped(analyses: dict) -> None:
+    """Morpheus marks morpheme boundaries with hyphens ('ob-rigesco').  Stripping
+    them yields the dictionary headword 'obrigesco', so the lemma is confirmed
+    (no longer form_only) even when LIS lacks the inflected surface form."""
+    obr = _word(analyses, OBRIGUERE, "obriguere")
+    assert obr.lemma == "obrigesco"
+    assert obr.confidence.value != "form_only"

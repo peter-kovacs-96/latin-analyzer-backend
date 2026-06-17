@@ -218,3 +218,6 @@ Required environment variables on Render:
 - Morpheus lemmata are also used as LIS name-match candidates, so words UDPipe
   mis-tags (e.g. the participle `sculptus`, tagged NOUN, found in LIS under the
   verb `sculpo`) still resolve. See ADR-0011.
+- Morpheus morpheme hyphens are stripped (`ob-rigesco` → `obrigesco`), and the
+  personal-pronoun paradigm (`ego, tu, -`) is matched on any principal part so
+  2nd/3rd-person forms (`tibi`, `te`) resolve. See ADR-0012.

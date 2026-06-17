@@ -241,7 +241,8 @@ def find_lis_match(
             continue
 
         sn = item.get("short_name", "").lower()
-        fn_first = item.get("full_name", "").split(",")[0].strip().lower()
+        full_name = item.get("full_name", "")
+        fn_first = full_name.split(",")[0].strip().lower()
 
         if sn in lemma_candidates:
             form_score = 10
@@ -251,6 +252,14 @@ def find_lis_match(
             form_score = 6
         elif form_lc and fn_first == form_lc:
             form_score = 4
+        elif item.get("intern_type") == "perspron" and {
+            p.strip().lower() for p in full_name.split(",")
+        } & lemma_candidates:
+            # Suppletive personal-pronoun paradigm: the single LIS entry
+            # 'ego, tu, -' covers ego/tu/sui, so 2nd/3rd-person lemmas (tu, te,
+            # tibi) only match via a non-first principal part.  Weakest tier, so
+            # a word's own specific entry (e.g. 'te') still wins when present.
+            form_score = 3
         else:
             continue  # no form match at all
 

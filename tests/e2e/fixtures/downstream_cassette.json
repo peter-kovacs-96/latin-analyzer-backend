@@ -4,11 +4,39 @@
     "diagnostic": {
       "cached": false,
       "http_status": 400,
-      "latency_ms": 526,
+      "latency_ms": 648,
       "message": "latin_is_simple returned HTTP 400",
       "reason": "LIS_HTTP_ERROR",
       "retryable": false,
       "status": "http_error"
+    }
+  },
+  "latin_is_simple:Caelia": {
+    "data": [
+      {
+        "full_name": "caelia, caeliae [f.] A",
+        "id": 3860,
+        "intern_type": "noun",
+        "short_name": "caelia",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "kind of beer"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/3860/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
     }
   },
   "latin_is_simple:De": {
@@ -67,6 +95,34 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:Flens": {
+    "data": [
+      {
+        "full_name": "fleo, fles, flere E, flevi, fletum",
+        "id": 156,
+        "intern_type": "verb",
+        "short_name": "flere",
+        "translations_unstructured": {
+          "de": "weinen, beklagen",
+          "en": "weep, cry"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/156/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:Friget": {
     "data": [
       {
@@ -111,6 +167,34 @@
     }
   },
   "latin_is_simple:Haec": {
+    "data": [
+      {
+        "full_name": "hic, haec, hoc",
+        "id": 3,
+        "intern_type": "dempron",
+        "short_name": "hic",
+        "translations_unstructured": {
+          "de": "dieser, diese, dieses",
+          "en": "this, that"
+        },
+        "type": {
+          "label": "Demonstrative Pronoun",
+          "name": "dempron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/dempron/3/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Hanc": {
     "data": [
       {
         "full_name": "hic, haec, hoc",
@@ -242,6 +326,49 @@
           "name": "verb"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6325/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Palluit": {
+    "data": [
+      {
+        "full_name": "palleo, palles, pallere E, pallui, -",
+        "id": 5217,
+        "intern_type": "verb",
+        "short_name": "pallere",
+        "translations_unstructured": {
+          "de": "blass aussehen, Kraft verlieren, überblenden, abblühen, ausgehen, bleichen, erblassen, nachlassen, schwinden, schwächer werden, sich verfärben, verblassen, verbleichen, verblühen, verklingen, verschießen, verwelken, verkümmern",
+          "en": "be/look pale, fade, become pale at"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/5217/"
+      },
+      {
+        "full_name": "pallesco, pallescis, pallescere C, pallui, -",
+        "id": 5218,
+        "intern_type": "verb",
+        "short_name": "pallescere",
+        "translations_unstructured": {
+          "de": "blass werden, abbrühen, Kraft verlieren, erblassen, blanchieren, überblenden, bleichen, abblühen, bleich werden, ausgehen, erbleichen, verzinnen, vorgaren, nachlassen, weiß machen, schwinden, überbrühen, schwächer werden",
+          "en": "grow pale, blanch, fade"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/5218/"
       }
     ],
     "diagnostic": {
@@ -538,6 +665,360 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:comae": {
+    "data": [
+      {
+        "full_name": "coma, comae [f.] A",
+        "id": 5869,
+        "intern_type": "noun",
+        "short_name": "coma",
+        "translations_unstructured": {
+          "de": "Haar, Haupthaar, Wolle, Flausch, Belaubung, Laubblätter, Strahlen, Kopfbehaarung, Fleece, Blattwerk, Blätter, Rochen, Kopfhaar, Faserpelz, Haarwuchs, Vlies, grünes Gezweig, Kraut",
+          "en": "hair, hair of head, mane of animal, wool, fleece, foliage, leaves, rays"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/5869/"
+      },
+      {
+        "full_name": "ilerda, ae [f.] A",
+        "id": 18304,
+        "intern_type": "noun",
+        "short_name": "ilerda",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Lérida"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18304/"
+      },
+      {
+        "full_name": "fallacia, ae [f.] A",
+        "id": 18462,
+        "intern_type": "noun",
+        "short_name": "fallacia",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "fallacy"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18462/"
+      },
+      {
+        "full_name": "Andromeda, ae [f.] A",
+        "id": 18638,
+        "intern_type": "noun",
+        "short_name": "Andromeda",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Andromeda"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18638/"
+      },
+      {
+        "full_name": "Minyae, ae [f.] A",
+        "id": 18769,
+        "intern_type": "noun",
+        "short_name": "Minyae",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Minyae"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18769/"
+      },
+      {
+        "full_name": "Minyae, ae [f.] A",
+        "id": 18771,
+        "intern_type": "noun",
+        "short_name": "Minyae",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Minyae"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18771/"
+      },
+      {
+        "full_name": "Ephyre, ae [f.] A",
+        "id": 19002,
+        "intern_type": "noun",
+        "short_name": "Ephyre",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Corinthus, Efire"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/19002/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:deam": {
+    "data": [
+      {
+        "full_name": "dea, deae [f.] A",
+        "id": 76,
+        "intern_type": "noun",
+        "short_name": "dea",
+        "translations_unstructured": {
+          "de": "Göttin, Heilige",
+          "en": "god (f.), saint (f.), goddess"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/76/"
+      },
+      {
+        "full_name": "dea, deae [f.] A",
+        "id": 17496,
+        "intern_type": "noun",
+        "short_name": "dea",
+        "translations_unstructured": {
+          "de": "Göttin",
+          "en": "Goddess"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/17496/"
+      },
+      {
+        "full_name": "dea, deae [f.] A",
+        "id": 18186,
+        "intern_type": "noun",
+        "short_name": "dea",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "goddess"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18186/"
+      },
+      {
+        "full_name": "Dea, Deae [f.] A",
+        "id": 18313,
+        "intern_type": "noun",
+        "short_name": "Dea",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Diosa"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18313/"
+      },
+      {
+        "full_name": "ilerda, ae [f.] A",
+        "id": 18304,
+        "intern_type": "noun",
+        "short_name": "ilerda",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Lérida"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18304/"
+      },
+      {
+        "full_name": "fallacia, ae [f.] A",
+        "id": 18462,
+        "intern_type": "noun",
+        "short_name": "fallacia",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "fallacy"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18462/"
+      },
+      {
+        "full_name": "Andromeda, ae [f.] A",
+        "id": 18638,
+        "intern_type": "noun",
+        "short_name": "Andromeda",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Andromeda"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18638/"
+      },
+      {
+        "full_name": "Minyae, ae [f.] A",
+        "id": 18769,
+        "intern_type": "noun",
+        "short_name": "Minyae",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Minyae"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18769/"
+      },
+      {
+        "full_name": "Minyae, ae [f.] A",
+        "id": 18771,
+        "intern_type": "noun",
+        "short_name": "Minyae",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Minyae"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/18771/"
+      },
+      {
+        "full_name": "o, is, ere C, __auto__i, ?um",
+        "id": 7145,
+        "intern_type": "verb",
+        "short_name": "ere",
+        "translations_unstructured": {
+          "de": "vertrauen",
+          "en": "believe, trust"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7145/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:dispar": {
+    "data": [
+      {
+        "full_name": "dispar, disparis M",
+        "id": 3778,
+        "intern_type": "adjective",
+        "short_name": "dispar",
+        "translations_unstructured": {
+          "de": "ungleich, disparat, anders, unsymmetrisch, grundverschieden, anders als, nicht in der Lage, unfähig, ungleichartig, unähnlich, ungleichnamig",
+          "en": "unequal, disparate, unlike"
+        },
+        "type": {
+          "label": "Adjective",
+          "name": "adj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adjective/3778/"
+      },
+      {
+        "full_name": "par, paris",
+        "id": 1941,
+        "intern_type": "other",
+        "short_name": "par, paris",
+        "translations_unstructured": {
+          "de": "gleich, ebenbürtig",
+          "en": "still in translation"
+        },
+        "type": {
+          "label": "Phrase",
+          "name": "phrase"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/1941/"
+      },
+      {
+        "full_name": "par, paris M",
+        "id": 8864,
+        "intern_type": "adjective",
+        "short_name": "par",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "equal"
+        },
+        "type": {
+          "label": "Adjective",
+          "name": "adj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adjective/8864/"
+      },
+      {
+        "full_name": "par, paris [n.] C",
+        "id": 13216,
+        "intern_type": "noun",
+        "short_name": "par",
+        "translations_unstructured": {
+          "de": "Duo, Paar, Pärchen",
+          "en": "pair, set of two, conjugal pair, pair of associates/adversaries/contestants"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/13216/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:dixi": {
     "data": [
       {
@@ -581,6 +1062,34 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:dixit": {
+    "data": [
+      {
+        "full_name": "dico, dicis, dicere C, dixi, dictum",
+        "id": 60,
+        "intern_type": "verb",
+        "short_name": "dicere",
+        "translations_unstructured": {
+          "de": "sagen, nennen, sprechen, reden",
+          "en": "say, call, tell"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/60/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:eiusdem": {
     "data": [
       {
@@ -597,6 +1106,64 @@
           "name": "other"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/other/2967/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:est": {
+    "data": [
+      {
+        "full_name": "sum, es, esse IR, fui, -",
+        "id": 45,
+        "intern_type": "verb",
+        "short_name": "esse",
+        "translations_unstructured": {
+          "de": "(1.) sein, existieren (2.) abwesend, fern sein",
+          "en": "be, exist"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/45/"
+      },
+      {
+        "full_name": "est, sunt qui",
+        "id": 2799,
+        "intern_type": "other",
+        "short_name": "est, sunt qui",
+        "translations_unstructured": {
+          "de": "gibt jemanden, der",
+          "en": "still in translation"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/2799/"
+      },
+      {
+        "full_name": "st",
+        "id": 1457,
+        "intern_type": "other",
+        "short_name": "st",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "hush!  hist!"
+        },
+        "type": {
+          "label": "Interjection",
+          "name": "interj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/1457/"
       }
     ],
     "diagnostic": {
@@ -696,6 +1263,64 @@
           "name": "noun"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/noun/9516/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:ferire": {
+    "data": [
+      {
+        "full_name": "ferio, feris, ferire I, -, -",
+        "id": 3973,
+        "intern_type": "verb",
+        "short_name": "ferire",
+        "translations_unstructured": {
+          "de": "aufprallen, stoßen, einen Handel abschließen, beiseiteschaffen, erlegen, aufschlagen, zuschlagen, ein gutes Geschäft abschließen, töten, drücken, anzünden, hinmachen, erreichen, erzielen, killen, hinschlagen, treffen, reißen",
+          "en": "hit, strike, strike a bargain, kill, slay"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/3973/"
+      },
+      {
+        "full_name": "ferio, feris, ferire I, ferii, feriturum",
+        "id": 7032,
+        "intern_type": "verb",
+        "short_name": "ferire",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "To hit, to strike"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7032/"
+      },
+      {
+        "full_name": "ferio, feris, ferire I, ferivi, feritum",
+        "id": 7257,
+        "intern_type": "verb",
+        "short_name": "ferire",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "to strike"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7257/"
       }
     ],
     "diagnostic": {
@@ -1188,6 +1813,88 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:non": {
+    "data": [
+      {
+        "full_name": "non",
+        "id": 25,
+        "intern_type": "other",
+        "short_name": "non",
+        "translations_unstructured": {
+          "de": "(1.) nein, nicht (2.) nicht, nicht, nicht, nicht, nein, nicht, nein",
+          "en": "(1.) not (2.) no, not (3.) not (4.) not, no (5.) no, not (6.) no, not, aren't"
+        },
+        "type": {
+          "label": "Adverb",
+          "name": "adv"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/25/"
+      },
+      {
+        "full_name": "non",
+        "id": 8875,
+        "intern_type": "adverb",
+        "short_name": "non",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "not"
+        },
+        "type": {
+          "label": "Adverb",
+          "name": "adv"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adverb/8875/"
+      },
+      {
+        "full_name": "Non",
+        "id": 8911,
+        "intern_type": "adverb",
+        "short_name": "Non",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "Not"
+        },
+        "type": {
+          "label": "Adverb",
+          "name": "adv"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adverb/8911/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:obriguere": {
+    "data": [],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:obrigvere": {
+    "data": [],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:ora": {
     "data": [
       {
@@ -1234,6 +1941,79 @@
           "name": "noun"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/noun/12987/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:parce": {
+    "data": [
+      {
+        "full_name": "parco, parcis, parcere C, peperci, parsurum",
+        "id": 287,
+        "intern_type": "verb",
+        "short_name": "parcere",
+        "translations_unstructured": {
+          "de": "verschonen, ein Nachsehen haben, sparen, Gnade walten lassen, knausern, sparsam umgehen",
+          "en": "be lenient, spare"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/287/"
+      },
+      {
+        "full_name": "parco, parcis, parcere C, parcui, parsum",
+        "id": 5231,
+        "intern_type": "verb",
+        "short_name": "parcere",
+        "translations_unstructured": {
+          "de": "dulden, sparen, Nachsicht üben, Gnade walten lassen, unterlassen, knausern, sparsam umgehen",
+          "en": "forbear, refrain from, spare, show consideration, be economical/thrifty with"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/5231/"
+      },
+      {
+        "full_name": "parcus/parca/parcum, AO",
+        "id": 6509,
+        "intern_type": "adjective",
+        "short_name": "parcus",
+        "translations_unstructured": {
+          "de": "schonend, bedürfnislos, dürftig, dünn, sparsam, bescheiden, knapp, gebrechlich, frugal, kärglich, gering, genügsam, notdürftig, geringfügig, haushälterisch, spärlich, schlank, mäßig",
+          "en": "sparing, frugal, scanty, slight"
+        },
+        "type": {
+          "label": "Adjective",
+          "name": "adj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adjective/6509/"
+      },
+      {
+        "full_name": "parce",
+        "id": 6505,
+        "intern_type": "adverb",
+        "short_name": "parce",
+        "translations_unstructured": {
+          "de": "schonend, bedürfnislos, dürftig, dünn, sparsam, bescheiden, knapp, gebrechlich, frugal, kärglich, gering, genügsam, notdürftig, geringfügig, haushälterisch, spärlich, schlank, mäßig",
+          "en": "sparing, frugal, scanty, slight"
+        },
+        "type": {
+          "label": "Adverb",
+          "name": "adv"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adverb/6505/"
       }
     ],
     "diagnostic": {
@@ -1376,6 +2156,34 @@
           "name": "noun"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/noun/15477/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:silex": {
+    "data": [
+      {
+        "full_name": "silex, silicis [m.] C",
+        "id": 17536,
+        "intern_type": "noun",
+        "short_name": "silex",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "(1.) pebble-stone, flint (2.) boulder, stone"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/17536/"
       }
     ],
     "diagnostic": {
@@ -1600,6 +2408,77 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:tandem": {
+    "data": [
+      {
+        "full_name": "tandem",
+        "id": 44,
+        "intern_type": "other",
+        "short_name": "tandem",
+        "translations_unstructured": {
+          "de": "endlich, schließlich, Endlich",
+          "en": "finally, eventually, at last, after all, Finally, At last"
+        },
+        "type": {
+          "label": "Adverb",
+          "name": "adv"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/44/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:te": {
+    "data": [
+      {
+        "full_name": "ego, tu, -",
+        "id": 1,
+        "intern_type": "perspron",
+        "short_name": "ego",
+        "translations_unstructured": {
+          "de": "ich, du, er/sie/es (Personalpronomen)",
+          "en": "I, you, he/she/it (personal pronoun)"
+        },
+        "type": {
+          "label": "Personal Pronoun",
+          "name": "perspron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/perspron/1/"
+      },
+      {
+        "full_name": "te",
+        "id": 2036,
+        "intern_type": "other",
+        "short_name": "te",
+        "translations_unstructured": {
+          "de": "du, dich",
+          "en": "you (Nom. = subject), you (Acc. = dir. object)"
+        },
+        "type": {
+          "label": "Personal Pronoun",
+          "name": "perspron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/2036/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:telumque": {
     "data": [
       {
@@ -1631,6 +2510,92 @@
           "name": "noun"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/noun/16306/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:tibi": {
+    "data": [
+      {
+        "full_name": "ego, tu, -",
+        "id": 1,
+        "intern_type": "perspron",
+        "short_name": "ego",
+        "translations_unstructured": {
+          "de": "ich, du, er/sie/es (Personalpronomen)",
+          "en": "I, you, he/she/it (personal pronoun)"
+        },
+        "type": {
+          "label": "Personal Pronoun",
+          "name": "perspron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/perspron/1/"
+      },
+      {
+        "full_name": "tibi",
+        "id": 4110,
+        "intern_type": "other",
+        "short_name": "tibi",
+        "translations_unstructured": {
+          "de": "dir",
+          "en": "still in translation"
+        },
+        "type": {
+          "label": "Other",
+          "name": "other"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/4110/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:utque": {
+    "data": [
+      {
+        "full_name": "ut",
+        "id": 114,
+        "intern_type": "other",
+        "short_name": "ut",
+        "translations_unstructured": {
+          "de": "dass, sodass, damit, wie, so dass, um ... zu, zu",
+          "en": "(1.) as, like, how (2.) that, so that (3.) that (4.) that (5.) "
+        },
+        "type": {
+          "label": "Conjunction",
+          "name": "conj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/114/"
+      },
+      {
+        "full_name": "Ut",
+        "id": 3912,
+        "intern_type": "other",
+        "short_name": "Ut",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "for"
+        },
+        "type": {
+          "label": "Conjunction",
+          "name": "conj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/3912/"
       }
     ],
     "diagnostic": {
@@ -1744,12 +2709,55 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:volui": {
+    "data": [
+      {
+        "full_name": "volo, vis, velle IR, volui, -",
+        "id": 216,
+        "intern_type": "verb",
+        "short_name": "velle",
+        "translations_unstructured": {
+          "de": "wollen, wünschen",
+          "en": "want, wish"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/216/"
+      },
+      {
+        "full_name": "volvoio, volvois, volvoire C, volui, ?um",
+        "id": 7177,
+        "intern_type": "verb",
+        "short_name": "volvoire",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "turn around"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7177/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:”": {
     "data": null,
     "diagnostic": {
       "cached": false,
       "http_status": 400,
-      "latency_ms": 152,
+      "latency_ms": 711,
       "message": "latin_is_simple returned HTTP 400",
       "reason": "LIS_HTTP_ERROR",
       "retryable": false,
@@ -1761,7 +2769,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 67,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -1793,7 +2801,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 150,
+      "latency_ms": 147,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1825,7 +2833,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 152,
+      "latency_ms": 147,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1857,7 +2865,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 68,
+      "latency_ms": 75,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1908,7 +2916,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 56,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1940,7 +2948,71 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 58,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:celia": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "celia",
+        "morpho": "n-s---fn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'kɛ.lɪ̣.ja",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "celi",
+        "prosody": "celia",
+        "uri": "32977",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 68,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:coma": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "coma",
+        "morpho": "n-s---fn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'kɔ.ma",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "com",
+        "prosody": "coma",
+        "uri": "c2551",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 69,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1991,7 +3063,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 56,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2023,7 +3095,39 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 48,
+      "latency_ms": 49,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:dea": {
+    "data": [
+      {
+        "alternative_forms": "n-p---fd1-=deabus n-p---fb1-=deabus",
+        "irregular_forms": "n-p---fd1-=deabus n-p---fb1-=deabus",
+        "lemma": "dea",
+        "morpho": "n-s---fn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'d̪ɛ̣.ja",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "de",
+        "prosody": "dea",
+        "uri": "d0072",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2072,9 +3176,41 @@
       }
     ],
     "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:dispar": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "dispar",
+        "morpho": "aps---an3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'d̪ɪs.par",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "dispar dispar dispar",
+        "prosody": "dispar",
+        "uri": "d1809",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 60,
+      "latency_ms": 65,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2106,7 +3242,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 148,
+      "latency_ms": 141,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2157,7 +3293,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 51,
+      "latency_ms": 49,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2253,7 +3389,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 62,
+      "latency_ms": 67,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2283,9 +3419,9 @@
       }
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 52,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2317,7 +3453,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 59,
+      "latency_ms": 60,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2344,6 +3480,38 @@
         "prosody": "flatilis",
         "uri": "f0649",
         "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 48,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:fleo": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "fleo",
+        "morpho": "v1spia--2-",
+        "phonological_transcription": [
+          {
+            "ipa": "'flɛ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "fl fleu flet",
+        "prosody": "fleo",
+        "uri": "f0662",
+        "validated": true
       }
     ],
     "diagnostic": {
@@ -2432,7 +3600,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 61,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2464,7 +3632,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 152,
+      "latency_ms": 143,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2560,7 +3728,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 156,
+      "latency_ms": 136,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2572,7 +3740,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 49,
+      "latency_ms": 48,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -2604,7 +3772,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 51,
+      "latency_ms": 49,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2700,7 +3868,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 54,
+      "latency_ms": 50,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2732,7 +3900,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 51,
+      "latency_ms": 49,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2764,7 +3932,71 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 61,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:non": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "non",
+        "morpho": "rp--------",
+        "phonological_transcription": [
+          {
+            "ipa": "'n̪ɔn̪",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "r",
+        "principal_parts": "",
+        "prosody": "non",
+        "uri": "n9508",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:obrigesco": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "obrigesco",
+        "morpho": "v1spia--3-",
+        "phonological_transcription": [
+          {
+            "ipa": "ɔ.'brɪ.gɛ.skɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "obrigesc obrigu -",
+        "prosody": "obrigesco",
+        "uri": "o0174",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 68,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2796,7 +4028,71 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 57,
+      "latency_ms": 63,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:palleo": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "palleo",
+        "morpho": "v1spia--2-",
+        "phonological_transcription": [
+          {
+            "ipa": "'paɫ.lɛ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "pall pallu -",
+        "prosody": "palleo",
+        "uri": "p0114",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 66,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:parco": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "parco",
+        "morpho": "v1spia--3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'par.kɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "parc peperc pars",
+        "prosody": "parco",
+        "uri": "p0367",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 58,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2828,7 +4124,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 156,
+      "latency_ms": 138,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2840,7 +4136,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 160,
+      "latency_ms": 139,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -2872,7 +4168,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 51,
+      "latency_ms": 48,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2884,7 +4180,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 156,
+      "latency_ms": 135,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -2916,7 +4212,39 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 62,
+      "latency_ms": 63,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:silex": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "silex",
+        "morpho": "n-s---mn3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'sɪ.lɛks",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "silic",
+        "prosody": "silex",
+        "uri": "s1640",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 71,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2948,7 +4276,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 60,
+      "latency_ms": 65,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2980,7 +4308,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 69,
+      "latency_ms": 70,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3012,7 +4340,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 59,
+      "latency_ms": 61,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3044,7 +4372,39 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 50,
+      "latency_ms": 52,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:sum": {
+    "data": [
+      {
+        "alternative_forms": "v1sisa--3-=forem v2sisa--3-=fores v3sisa--3-=foret v3pisa--3-=forent v1spna--3-=esse v2spia--3-=es v3spia--3-=est v1ppia--3-=sumus v2ppia--3-=estis v3ppia--3-=sunt v2spma--3-=es v2ppma--3-=este v2sfma--3-=esto v2pfma--3-=estote v1siia--3-=eram v2siia--3-=eras v3siia--3-=erat v1piia--3-=eramus v2piia--3-=eratis v3piia--3-=erant v1sfia--3-=ero v2sfia--3-=eris v3sfia--3-=erit v1pfia--3-=erimus v2pfia--3-=eritis v3pfia--3-=erunt v1spsa--3-=sim v2spsa--3-=sis v3spsa--3-=sit v1ppsa--3-=simus v2ppsa--3-=sitis v3ppsa--3-=sint v-sfpamn1-=futurus v-sfpafn1-=futura v-sfpann1-=futurum",
+        "irregular_forms": "v1sisa--3-=forem v2sisa--3-=fores v3sisa--3-=foret v3pisa--3-=forent v1spna--3-=esse v2spia--3-=es v3spia--3-=est v1ppia--3-=sumus v2ppia--3-=estis v3ppia--3-=sunt v2spma--3-=es v2ppma--3-=este v2sfma--3-=esto v2pfma--3-=estote v1siia--3-=eram v2siia--3-=eras v3siia--3-=erat v1piia--3-=eramus v2piia--3-=eratis v3piia--3-=erant v1sfia--3-=ero v2sfia--3-=eris v3sfia--3-=erit v1pfia--3-=erimus v2pfia--3-=eritis v3pfia--3-=erunt v1spsa--3-=sim v2spsa--3-=sis v3spsa--3-=sit v1ppsa--3-=simus v2ppsa--3-=sitis v3ppsa--3-=sint v-sfpamn1-=futurus v-sfpafn1-=futura v-sfpann1-=futurum",
+        "lemma": "sum",
+        "morpho": "v1spia--3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'sũː",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "- fu -",
+        "prosody": "sum",
+        "uri": "s3436",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 70,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3076,7 +4436,39 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 56,
+      "latency_ms": 55,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:tandem": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "tandem",
+        "morpho": "rp--------",
+        "phonological_transcription": [
+          {
+            "ipa": "'t̪an̪.d̪ẽː",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "r",
+        "principal_parts": "",
+        "prosody": "tandem",
+        "uri": "t0094",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 54,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3108,7 +4500,51 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 58,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:tu": {
+    "data": [],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 59,
+      "message": "latin_wordnet has no entry for this lemma",
+      "reason": "WORDNET_LEMMA_NOT_FOUND",
+      "retryable": false,
+      "status": "not_found"
+    }
+  },
+  "latin_wordnet:ut": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "ut",
+        "morpho": "rp--------",
+        "phonological_transcription": [
+          {
+            "ipa": "'ʊt̪",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "r",
+        "principal_parts": "",
+        "prosody": "ut",
+        "uri": "37549",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 71,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3140,7 +4576,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 51,
+      "latency_ms": 57,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3191,7 +4627,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 52,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3223,7 +4659,77 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 53,
+      "latency_ms": 57,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:volo": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "uolo",
+        "morpho": "n-s---mn3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'wɔ.lɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "uolon",
+        "prosody": "uolo",
+        "uri": "u1169",
+        "validated": false
+      },
+      {
+        "alternative_forms": "v3spia--3-=uolt v2ppia--3-=uoltis v--pna--3-=uelle v2spia--3-=uis v3spia--3-=uult v1ppia--3-=uolumus v2ppia--3-=uultis v3ppia--3-=uolunt v1spsa--3-=uelim v2spsa--3-=uelis v3spsa--3-=uelit v1ppsa--3-=uelimus v2ppsa--3-=uelitis v3ppsa--3-=uelint",
+        "irregular_forms": "v3spia--3-=uolt v2ppia--3-=uoltis v--pna--3-=uelle v2spia--3-=uis v3spia--3-=uult v1ppia--3-=uolumus v2ppia--3-=uultis v3ppia--3-=uolunt v1spsa--3-=uelim v2spsa--3-=uelis v3spsa--3-=uelit v1ppsa--3-=uelimus v2ppsa--3-=uelitis v3ppsa--3-=uelint",
+        "lemma": "uolo",
+        "morpho": "v1spia--3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'wɔ.lɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "uol uolu -",
+        "prosody": "uolo",
+        "uri": "u1167",
+        "validated": true
+      },
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "uolo",
+        "morpho": "v1spia--1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'wɔ.lɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "uol uolau uolat",
+        "prosody": "uolo",
+        "uri": "u1168",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 55,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3235,11 +4741,25 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 69,
+      "latency_ms": 75,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
       "status": "not_found"
+    }
+  },
+  "morpheus:Caelia": {
+    "data": [
+      "celia"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 118,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
     }
   },
   "morpheus:De": {
@@ -3249,7 +4769,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3263,7 +4783,21 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Flens": {
+    "data": [
+      "fleo"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3292,7 +4826,21 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Hanc": {
+    "data": [
+      "hic"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3306,7 +4854,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3321,7 +4869,21 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Palluit": {
+    "data": [
+      "palleo"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3335,7 +4897,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 446,
+      "latency_ms": 582,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3351,7 +4913,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3363,7 +4925,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3377,7 +4939,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 118,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3392,7 +4954,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 445,
+      "latency_ms": 575,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3406,7 +4968,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 119,
+      "latency_ms": 121,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3420,7 +4982,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3434,7 +4996,51 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:comae": {
+    "data": [
+      "coma",
+      "come",
+      "complaceo"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 111,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:deam": {
+    "data": [
+      "dea"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:dispar": {
+    "data": [
+      "dispar"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3448,7 +5054,21 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 116,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:dixit": {
+    "data": [
+      "dico"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3462,7 +5082,22 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 110,
+      "latency_ms": 109,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:est": {
+    "data": [
+      "edo",
+      "sum"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3504,14 +5139,14 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 117,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
       "status": "ok"
     }
   },
-  "morpheus:ferit": {
+  "morpheus:ferire": {
     "data": [
       "ferio"
     ],
@@ -3525,6 +5160,20 @@
       "status": "ok"
     }
   },
+  "morpheus:ferit": {
+    "data": [
+      "ferio"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "morpheus:flammis": {
     "data": [
       "flamma"
@@ -3532,7 +5181,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3561,7 +5210,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 437,
+      "latency_ms": 573,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3589,7 +5238,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 437,
+      "latency_ms": 573,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3645,7 +5294,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3659,7 +5308,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 436,
+      "latency_ms": 582,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3673,7 +5322,35 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 110,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:non": {
+    "data": [
+      "non"
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:obriguere": {
+    "data": [
+      "obrigesco"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3697,6 +5374,21 @@
       "status": "ok"
     }
   },
+  "morpheus:parce": {
+    "data": [
+      "parco",
+      "parcus"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "morpheus:pereunt": {
     "data": [
       "pereo"
@@ -3704,7 +5396,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 444,
+      "latency_ms": 579,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3719,7 +5411,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 108,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3733,7 +5425,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 439,
+      "latency_ms": 573,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3754,6 +5446,20 @@
       "status": "ok"
     }
   },
+  "morpheus:silex": {
+    "data": [
+      "silex"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "morpheus:sine": {
     "data": [
       "sine",
@@ -3763,7 +5469,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 117,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3791,7 +5497,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 110,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3805,7 +5511,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 117,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3815,6 +5521,34 @@
   "morpheus:syluas": {
     "data": [
       "silva"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:tandem": {
+    "data": [
+      "tandem"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:te": {
+    "data": [
+      "tu"
     ],
     "diagnostic": {
       "cached": false,
@@ -3833,7 +5567,35 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 111,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:tibi": {
+    "data": [
+      "tu"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 449,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:utque": {
+    "data": [
+      "ut"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3848,7 +5610,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3864,7 +5626,22 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:volui": {
+    "data": [
+      "volo",
+      "volvo"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3876,7 +5653,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 87,
+      "latency_ms": 74,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3888,7 +5665,19 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 98,
+      "latency_ms": 82,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Flens tandem dixit, non est tibi Caelia dispar;": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Flens tandem dixit, non est tibi Caelia dispar;\n1\tFlens\tflens\tPROPN\tC1|grn1|casA|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurI|Number=Sing\t3\tnsubj\t_\t_\n2\ttandem\ttandem\tADV\tO4|vgr1\t_\t3\tadvmod\t_\t_\n3\tdixit\tdico\tVERB\tN3|modA|tem4|gen6\tAspect=Perf|InflClass=LatX|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin|Voice=Act\t0\troot\t_\tSpaceAfter=No\n4\t,\t,\tPUNCT\tPunc\t_\t9\tpunct\t_\t_\n5\tnon\tnon\tPART\tO4\tPolarity=Neg\t9\tadvmod:neg\t_\t_\n6\test\tsum\tAUX\tN3|modA|tem1|gen6\tAspect=Imp|InflClass=LatAnom|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin\t9\tcop\t_\t_\n7\ttibi\ttu\tPRON\tF1|grn1|casC|gen1\tCase=Dat|InflClass=LatAnom|Number=Sing|Person=2|PronType=Prs\t9\tnmod\t_\t_\n8\tCaelia\tCaelia\tPROPN\tA1|grn1|casA|gen2|vgr1\tCase=Nom|Gender=Fem|InflClass=IndEurA|Number=Sing\t9\tnsubj\t_\t_\n9\tdispar\tdispar\tADJ\tC1|grn1|casA|gen2\tCase=Nom|Gender=Neut|InflClass=IndEurI|Number=Sing\t3\tccomp\t_\tSpaceAfter=No\n10\t;\t;\tPUNCT\tPunc\t_\t3\tpunct\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 61,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3900,7 +5689,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 80,
+      "latency_ms": 66,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3912,7 +5701,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 103,
+      "latency_ms": 61,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3924,7 +5713,19 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 108,
+      "latency_ms": 64,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Hanc volui, non te, parce, ferire deam.": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Hanc volui, non te, parce, ferire deam.\n1\tHanc\thic\tDET\tF1|grn1|casD|gen2\tCase=Acc|Gender=Fem|InflClass=LatPron|Number=Sing|PronType=Dem\t2\tobj\t_\t_\n2\tvolui\tvolo\tVERB\tL3|modA|tem4|gen4\tAspect=Perf|InflClass=LatX|Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin|Voice=Act\t0\troot\t_\tSpaceAfter=No\n3\t,\t,\tPUNCT\tPunc\t_\t5\tpunct\t_\t_\n4\tnon\tnon\tPART\tO4\tPolarity=Neg\t7\tadvmod:neg\t_\t_\n5\tte\ttu\tPRON\tF1|grn1|casD|gen1\tCase=Acc|InflClass=LatAnom|Number=Sing|Person=2|PronType=Prs\t7\tobj\t_\tSpaceAfter=No\n6\t,\t,\tPUNCT\tPunc\t_\t5\tpunct\t_\t_\n7\tparce\tparco\tVERB\tL3|modC|tem1|gen5\tAspect=Imp|InflClass=LatX|Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act\t2\tconj\t_\tSpaceAfter=No\n8\t,\t,\tPUNCT\tPunc\t_\t9\tpunct\t_\t_\n9\tferire\tferio\tVERB\tN3|modH|tem1\tAspect=Imp|InflClass=LatAnom|VerbForm=Inf|Voice=Act\t7\tccomp\t_\t_\n10\tdeam\tdeus\tNOUN\tF1|grn1|casD|gen2\tCase=Acc|Gender=Fem|InflClass=IndEurA|Number=Sing\t9\tobj\t_\tSpaceAfter=No\n11\t.\t.\tPUNCT\tPunc\t_\t2\tpunct\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 63,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3936,7 +5737,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 58,
+      "latency_ms": 57,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3948,7 +5749,19 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 59,
+      "latency_ms": 84,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Palluit, utque silex obriguere comae.": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Palluit, utque silex obriguere comae.\n1\tPalluit\tpalluo\tVERB\tL3|modA|tem1|gen6\tAspect=Imp|InflClass=LatX|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act\t0\troot\t_\tSpaceAfter=No\n2\t,\t,\tPUNCT\tPunc\t_\t5\tpunct\t_\t_\n3\tutque\tutque\tSCONJ\tO4\t_\t5\tmark\t_\t_\n4\tsilex\tsilex\tNOUN\tC1|grn1|casA|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurI|Number=Sing\t5\tnsubj\t_\t_\n5\tobriguere\tobrigeo\tVERB\tL3|modH|tem1\tAspect=Perf|InflClass=LatX|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Act\t1\tadvcl\t_\t_\n6\tcomae\tcoma\tNOUN\tA1|grn1|casC|gen2|vgr1\tCase=Dat|Gender=Fem|InflClass=IndEurA|Number=Sing\t5\tobl:arg\t_\tSpaceAfter=No\n7\t.\t.\tPUNCT\tPunc\t_\t1\tpunct\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 72,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3960,7 +5773,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 87,
+      "latency_ms": 86,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3972,7 +5785,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 64,
+      "latency_ms": 60,
       "message": null,
       "reason": null,
       "retryable": false,
