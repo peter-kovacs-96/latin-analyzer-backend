@@ -92,8 +92,11 @@ SURDIS = "Haec ferit, illa ferit;surdis haec auribus, illa"
 ACCIPE = "Quum Venerem aspicerem sine flammis; „accipe”, dixi,"
 FAUCIBUS = "Insidet et siccis faucibus atra fames?"
 EIUSDEM = "De statua eiusdem"
+SYLUAS = "Ibat venatum in syluas, telumque gerebat"
+HYEMS = "Friget hyems."
+MOUET = "Flatilis in venis spiritus, ora mouet."
 
-SENTENCES = [GREGESQUE, SURDIS, ACCIPE, FAUCIBUS, EIUSDEM]
+SENTENCES = [GREGESQUE, SURDIS, ACCIPE, FAUCIBUS, EIUSDEM, SYLUAS, HYEMS, MOUET]
 
 
 @pytest.fixture(scope="session")
@@ -214,3 +217,29 @@ def test_eiusdem_form_based_lis_lookup_still_works(analyses: dict) -> None:
     assert eiusdem.lemma == "idem"
     assert eiusdem.confidence.value == "full"
     assert "same" in eiusdem.meaning.lower()
+
+
+def test_uv_and_yi_spelling_variant_resolves_via_lis_fallback(analyses: dict) -> None:
+    """'syluas' = classical 'silvas' (y→i, u→v).  LIS's form search misses the
+    medieval spelling; the normalised-spelling fallback must recover 'forest'."""
+    syluas = _word(analyses, SYLUAS, "syluas")
+    assert syluas.confidence.value == "full"
+    assert "forest" in syluas.meaning.lower()
+
+
+def test_yi_spelling_variant_resolves_via_wordnet_and_lis_fallback(analyses: dict) -> None:
+    """'hyems' = classical 'hiems' (y→i).  Both WordNet and LIS miss the
+    y-spelling, so without the fallback the word is form_only; the normalised
+    spelling recovers it to a full 'winter'."""
+    hyems = _word(analyses, HYEMS, "hyems")
+    assert hyems.confidence.value == "full"
+    assert "winter" in hyems.meaning.lower()
+
+
+def test_uv_spelling_variant_resolves_via_lis_fallback(analyses: dict) -> None:
+    """'mouet' = classical 'movet' (consonantal u→v).  LIS misses the u-spelling;
+    the fallback recovers the verb 'moveo' with a meaning."""
+    mouet = _word(analyses, MOUET, "mouet")
+    assert mouet.lemma == "moveo"
+    assert mouet.confidence.value == "full"
+    assert "move" in mouet.meaning.lower()

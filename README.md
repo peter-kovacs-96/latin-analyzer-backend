@@ -211,3 +211,7 @@ Required environment variables on Render:
 - Async downstream calls with bounded concurrency (default 10).
 - TLS verification intentionally disabled (`verify_tls: false`).
 - Per-word downstream diagnostics included in every response.
+- Orthographic-spelling fallback: on a dictionary miss, WordNet/LIS lookups are
+  retried once with a classical-spelling variant of the key (`j→i`, `y→i`,
+  consonantal `u→v`) so medieval spellings like `hyems`/`syluas`/`mouet` resolve.
+  Fallback only — the displayed form/lemma are unchanged. See ADR-0010.

@@ -332,6 +332,30 @@ def strip_edges(s: str) -> str:
     return _EDGE_PUNCT_RE.sub("", s)
 
 
+_CONSONANTAL_U_RE = re.compile(r"(?<![qQ])([uU])(?=[aeiouAEIOU])")
+
+
+def normalize_spelling(word: str) -> str | None:
+    """Classical-spelling variant of a surface form or lemma, for lookup fallback.
+
+    Maps common medieval / early-modern spellings to their classical form so a
+    dictionary miss can be retried:
+
+      - ``j`` → ``i`` and ``y`` → ``i`` (e.g. ``hyems`` → ``hiems``)
+      - consonantal ``u`` → ``v``: a ``u`` before a vowel, except after ``q``
+        where ``qu`` is a digraph (e.g. ``syluas`` → ``silvas``, but ``que`` and
+        ``aqua`` are left untouched)
+
+    Returns ``None`` when the word is already in classical form (no fallback
+    needed).  This only ever produces an *alternative lookup key* — the
+    displayed surface form and lemma are never changed — and is used solely as a
+    fallback after the original spelling returns no dictionary result.
+    """
+    out = word.replace("j", "i").replace("J", "I").replace("y", "i").replace("Y", "I")
+    out = _CONSONANTAL_U_RE.sub(lambda m: "v" if m.group(1) == "u" else "V", out)
+    return out if out != word else None
+
+
 def _feats(value: str) -> dict[str, str]:
     """Parse a CoNLL-U FEATS string ('Key=Val|Key=Val') into a dict."""
     result: dict[str, str] = {}

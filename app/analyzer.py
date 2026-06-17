@@ -13,6 +13,7 @@ from app.latin import (
     extract_lis_url,
     extract_wordnet_lemma,
     extract_wordnet_morpho,
+    normalize_spelling,
     parse_conllu,
     strip_edges,
     tokenize,
@@ -57,6 +58,15 @@ class _TokenEntry(NamedTuple):
     syntactic_role: str | None
     source: str                  # _Source.*
     ud_diag: DownstreamDiagnostic
+
+
+def _lis_has_results(result: DownstreamResult) -> bool:
+    """True when a LIS call returned a non-empty list of entries."""
+    return (
+        result.diagnostic.status == DownstreamStatus.OK
+        and isinstance(result.data, list)
+        and len(result.data) > 0
+    )
 
 
 def _confidence(source: str, wn_status: DownstreamStatus, lis_status: DownstreamStatus) -> WordConfidence:
@@ -296,12 +306,47 @@ class AnalyzerService:
         results = await asyncio.gather(*(self.morpheus.lemmatize(form) for form in forms))
         return dict(zip(forms, results, strict=True))
 
+    async def _wordnet_one(self, word: str) -> DownstreamResult:
+        """WordNet lookup with an orthographic-spelling fallback on a miss.
+
+        Medieval/early-modern spellings (e.g. 'hyems') are absent from WordNet
+        even though the classical form ('hiems') is present.  On NOT_FOUND, retry
+        once with the normalised spelling.  Both keys go through the client's
+        cache.  WordNet already handles u/v variants, so only j/y matter here.
+        """
+        result = await self.wordnet.lemmatize(word)
+        if result.diagnostic.status == DownstreamStatus.NOT_FOUND:
+            variant = normalize_spelling(word)
+            if variant:
+                alt = await self.wordnet.lemmatize(variant)
+                if alt.diagnostic.status == DownstreamStatus.OK:
+                    return alt
+        return result
+
     async def _load_wordnet(self, words: list[str]) -> dict[str, DownstreamResult]:
-        results = await asyncio.gather(*(self.wordnet.lemmatize(word) for word in words))
+        results = await asyncio.gather(*(self._wordnet_one(word) for word in words))
         return dict(zip(words, results, strict=True))
 
+    async def _meaning_one(self, form: str) -> DownstreamResult:
+        """LIS lookup with an orthographic-spelling fallback on an empty result.
+
+        LIS's forms_only search is keyed by surface form, so non-classical
+        spellings (e.g. 'syluas', 'mouet') return zero hits even though the
+        classical form ('silvas', 'movet') matches.  On an empty result, retry
+        once with the normalised spelling — still a *form* lookup, so a wrong
+        UDPipe lemma can never inject a wrong meaning.  Both keys are cached.
+        """
+        result = await self.latin_is_simple.search(form)
+        if not _lis_has_results(result):
+            variant = normalize_spelling(form)
+            if variant:
+                alt = await self.latin_is_simple.search(variant)
+                if _lis_has_results(alt):
+                    return alt
+        return result
+
     async def _load_meanings(self, lemmas: list[str]) -> dict[str, DownstreamResult]:
-        results = await asyncio.gather(*(self.latin_is_simple.search(lemma) for lemma in lemmas))
+        results = await asyncio.gather(*(self._meaning_one(lemma) for lemma in lemmas))
         return dict(zip(lemmas, results, strict=True))
 
     @staticmethod
