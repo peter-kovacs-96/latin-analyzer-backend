@@ -153,9 +153,42 @@ Invoke-WebRequest -Method POST -Uri "http://127.0.0.1:8000/analyze/stream?mode=s
 # API probing (direct calls to live external services)
 pytest tests/e2e/test_api_probing.py -v
 
-# Full E2E (starts local backend, tests all endpoints)
+# Full E2E (starts local backend, tests all endpoints — hits live downstreams)
 pytest tests/e2e/test_analyze_e2e.py -v
+
+# Word-level regression tests (deterministic, offline — no live API calls)
+pytest tests/e2e/test_word_regression.py -v
 ```
+
+### Word regression tests (cassette-based)
+
+`test_word_regression.py` pins the analysis of words that previously exposed
+pipeline bugs (`gregesque`, `surdis`, `ferit`, `accipe`, `Venerem`, `faucibus`,
+`eiusdem`). To stay reliable it does **not** call the live downstream APIs on
+every run — those throttle our IP and make the suite flaky (see ADR-0009).
+
+Instead it runs the real `AnalyzerService` in-process against a **cassette** of
+recorded *real* downstream responses, committed at
+`tests/e2e/fixtures/downstream_cassette.json`:
+
+- **Replay (default):** responses come only from the cassette → fast (< 1 s),
+  deterministic, offline. This is what runs in CI.
+- **Record:** delegates to the real clients and refreshes the cassette. Run this
+  by hand when you add test sentences or want to re-capture upstream data:
+
+  ```bash
+  LATIN_ANALYZER_E2E_RECORD=1 \
+  LATIN_ANALYZER_LATIN_IS_SIMPLE_BASE_URL=https://latin-is-simple-proxy.gondir96.workers.dev \
+  LATIN_ANALYZER_UPSTASH_REDIS_URL=... LATIN_ANALYZER_UPSTASH_REDIS_TOKEN=... \
+  pytest tests/e2e/test_word_regression.py
+  ```
+
+  Then review and commit the updated cassette JSON.
+
+The cassette holds genuine API output, so the tests still validate our
+parsing/alignment/matching/confidence logic against real data; they just freeze
+that data so the test isn't at the mercy of API availability. They intentionally
+do not detect upstream changes — re-record to surface those.
 
 ## Deployment
 
