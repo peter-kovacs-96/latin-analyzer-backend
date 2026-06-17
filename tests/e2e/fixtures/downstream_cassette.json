@@ -1,0 +1,2562 @@
+{
+  "latin_is_simple:;": {
+    "data": null,
+    "diagnostic": {
+      "cached": false,
+      "http_status": 400,
+      "latency_ms": 260,
+      "message": "latin_is_simple returned HTTP 400",
+      "reason": "LIS_HTTP_ERROR",
+      "retryable": false,
+      "status": "http_error"
+    }
+  },
+  "latin_is_simple:De": {
+    "data": [
+      {
+        "full_name": "de",
+        "id": 2950,
+        "intern_type": "other",
+        "short_name": "de",
+        "translations_unstructured": {
+          "de": "von, über, von...her, von...herab",
+          "en": "down, away from, from, off, about, of, concerning, according to, with regard to, From, Of"
+        },
+        "type": {
+          "label": "Preposition",
+          "name": "prepo"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/2950/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Haec": {
+    "data": [
+      {
+        "full_name": "hic, haec, hoc",
+        "id": 3,
+        "intern_type": "dempron",
+        "short_name": "hic",
+        "translations_unstructured": {
+          "de": "dieser, diese, dieses",
+          "en": "this, that"
+        },
+        "type": {
+          "label": "Demonstrative Pronoun",
+          "name": "dempron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/dempron/3/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Insidet": {
+    "data": [
+      {
+        "full_name": "insideo, insides, insidere E, insidui, insiditum",
+        "id": 108,
+        "intern_type": "verb",
+        "short_name": "insidere",
+        "translations_unstructured": {
+          "de": "sitzen (auf)",
+          "en": "sit on"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/108/"
+      },
+      {
+        "full_name": "insideo, insides, insidere E, insidi, insessum",
+        "id": 4499,
+        "intern_type": "verb",
+        "short_name": "insidere",
+        "translations_unstructured": {
+          "de": "Platz nehmen, basieren, sitzen, beruhen auf, sich stützen auf",
+          "en": "sit (at/on), sit (on) a horse, be seated, (things) rest/lie upon, lie heavy"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/4499/"
+      },
+      {
+        "full_name": "insido, insidis, insidere C, insedi, insessum",
+        "id": 4502,
+        "intern_type": "verb",
+        "short_name": "insidere",
+        "translations_unstructured": {
+          "de": "nehmen, behaupten, durchdringen, eindringen, einen Krampfanfall haben, beibehalten, durchschneiden, einsinken, sich festfressen, bereithalten, eingehen, angreifen, besitzen, penetrieren, jdm. ins Bewusstsein dringen, belegen, enthalten, vordringen",
+          "en": "sit/settle on, occupy/seize, hold (position), penetrate, sink in, merge into"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/4502/"
+      },
+      {
+        "full_name": "insido, insidis, insidere C, insidi, insessum",
+        "id": 4503,
+        "intern_type": "verb",
+        "short_name": "insidere",
+        "translations_unstructured": {
+          "de": "nehmen, behaupten, durchdringen, eindringen, einen Krampfanfall haben, beibehalten, durchschneiden, einsinken, sich festfressen, bereithalten, eingehen, angreifen, besitzen, penetrieren, jdm. ins Bewusstsein dringen, belegen, enthalten, vordringen",
+          "en": "sit/settle on, occupy/seize, hold (position), penetrate, sink in, merge into"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/4503/"
+      },
+      {
+        "full_name": "sido, sidis, sidere C, sidi, -",
+        "id": 6325,
+        "intern_type": "verb",
+        "short_name": "sidere",
+        "translations_unstructured": {
+          "de": "abmachen, zusammensinken, hinsetzen, auf den Strand auflaufen, ausgleichen, sich hinsetzen, auf Grund laufen, begleichen, sich niedersetzen, festkommen, beilegen, sich setzen, stranden, bereinigen, scheitern, beruhigen, bezahlen, einschwingen",
+          "en": "settle, sink down, sit down, run aground"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6325/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Quid": {
+    "data": [
+      {
+        "full_name": "quid",
+        "id": 31,
+        "intern_type": "other",
+        "short_name": "quid",
+        "translations_unstructured": {
+          "de": "was?",
+          "en": "(1.) what (2.) What(?)"
+        },
+        "type": {
+          "label": "Pronoun",
+          "name": "pron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/31/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Quum": {
+    "data": [
+      {
+        "full_name": "quum",
+        "id": 1357,
+        "intern_type": "other",
+        "short_name": "quum",
+        "translations_unstructured": {
+          "de": "als, derweil, indem, da ja, aber dafür, da, derweilen, weil, seitdem, auch wenn, wenn, wie zum Beispiel, dafür aber, wie, indessen, während, obgleich, indes",
+          "en": "when, while, as, since, although, as soon"
+        },
+        "type": {
+          "label": "Conjunction",
+          "name": "conj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/1357/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:Venerem": {
+    "data": [
+      {
+        "full_name": "Venus, Veneris [f.] C",
+        "id": 99,
+        "intern_type": "noun",
+        "short_name": "Venus",
+        "translations_unstructured": {
+          "de": "Venus, Aphrodite (Göttin der Liebe)",
+          "en": "Venus, Aphrodite (god of love)"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/99/"
+      },
+      {
+        "full_name": "veneror, veneraris, venerari A, veneratus sum (Dep.)",
+        "id": 6888,
+        "intern_type": "verb",
+        "short_name": "venerari",
+        "translations_unstructured": {
+          "de": "anbeten, ehren, akzeptieren, bewundern, jdn. beknien, beten, anflehen, kniefällig verehren, verehren, anerkennen, bitten, schwärmen für, auszeichnen, hochachten, benzen, dringend bitten, beehren, hochhalten",
+          "en": "adore, revere, do homage to, honor, venerate, worship, beg, pray, entreat"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6888/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:accipe": {
+    "data": [
+      {
+        "full_name": "accipio, accipis, accipere M, accepi, acceptum",
+        "id": 67,
+        "intern_type": "verb",
+        "short_name": "accipere",
+        "translations_unstructured": {
+          "de": "annehmen, nehmen, erhalten, aufnehmen, vernehmen, erfahren, empfangen",
+          "en": "accept, take, receive"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/67/"
+      },
+      {
+        "full_name": "cipus, cipi [m.] O",
+        "id": 5244,
+        "intern_type": "noun",
+        "short_name": "cipus",
+        "translations_unstructured": {
+          "de": "Grenzstein, Grenzpfahl, Grabstein, Grenzpfosten",
+          "en": "boundary stone/post/pillar, tombstone (usu. indicating extent of cemetery)"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/5244/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:armenta": {
+    "data": [
+      {
+        "full_name": "armenta, armentae [f.] A",
+        "id": 2584,
+        "intern_type": "noun",
+        "short_name": "armenta",
+        "translations_unstructured": {
+          "de": "Bestand, Rinder, Gäule, Rudel, Rindvieh, Pferde, Viehzeug, Rosse, Vieh",
+          "en": "herd (of cattle), a head of cattle, individual bull/horse, cattle/horses (pl.)"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/2584/"
+      },
+      {
+        "full_name": "armentum, armenti [n.] O",
+        "id": 2586,
+        "intern_type": "noun",
+        "short_name": "armentum",
+        "translations_unstructured": {
+          "de": "Bestand, Rinder, Gäule, Rudel, Rindvieh, Pferde, Viehzeug, Rosse, Vieh",
+          "en": "herd (of cattle), a head of cattle, individual bull/horse, cattle/horses (pl.)"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/2586/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:aspicerem": {
+    "data": [
+      {
+        "full_name": "aspicio, aspicis, aspicere M, aspexi, aspectum",
+        "id": 1229,
+        "intern_type": "verb",
+        "short_name": "aspicere",
+        "translations_unstructured": {
+          "de": "erblicken, beachten, anschauen, plandrehen, sich überlegen, beabsichtigen, sehen, bemerken, ansehen, berücksichtigen, in Betracht ziehen, beschauen, einsehen, beobachten, erblicken, schätzen, entgegensehen, in Erwägung ziehen",
+          "en": "look/gaze on/at, see, observe, behold, regard, face, consider, contemplate"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/1229/"
+      },
+      {
+        "full_name": "spicio, spicis, spicere M, spixi, -",
+        "id": 6367,
+        "intern_type": "verb",
+        "short_name": "spicere",
+        "translations_unstructured": {
+          "de": "nachschauen, kieken, angucken, sehen, ankucken, einsehen, ansehen, verstehen, zusehen",
+          "en": "look at, see"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6367/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:atra": {
+    "data": [
+      {
+        "full_name": "ater/atra/atrum, AO",
+        "id": 1218,
+        "intern_type": "adjective",
+        "short_name": "ater",
+        "translations_unstructured": {
+          "de": "dunkel, düster, bedrückend, erfolglos, elend, armselig, extrafett, finster, bedrückt, glücklos, heruntergekommen, dreckig, farbig, lichtlos, bewölkt, ohne Glück, schmutzig, schwarz, grauenvoll",
+          "en": "black, dark, dark-colored (hair/skin), gloomy/murky, unlucky, sordid/squalid"
+        },
+        "type": {
+          "label": "Adjective",
+          "name": "adj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adjective/1218/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:auribus": {
+    "data": [
+      {
+        "full_name": "auris, auris [f.] M",
+        "id": 2991,
+        "intern_type": "noun",
+        "short_name": "auris",
+        "translations_unstructured": {
+          "de": "Ohr, Hören",
+          "en": "ear, hearing, a discriminating sense of hearing, \"ear\" (for), pin on plow"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/2991/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:dixi": {
+    "data": [
+      {
+        "full_name": "dico, dicis, dicere C, dixi, dictum",
+        "id": 60,
+        "intern_type": "verb",
+        "short_name": "dicere",
+        "translations_unstructured": {
+          "de": "sagen, nennen, sprechen, reden",
+          "en": "say, call, tell"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/60/"
+      },
+      {
+        "full_name": "dixi",
+        "id": 481,
+        "intern_type": "phrase",
+        "short_name": "dixi",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "I have spoken"
+        },
+        "type": {
+          "label": "Phrase",
+          "name": "phrase"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/phrase/481/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:eiusdem": {
+    "data": [
+      {
+        "full_name": "eiusdem",
+        "id": 2967,
+        "intern_type": "other",
+        "short_name": "eiusdem",
+        "translations_unstructured": {
+          "de": "von, 2F SG m/f/n von derselbe, dieselbe, dasselbe, seiner, ihrer, seiner",
+          "en": "the same, of the same kind"
+        },
+        "type": {
+          "label": "Other",
+          "name": "other"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/2967/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:et": {
+    "data": [
+      {
+        "full_name": "et",
+        "id": 20,
+        "intern_type": "other",
+        "short_name": "et",
+        "translations_unstructured": {
+          "de": "und, auch",
+          "en": "and, also"
+        },
+        "type": {
+          "label": "Conjunction",
+          "name": "conj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/20/"
+      },
+      {
+        "full_name": "o, is, ere C, __auto__i, ?um",
+        "id": 7145,
+        "intern_type": "verb",
+        "short_name": "ere",
+        "translations_unstructured": {
+          "de": "vertrauen",
+          "en": "believe, trust"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7145/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:fames": {
+    "data": [
+      {
+        "full_name": "fames, famis [f.] M",
+        "id": 161,
+        "intern_type": "noun",
+        "short_name": "fames",
+        "translations_unstructured": {
+          "de": "Hunger",
+          "en": "hunger"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/161/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:faucibus": {
+    "data": [
+      {
+        "full_name": "faux, faucis [f.] C",
+        "id": 9516,
+        "intern_type": "noun",
+        "short_name": "faux",
+        "translations_unstructured": {
+          "de": "Pharynx, Gurgel, Gänseschlund, Neck, Beißwerkzeuge, Rachen, Abgrund, Rachenhöhle, Raum zwischen den Sägezähnen, Vulkanschlund, Genick, Kiefer, Schlund, Erdschlund, Rachenraum, Ventilbohrungskehle, Hals, Kluft",
+          "en": "pharynx (usu pl.), gullet/throat/neck/jaws/maw, narrow pass/shaft/strait, chasm"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/9516/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:ferit": {
+    "data": [
+      {
+        "full_name": "ferio, feris, ferire I, -, -",
+        "id": 3973,
+        "intern_type": "verb",
+        "short_name": "ferire",
+        "translations_unstructured": {
+          "de": "aufprallen, stoßen, einen Handel abschließen, beiseiteschaffen, erlegen, aufschlagen, zuschlagen, ein gutes Geschäft abschließen, töten, drücken, anzünden, hinmachen, erreichen, erzielen, killen, hinschlagen, treffen, reißen",
+          "en": "hit, strike, strike a bargain, kill, slay"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/3973/"
+      },
+      {
+        "full_name": "ferio, feris, ferire I, ferii, feriturum",
+        "id": 7032,
+        "intern_type": "verb",
+        "short_name": "ferire",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "To hit, to strike"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7032/"
+      },
+      {
+        "full_name": "ferio, feris, ferire I, ferivi, feritum",
+        "id": 7257,
+        "intern_type": "verb",
+        "short_name": "ferire",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "to strike"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/7257/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:flammis": {
+    "data": [
+      {
+        "full_name": "flamma, flammae [f.] A",
+        "id": 58,
+        "intern_type": "noun",
+        "short_name": "flamma",
+        "translations_unstructured": {
+          "de": "Flamme",
+          "en": "flame"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/58/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:gregesque": {
+    "data": [
+      {
+        "full_name": "grego, gregas, gregare A, gregavi, gregatum",
+        "id": 4135,
+        "intern_type": "verb",
+        "short_name": "gregare",
+        "translations_unstructured": {
+          "de": "aufnehmen, bestücken, heranziehen, assemblieren, klauben, Maschinencode erzeugen, pflücken, umwandeln, sich zusammenziehen, zusammenkommen, aufziehen, sich treffen",
+          "en": "gather, assemble"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/4135/"
+      },
+      {
+        "full_name": "grex, gregis [m.] C",
+        "id": 17550,
+        "intern_type": "noun",
+        "short_name": "grex",
+        "translations_unstructured": {
+          "de": "Schwarm, Herde",
+          "en": "flock, herd, crowd"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/17550/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:haec": {
+    "data": [
+      {
+        "full_name": "hic, haec, hoc",
+        "id": 3,
+        "intern_type": "dempron",
+        "short_name": "hic",
+        "translations_unstructured": {
+          "de": "dieser, diese, dieses",
+          "en": "this, that"
+        },
+        "type": {
+          "label": "Demonstrative Pronoun",
+          "name": "dempron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/dempron/3/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:homines": {
+    "data": [
+      {
+        "full_name": "homo, hominis [m.] C",
+        "id": 113,
+        "intern_type": "noun",
+        "short_name": "homo",
+        "translations_unstructured": {
+          "de": "Mensch",
+          "en": "human"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/113/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:illa": {
+    "data": [
+      {
+        "full_name": "ille, illa, illud",
+        "id": 2,
+        "intern_type": "dempron",
+        "short_name": "ille",
+        "translations_unstructured": {
+          "de": "jener, jene, jenes",
+          "en": "that"
+        },
+        "type": {
+          "label": "Demonstrative Pronoun",
+          "name": "dempron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/dempron/2/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:mihi": {
+    "data": [
+      {
+        "full_name": "ego, tu, -",
+        "id": 1,
+        "intern_type": "perspron",
+        "short_name": "ego",
+        "translations_unstructured": {
+          "de": "ich, du, er/sie/es (Personalpronomen)",
+          "en": "I, you, he/she/it (personal pronoun)"
+        },
+        "type": {
+          "label": "Personal Pronoun",
+          "name": "perspron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/perspron/1/"
+      },
+      {
+        "full_name": "mihi, tibi, nobis, vobis",
+        "id": 3077,
+        "intern_type": "other",
+        "short_name": "mihi, tibi, nobis, vobis",
+        "translations_unstructured": {
+          "de": "mir, dir, uns, euch",
+          "en": "me, you, us, you"
+        },
+        "type": {
+          "label": "Personal Pronoun",
+          "name": "perspron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/3077/"
+      },
+      {
+        "full_name": "Mihi",
+        "id": 3630,
+        "intern_type": "other",
+        "short_name": "Mihi",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "(1.) to me (2.) to myself"
+        },
+        "type": {
+          "label": "Personal Pronoun",
+          "name": "perspron"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/3630/"
+      },
+      {
+        "full_name": "mihi",
+        "id": 4203,
+        "intern_type": "other",
+        "short_name": "mihi",
+        "translations_unstructured": {
+          "de": "mir",
+          "en": "still in translation"
+        },
+        "type": {
+          "label": "Other",
+          "name": "other"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/4203/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:pereunt": {
+    "data": [
+      {
+        "full_name": "pereo, peris, perire C, perii, -",
+        "id": 6966,
+        "intern_type": "verb",
+        "short_name": "perire",
+        "translations_unstructured": {
+          "de": "zugrunde richten, zugrunde gehen",
+          "en": "Perish, disappear, die, pass away, be destroyed"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6966/"
+      },
+      {
+        "full_name": "eo, is, ire IR, ii, -",
+        "id": 85,
+        "intern_type": "verb",
+        "short_name": "ire",
+        "translations_unstructured": {
+          "de": "gehen, (subīre) nachfolgen",
+          "en": "go"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/85/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:si": {
+    "data": [
+      {
+        "full_name": "si",
+        "id": 68,
+        "intern_type": "other",
+        "short_name": "si",
+        "translations_unstructured": {
+          "de": "wenn, falls, ob, falls, wenn, falls, wenn, falls, wenn, falls, wenn",
+          "en": "if, If"
+        },
+        "type": {
+          "label": "Conjunction",
+          "name": "conj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/68/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:siccis": {
+    "data": [
+      {
+        "full_name": "siccus/sicca/siccum, AO",
+        "id": 7805,
+        "intern_type": "adjective",
+        "short_name": "siccus",
+        "translations_unstructured": {
+          "de": "dürr, herb, niederschlagsfrei, regenarm, wasserlos, langweilig",
+          "en": "dry"
+        },
+        "type": {
+          "label": "Adjective",
+          "name": "adj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adjective/7805/"
+      },
+      {
+        "full_name": "siccum, sicci [n.] O",
+        "id": 15477,
+        "intern_type": "noun",
+        "short_name": "siccum",
+        "translations_unstructured": {
+          "de": "das Trockene, festes Land, trockenes Land",
+          "en": "dry land"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/15477/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:sine": {
+    "data": [
+      {
+        "full_name": "sine",
+        "id": 63,
+        "intern_type": "other",
+        "short_name": "sine",
+        "translations_unstructured": {
+          "de": "ohne",
+          "en": "without"
+        },
+        "type": {
+          "label": "Preposition",
+          "name": "prepo"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/63/"
+      },
+      {
+        "full_name": "sino, sinis, sinere C, sivi, situm",
+        "id": 6337,
+        "intern_type": "verb",
+        "short_name": "sinere",
+        "translations_unstructured": {
+          "de": "anerkennen, bewilligen, berücksichtigen, billigen, erlauben, dreingeben, genehmigen, durchlassen, gestatten, zulassen, ermöglichen, lassen",
+          "en": "allow, permit"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6337/"
+      },
+      {
+        "full_name": "sinus, sini [m.] O",
+        "id": 15549,
+        "intern_type": "noun",
+        "short_name": "sinus",
+        "translations_unstructured": {
+          "de": "still in translation",
+          "en": "bowl for serving wine, etc"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/15549/"
+      },
+      {
+        "full_name": "si",
+        "id": 68,
+        "intern_type": "other",
+        "short_name": "si",
+        "translations_unstructured": {
+          "de": "wenn, falls, ob, falls, wenn, falls, wenn, falls, wenn, falls, wenn",
+          "en": "if, If"
+        },
+        "type": {
+          "label": "Conjunction",
+          "name": "conj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/other/68/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:statua": {
+    "data": [
+      {
+        "full_name": "statua, statuae [f.] A",
+        "id": 71,
+        "intern_type": "noun",
+        "short_name": "statua",
+        "translations_unstructured": {
+          "de": "Statue",
+          "en": "statue"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/71/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:surdis": {
+    "data": [
+      {
+        "full_name": "surdus/surda/surdum, AO",
+        "id": 8160,
+        "intern_type": "adjective",
+        "short_name": "surdus",
+        "translations_unstructured": {
+          "de": "ertaubt, dumpf, gedeckt, gehörlos, bedeckt, schweigend, hörunfähig, leicht, schwerhörig, leise, taub",
+          "en": "deaf, unresponsive to what is said, falling on deaf ears, muffled, muted"
+        },
+        "type": {
+          "label": "Adjective",
+          "name": "adj"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/adjective/8160/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:”": {
+    "data": null,
+    "diagnostic": {
+      "cached": false,
+      "http_status": 400,
+      "latency_ms": 169,
+      "message": "latin_is_simple returned HTTP 400",
+      "reason": "LIS_HTTP_ERROR",
+      "retryable": false,
+      "status": "http_error"
+    }
+  },
+  "latin_wordnet:;": {
+    "data": [],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 71,
+      "message": "latin_wordnet has no entry for this lemma",
+      "reason": "WORDNET_LEMMA_NOT_FOUND",
+      "retryable": false,
+      "status": "not_found"
+    }
+  },
+  "latin_wordnet:accipio": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "accipio",
+        "morpho": "v1spia--3i",
+        "phonological_transcription": [
+          {
+            "ipa": "ak.'kɪ.pɪ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "accip accep accept",
+        "prosody": "accipio",
+        "uri": "a0275",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 155,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:armentum": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "armentum",
+        "morpho": "n-s---nn2-",
+        "phonological_transcription": [
+          {
+            "ipa": "ar.'mɛn̪.t̪ũː",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "arment",
+        "prosody": "armentum",
+        "uri": "a2870",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 256,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:aspicio": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "aspicio",
+        "morpho": "v1spia--3i",
+        "phonological_transcription": [
+          {
+            "ipa": "as.'pɪ.kɪ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "aspic aspex aspect",
+        "prosody": "aspicio",
+        "uri": "a3091",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 75,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:ater": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "ater",
+        "morpho": "aps---mn1r",
+        "phonological_transcription": [
+          {
+            "ipa": "'a.t̪ɛr",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "  ",
+        "prosody": "ater",
+        "uri": "a6288",
+        "validated": true
+      },
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "ater",
+        "morpho": "n-s---mn2-",
+        "phonological_transcription": [
+          {
+            "ipa": "'a.t̪ɛr",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "atr",
+        "prosody": "ater",
+        "uri": "101242",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 55,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:auris": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "auris",
+        "morpho": "n-s---fn3i",
+        "phonological_transcription": [
+          {
+            "ipa": "'aw.rɪs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "aur",
+        "prosody": "auris",
+        "uri": "a3569",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 59,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:cum": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "cum",
+        "morpho": "p---------",
+        "phonological_transcription": [
+          {
+            "ipa": "'kũː",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "p",
+        "principal_parts": "-",
+        "prosody": "cum",
+        "uri": "c4579",
+        "validated": false
+      },
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "cum",
+        "morpho": "rp--------",
+        "phonological_transcription": [
+          {
+            "ipa": "'kũː",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "r",
+        "principal_parts": "",
+        "prosody": "cum",
+        "uri": "c4584",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 51,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:de": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "de",
+        "morpho": "p---------",
+        "phonological_transcription": [
+          {
+            "ipa": "'d̪ɛ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "p",
+        "principal_parts": "-",
+        "prosody": "de",
+        "uri": "d0071",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 53,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:dico": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "dico",
+        "morpho": "v1spia--1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'d̪ɪ.kɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "dic dicau dicat",
+        "prosody": "dico",
+        "uri": "d1349",
+        "validated": true
+      },
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "dico",
+        "morpho": "v1spia--3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'d̪ɪ.kɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "dic dix dict",
+        "prosody": "dico",
+        "uri": "d1350",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 63,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:ego": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "ego",
+        "morpho": "v1spia--3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'ɛ.gɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "eg  ",
+        "prosody": "ego",
+        "uri": "98294",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 259,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:et": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "et",
+        "morpho": "rp--------",
+        "phonological_transcription": [
+          {
+            "ipa": "'ɛt̪",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "r",
+        "principal_parts": "concamarat",
+        "prosody": "et",
+        "uri": "32800",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 63,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:fames": {
+    "data": [
+      {
+        "alternative_forms": "n-s---fn3i=famis",
+        "irregular_forms": "n-s---fn3i=famis",
+        "lemma": "fames",
+        "morpho": "n-s---fn3i",
+        "phonological_transcription": [
+          {
+            "ipa": "'fa.mɛs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "fam",
+        "prosody": "fames",
+        "uri": "f0153",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 60,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:fauces": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "fauces",
+        "morpho": "n-p---mn3i",
+        "phonological_transcription": [
+          {
+            "ipa": "'faw.kɛs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "fauc",
+        "prosody": "fauces",
+        "uri": "98508",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 70,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:ferio": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "ferio",
+        "morpho": "v1spia--4-",
+        "phonological_transcription": [
+          {
+            "ipa": "'fɛ.rɪ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "fer - ferit",
+        "prosody": "ferio",
+        "uri": "f0370",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 58,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:flamma": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "flamma",
+        "morpho": "n-s---fn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'fla.mma",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "flamm",
+        "prosody": "flamma",
+        "uri": "f0623",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 61,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:grex": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "grex",
+        "morpho": "n-s---mn3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'grɛks",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "greg",
+        "prosody": "grex",
+        "uri": "g0612",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 252,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:hic": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "hic",
+        "morpho": "rp--------",
+        "phonological_transcription": [
+          {
+            "ipa": "'hɪk",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "r",
+        "principal_parts": "",
+        "prosody": "hic",
+        "uri": "23798",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 50,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:homo": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "homo",
+        "morpho": "n-s---mn3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'hɔ.mɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "homin",
+        "prosody": "homo",
+        "uri": "h0518",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 255,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:idem": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "idem",
+        "morpho": "aps---mn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'ɪ.d̪ẽː",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "  ",
+        "prosody": "idem",
+        "uri": "48306",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 49,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:ille": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "ille",
+        "morpho": "aps---mn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'ɪɫ.lɛ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "ill ill ill",
+        "prosody": "ille",
+        "uri": "46623",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 68,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:insideo": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "insideo",
+        "morpho": "v1spia--2-",
+        "phonological_transcription": [
+          {
+            "ipa": "iːn̪.'sɪ.d̪ɛ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "insid insed insess",
+        "prosody": "insideo",
+        "uri": "i2016",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 52,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:pereo": {
+    "data": [
+      {
+        "alternative_forms": "v2spia--4-=peris v3spia--4-=perit v1ppia--4-=perimus v2ppia--4-=peritis v3ppia--4-=pereunt v1siia--4-=peribam v2siia--4-=peribas v3siia--4-=peribat v1piia--4-=peribamus v2piia--4-=peribatis v3piia--4-=peribant v1sfia--4-=peribo v2sfia--4-=peribis v3sfia--4-=peribit v1pfia--4-=peribimus v2pfia--4-=peribitis v3pfia--4-=peribunt v-sppamn4-=periens v-sppafn4-=periens v-sppann4-=periens v-sfpamn4-=periturus v-sfpafn4-=peritura v-sfpann4-=periturum v-sfppmn4-=pereundus v-sfppfn4-=pereunda v-sfppnn4-=pereundum v-s-gang4-=pereundi v-s-damn4-=pereundus v-s-dafn4-=pereunda v-s-dann4-=pereundum",
+        "irregular_forms": "v2spia--4-=peris v3spia--4-=perit v1ppia--4-=perimus v2ppia--4-=peritis v3ppia--4-=pereunt v1siia--4-=peribam v2siia--4-=peribas v3siia--4-=peribat v1piia--4-=peribamus v2piia--4-=peribatis v3piia--4-=peribant v1sfia--4-=peribo v2sfia--4-=peribis v3sfia--4-=peribit v1pfia--4-=peribimus v2pfia--4-=peribitis v3pfia--4-=peribunt v-sppamn4-=periens v-sppafn4-=periens v-sppann4-=periens v-sfpamn4-=periturus v-sfpafn4-=peritura v-sfpann4-=periturum v-sfppmn4-=pereundus v-sfppfn4-=pereunda v-sfppnn4-=pereundum v-s-gang4-=pereundi v-s-damn4-=pereundus v-s-dafn4-=pereunda v-s-dann4-=pereundum",
+        "lemma": "pereo",
+        "morpho": "v1spia--4-",
+        "phonological_transcription": [
+          {
+            "ipa": "'pɛ.rɛ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "per peri perit",
+        "prosody": "pereo",
+        "uri": "p1081",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 252,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:quis": {
+    "data": [],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 245,
+      "message": "latin_wordnet has no entry for this lemma",
+      "reason": "WORDNET_LEMMA_NOT_FOUND",
+      "retryable": false,
+      "status": "not_found"
+    }
+  },
+  "latin_wordnet:si": {
+    "data": [],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 253,
+      "message": "latin_wordnet has no entry for this lemma",
+      "reason": "WORDNET_LEMMA_NOT_FOUND",
+      "retryable": false,
+      "status": "not_found"
+    }
+  },
+  "latin_wordnet:siccus": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "siccus",
+        "morpho": "aps---mn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'sɪk.kʊs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "sicc sicc sicc",
+        "prosody": "siccus",
+        "uri": "s1571",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 66,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:sine": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "sine",
+        "morpho": "p---------",
+        "phonological_transcription": [
+          {
+            "ipa": "'sɪ.n̪ɛ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "p",
+        "principal_parts": "-",
+        "prosody": "sine",
+        "uri": "s1737",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 72,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:statua": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "statua",
+        "morpho": "n-s---fn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'st̪a.t̪ʊ.ja",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "statu",
+        "prosody": "statua",
+        "uri": "s2396",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 59,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:surdus": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "surdus",
+        "morpho": "aps---mn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'sʊr.d̪ʊs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "surd surd surd",
+        "prosody": "surdus",
+        "uri": "s3828",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 64,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:venio": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "uenio",
+        "morpho": "v1spia--4-",
+        "phonological_transcription": [
+          {
+            "ipa": "'wɛ.n̪ɪ̣.jɔ",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "v",
+        "principal_parts": "uen uen uent",
+        "prosody": "uenio",
+        "uri": "u0300",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 62,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:”": {
+    "data": [],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 70,
+      "message": "latin_wordnet has no entry for this lemma",
+      "reason": "WORDNET_LEMMA_NOT_FOUND",
+      "retryable": false,
+      "status": "not_found"
+    }
+  },
+  "morpheus:De": {
+    "data": [
+      "de"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 111,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Haec": {
+    "data": [
+      "hic"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Insidet": {
+    "data": [
+      "insideo",
+      "insido"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 112,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Quid": {
+    "data": [
+      "quis"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 708,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Quum": {
+    "data": [
+      "cum",
+      "qui",
+      "quis"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Venerem": {
+    "data": [],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:accipe": {
+    "data": [
+      "accipio"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:armenta": {
+    "data": [
+      "armenta",
+      "armentum"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 697,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:aspicerem": {
+    "data": [
+      "aspicio"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:atra": {
+    "data": [
+      "ater"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:auribus": {
+    "data": [
+      "auris"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:dixi": {
+    "data": [
+      "dico"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:eiusdem": {
+    "data": [
+      "idem"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 112,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:et": {
+    "data": [
+      "et"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:fames": {
+    "data": [
+      "fames"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:faucibus": {
+    "data": [
+      "fauces"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:ferit": {
+    "data": [
+      "ferio"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:flammis": {
+    "data": [
+      "flamma"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:gregesque": {
+    "data": [
+      "grego",
+      "grex"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 698,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:haec": {
+    "data": [
+      "hic"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:homines": {
+    "data": [
+      "homo"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 707,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:illa": {
+    "data": [
+      "illa",
+      "ille"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:mihi": {
+    "data": [
+      "ego"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 708,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:pereunt": {
+    "data": [
+      "pereo"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 700,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:si": {
+    "data": [
+      "si"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 708,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:siccis": {
+    "data": [
+      "siccus"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 113,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:sine": {
+    "data": [
+      "sine",
+      "sino",
+      "sinum"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:statua": {
+    "data": [
+      "statua"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 111,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:surdis": {
+    "data": [
+      "surdus"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:De statua eiusdem": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = De statua eiusdem\n1\tDe\tde\tADP\tS4\t_\t2\tcase\t_\t_\n2\tstatua\tstatua\tNOUN\tA1|grn1|casF|gen2\tCase=Abl|Gender=Fem|InflClass=IndEurA|Number=Sing\t0\troot\t_\t_\n3\teiusdem\tidem\tDET\tF1|grn1|casB|gen1|vgr2\tCase=Gen|Form=Emp|Gender=Masc|InflClass=LatPron|Number=Sing|PronType=Dem\t2\tnmod\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 64,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Haec ferit, illa ferit;surdis haec auribus, illa": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Haec ferit, illa ferit;surdis haec auribus, illa\n1\tHaec\thic\tDET\tF1|grn1|casA|gen2|vgr1\tCase=Nom|Gender=Fem|InflClass=LatPron|Number=Sing|PronType=Dem\t2\tnsubj\t_\t_\n2\tferit\tfero\tVERB\tN3|modA|tem1|gen6\tAspect=Imp|InflClass=LatAnom|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act\t0\troot\t_\tSpaceAfter=No\n3\t,\t,\tPUNCT\tPunc\t_\t5\tpunct\t_\t_\n4\tilla\tille\tDET\tF1|grn1|casA|gen2\tCase=Nom|Gender=Fem|InflClass=LatPron|Number=Sing|PronType=Dem\t5\tnsubj\t_\t_\n5\tferit\tfero\tVERB\tN3|modA|tem1|gen6\tAspect=Imp|InflClass=LatAnom|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act\t2\tconj\t_\tSpaceAfter=No\n6\t;surdis\t;surdus\tADJ\tB1|grn1|casL|gen1\tCase=Dat|Gender=Masc|InflClass=IndEurO|Number=Plur\t5\tobl:arg\t_\t_\n7\thaec\thic\tDET\tF1|grn1|casA|gen2|vgr1\tCase=Nom|Gender=Fem|InflClass=LatPron|Number=Sing|PronType=Dem\t5\tnsubj\t_\t_\n8\tauribus\tauris\tNOUN\tC1|grn1|casL|gen2\tCase=Dat|Gender=Fem|InflClass=IndEurI|Number=Plur\t5\tobl:arg\t_\tSpaceAfter=No\n9\t,\t,\tPUNCT\tPunc\t_\t10\tpunct\t_\t_\n10\tilla\tille\tDET\tF1|grn1|casA|gen2\tCase=Nom|Gender=Fem|InflClass=LatPron|Number=Sing|PronType=Dem\t5\tnsubj\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 87,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Insidet et siccis faucibus atra fames?": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Insidet et siccis faucibus atra fames?\n1\tInsidet\tinsideo\tVERB\tL3|modA|tem3|gen6\tAspect=Imp|InflClass=LatX|Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin|Voice=Act\t0\troot\t_\t_\n2\tet\tet\tCCONJ\tO4\t_\t4\tadvmod:emph\t_\t_\n3\tsiccis\tsiccus\tADJ\tA1|grn1|casL|gen2\tCase=Dat|Gender=Fem|InflClass=IndEurA|Number=Plur\t4\tamod\t_\t_\n4\tfaucibus\tfaux\tNOUN\tC1|grn1|casL|gen2\tCase=Dat|Gender=Fem|InflClass=IndEurI|Number=Plur\t1\tobl:arg\t_\t_\n5\tatra\tater\tADJ\tA1|grn1|casA|gen2\tCase=Nom|Gender=Fem|InflClass=IndEurA|Number=Sing\t6\tamod\t_\t_\n6\tfames\tfames\tNOUN\tC1|grn1|casA|gen2\tCase=Nom|Gender=Fem|InflClass=IndEurI|Number=Sing\t1\tnsubj\t_\tSpaceAfter=No\n7\t?\t?\tPUNCT\tPunc\t_\t1\tpunct\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 59,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Quid mihi, si pereunt homines, armenta, gregesque;?": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Quid mihi, si pereunt homines, armenta, gregesque;\n1\tQuid\tquis\tPRON\tF1|grn1|casA|gen3\tCase=Nom|Gender=Neut|InflClass=LatPron|Number=Sing|PronType=Int\t0\troot\t_\t_\n2\tmihi\tego\tPRON\tF1|grn1|casC|gen1|vgr1\tCase=Dat|InflClass=LatAnom|Number=Sing|Person=1|PronType=Prs\t1\tadvcl\t_\tSpaceAfter=No\n3\t,\t,\tPUNCT\tPunc\t_\t5\tpunct\t_\t_\n4\tsi\tsi\tSCONJ\tO4\t_\t5\tmark\t_\t_\n5\tpereunt\tpereo\tVERB\tN3|modA|tem1|gen9\tAspect=Imp|InflClass=LatAnom|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act\t1\tadvcl\t_\t_\n6\thomines\thomo\tNOUN\tC1|grn1|casJ|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurX|Number=Plur\t5\tnsubj\t_\tSpaceAfter=No\n7\t,\t,\tPUNCT\tPunc\t_\t8\tpunct\t_\t_\n8\tarmenta\tarmentum\tNOUN\tB1|grn1|casJ|gen3\tCase=Nom|Gender=Neut|InflClass=IndEurO|Number=Plur\t6\tconj\t_\tSpaceAfter=No\n9\t,\t,\tPUNCT\tPunc\t_\t10\tpunct\t_\t_\n10-11\tgregesque\t_\t_\t_\t_\t_\t_\t_\tSpaceAfter=No\n10\tgreges\tgrex\tNOUN\tC1|grn1|casJ|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurX|Number=Plur\t6\tconj\t_\t_\n11\tque\tque\tCCONJ\tO4\t_\t10\tcc\t_\t_\n12\t;\t;\tPUNCT\tPunc\t_\t1\tpunct\t_\tSpaceAfter=No\n\n# sent_id = 2\n# text = ?\n1\t?\t?\tPUNCT\tPunc\t_\t0\troot\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 71,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Quum Venerem aspicerem sine flammis; „accipe”, dixi,": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Quum Venerem aspicerem sine flammis;\n1\tQuum\tquum\tPRON\tF1|grn1|casD|gen1\tCase=Acc|Gender=Masc|InflClass=LatPron|Number=Sing|PronType=Rel\t3\tobj\t_\t_\n2\tVenerem\tvenio\tPROPN\tC1|grn1|casD|gen1|vgr1\tCase=Acc|Gender=Masc|InflClass=IndEurX|Number=Sing\t3\tobj\t_\t_\n3\taspicerem\taspicio\tVERB\tL3|modB|tem2|gen6\tAspect=Imp|Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin|Voice=Act\t0\troot\t_\t_\n4\tsine\tsine\tADP\tS4\t_\t5\tcase\t_\t_\n5\tflammis\tflamma\tNOUN\tA1|grn1|casO|gen2\tCase=Abl|Gender=Fem|InflClass=IndEurA|Number=Plur\t3\tobl\t_\tSpaceAfter=No\n6\t;\t;\tPUNCT\tPunc\t_\t3\tpunct\t_\t_\n\n# sent_id = 2\n# text = „accipe”, dixi,\n1\t„\t„\tPUNCT\tPunc\t_\t2\tpunct\t_\tSpaceAfter=No\n2\taccipe”\taccipeio\tVERB\tL3|modC|tem1|gen5\tAspect=Imp|InflClass=LatX|Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin|Voice=Act\t0\troot\t_\tSpaceAfter=No\n3\t,\t,\tPUNCT\tPunc\t_\t4\tpunct\t_\t_\n4\tdixi\tdico\tVERB\tN3|modA|tem4|gen4\tAspect=Perf|InflClass=LatX|Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin|Voice=Act\t2\tconj\t_\tSpaceAfter=No\n5\t,\t,\tPUNCT\tPunc\t_\t2\tpunct\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 82,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  }
+}
