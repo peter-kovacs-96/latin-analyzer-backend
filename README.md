@@ -215,3 +215,6 @@ Required environment variables on Render:
   retried once with a classical-spelling variant of the key (`j→i`, `y→i`,
   consonantal `u→v`) so medieval spellings like `hyems`/`syluas`/`mouet` resolve.
   Fallback only — the displayed form/lemma are unchanged. See ADR-0010.
+- Morpheus lemmata are also used as LIS name-match candidates, so words UDPipe
+  mis-tags (e.g. the participle `sculptus`, tagged NOUN, found in LIS under the
+  verb `sculpo`) still resolve. See ADR-0011.

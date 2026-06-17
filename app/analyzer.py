@@ -215,9 +215,15 @@ class AnalyzerService:
                 else None
             )
 
+            # Morpheus lemmata as extra LIS name-match candidates: UDPipe can
+            # mis-tag a word and keep a lemma LIS files under a different headword
+            # (e.g. participle "sculptus" → LIS verb "sculpo", a Morpheus analysis).
+            morph = morpheus_results.get(entry.form)
+            extra_lemmas = tuple(morph.data) if morph and morph.diagnostic.status == DownstreamStatus.OK and isinstance(morph.data, list) else ()
+
             # Derive effective LIS status from whether we actually extracted a
             # meaning: HTTP 200 with no matching entry still means no translation.
-            lis_meaning = extract_lis_meaning(lis_data, entry.internal_lemma, entry.upos, entry.form)
+            lis_meaning = extract_lis_meaning(lis_data, entry.internal_lemma, entry.upos, entry.form, extra_lemmas)
             lis_effective_status = (
                 DownstreamStatus.NOT_FOUND
                 if lis_diag.status == DownstreamStatus.OK and not lis_meaning
@@ -238,9 +244,9 @@ class AnalyzerService:
                 upos=entry.upos,
                 morphology=morphology,
                 syntactic_role=syntactic_role,
-                dictionary_form=extract_lis_fullname(lis_data, entry.internal_lemma, entry.upos, entry.form),
+                dictionary_form=extract_lis_fullname(lis_data, entry.internal_lemma, entry.upos, entry.form, extra_lemmas),
                 meaning=lis_meaning,
-                lis_url=extract_lis_url(lis_data, entry.internal_lemma, entry.upos, entry.form),
+                lis_url=extract_lis_url(lis_data, entry.internal_lemma, entry.upos, entry.form, extra_lemmas),
                 confidence=confidence,
                 source=source,
                 downstreams={

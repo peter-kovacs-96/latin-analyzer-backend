@@ -199,23 +199,36 @@ def _en_translation(item: dict) -> str:
     return translations or ""
 
 
-def find_lis_match(results: list, lemma: str, upos: str = "", form: str = "") -> dict | None:
+def find_lis_match(
+    results: list,
+    lemma: str,
+    upos: str = "",
+    form: str = "",
+    extra_lemmas: tuple[str, ...] = (),
+) -> dict | None:
     """Return the best-matching LIS entry for *lemma* given a UDPipe UPOS tag.
 
     Scoring:
-      +10  short_name == lemma (exact lemma match)
-      +8   first token of full_name == lemma (e.g. "vinco" in "vinco, vincis…")
+      +10  short_name == a lemma candidate (exact lemma match)
+      +8   first token of full_name == a lemma candidate (e.g. "vinco" in "vinco, vincis…")
       +6   short_name == form (surface-form fallback: handles irregular inflections
            where UDPipe lemma differs from LIS short_name, e.g. "volucris"→"volucra",
            or form-based LIS entries like "eiusdem")
       +4   first token of full_name == form
       +5   intern_type matches expected LIS type for *upos*
       skip entries with "still in translation" or empty English text
+
+    *extra_lemmas* are additional lemma candidates from Morpheus.  UDPipe
+    sometimes mis-parts-of-speech a word and keeps a lemma that LIS files under a
+    different headword (e.g. the participle "sculptus" is tagged NOUN with lemma
+    "sculptus", but LIS has it under the verb "sculpo" — one of Morpheus's
+    analyses).  Treating every Morpheus lemma as a valid name match recovers
+    these without relaxing the part-of-speech guard.
     """
     if not results:
         return None
 
-    lemma_lc = lemma.lower()
+    lemma_candidates = {lemma.lower()} | {e.lower() for e in extra_lemmas if e}
     form_lc = form.lower() if form else ""
     expected_type = UPOS_TO_LIS_TYPE.get(upos, "")
 
@@ -230,9 +243,9 @@ def find_lis_match(results: list, lemma: str, upos: str = "", form: str = "") ->
         sn = item.get("short_name", "").lower()
         fn_first = item.get("full_name", "").split(",")[0].strip().lower()
 
-        if sn == lemma_lc:
+        if sn in lemma_candidates:
             form_score = 10
-        elif fn_first == lemma_lc:
+        elif fn_first in lemma_candidates:
             form_score = 8
         elif form_lc and sn == form_lc:
             form_score = 6
@@ -273,7 +286,10 @@ def find_lis_match(results: list, lemma: str, upos: str = "", form: str = "") ->
     return None
 
 
-def extract_lis_meaning(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
+def extract_lis_meaning(
+    result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "",
+    extra_lemmas: tuple[str, ...] = (),
+) -> str:
     """Return the English meaning for a LIS search result.
 
     Requires a form-match via find_lis_match; returns "" when no entry
@@ -283,23 +299,29 @@ def extract_lis_meaning(result: list | dict | str | None, lemma: str = "", upos:
     """
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos, form)
+    best = find_lis_match(result, lemma, upos, form, extra_lemmas)
     return _en_translation(best) if best else ""
 
 
-def extract_lis_fullname(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
+def extract_lis_fullname(
+    result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "",
+    extra_lemmas: tuple[str, ...] = (),
+) -> str:
     """Return the dictionary full_name (e.g. 'amor, amoris [m.] C') from LIS."""
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos, form)
+    best = find_lis_match(result, lemma, upos, form, extra_lemmas)
     return best.get("full_name", "") if best else ""
 
 
-def extract_lis_url(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
+def extract_lis_url(
+    result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "",
+    extra_lemmas: tuple[str, ...] = (),
+) -> str:
     """Return the Latin is Simple page URL for the best matching entry."""
     if not result or not isinstance(result, list):
         return ""
-    best = find_lis_match(result, lemma, upos, form)
+    best = find_lis_match(result, lemma, upos, form, extra_lemmas)
     if not best:
         return ""
     url = best.get("url", "")

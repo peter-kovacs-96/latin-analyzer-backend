@@ -95,8 +95,9 @@ EIUSDEM = "De statua eiusdem"
 SYLUAS = "Ibat venatum in syluas, telumque gerebat"
 HYEMS = "Friget hyems."
 MOUET = "Flatilis in venis spiritus, ora mouet."
+SCULPTUS = "Friget hyems. lapis haec sculptus, et illa lapis."
 
-SENTENCES = [GREGESQUE, SURDIS, ACCIPE, FAUCIBUS, EIUSDEM, SYLUAS, HYEMS, MOUET]
+SENTENCES = [GREGESQUE, SURDIS, ACCIPE, FAUCIBUS, EIUSDEM, SYLUAS, HYEMS, MOUET, SCULPTUS]
 
 
 @pytest.fixture(scope="session")
@@ -243,3 +244,13 @@ def test_uv_spelling_variant_resolves_via_lis_fallback(analyses: dict) -> None:
     assert mouet.lemma == "moveo"
     assert mouet.confidence.value == "full"
     assert "move" in mouet.meaning.lower()
+
+
+def test_udpipe_pos_error_recovered_via_morpheus_lemma(analyses: dict) -> None:
+    """'sculptus' — UDPipe mis-tags the participle as a NOUN and keeps lemma
+    'sculptus', but LIS files it under the verb 'sculpo' (one of Morpheus's
+    analyses).  Morpheus lemmata as extra LIS name-match candidates must recover
+    the meaning despite the wrong UDPipe part of speech."""
+    sculptus = _word(analyses, SCULPTUS, "sculptus")
+    assert sculptus.confidence.value == "full"
+    assert "carve" in sculptus.meaning.lower() or "engrave" in sculptus.meaning.lower()

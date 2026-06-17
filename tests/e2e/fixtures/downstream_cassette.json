@@ -4,7 +4,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": 400,
-      "latency_ms": 551,
+      "latency_ms": 526,
       "message": "latin_is_simple returned HTTP 400",
       "reason": "LIS_HTTP_ERROR",
       "retryable": false,
@@ -1032,6 +1032,49 @@
       "status": "ok"
     }
   },
+  "latin_is_simple:lapis": {
+    "data": [
+      {
+        "full_name": "lapis, lapidis [m.] C",
+        "id": 11366,
+        "intern_type": "noun",
+        "short_name": "lapis",
+        "translations_unstructured": {
+          "de": "Gestein, Kilometerstein, Kleinod, Kern, Markstein, Uhrstein, Stein, Meilenstein, Schatz, Obstkern, Meilensäule, Edelstein, Wegmarke, Wendepunkt",
+          "en": "stone, milestone, jewel"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/11366/"
+      },
+      {
+        "full_name": "lapis, lapis [f.] M",
+        "id": 11367,
+        "intern_type": "noun",
+        "short_name": "lapis",
+        "translations_unstructured": {
+          "de": "Gestein, Kilometerstein, Kleinod, Kern, Markstein, Uhrstein, Stein, Meilenstein, Schatz, Obstkern, Meilensäule, Edelstein, Wegmarke, Wendepunkt",
+          "en": "stone, milestone, jewel"
+        },
+        "type": {
+          "label": "Noun",
+          "name": "noun"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/noun/11367/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "latin_is_simple:mihi": {
     "data": [
       {
@@ -1234,6 +1277,34 @@
           "name": "verb"
         },
         "url": "https://www.latin-is-simple.com/en/vocabulary/verb/85/"
+      }
+    ],
+    "diagnostic": {
+      "cached": true,
+      "http_status": null,
+      "latency_ms": null,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_is_simple:sculptus": {
+    "data": [
+      {
+        "full_name": "sculpo, sculpis, sculpere C, sculpsi, sculptum",
+        "id": 6278,
+        "intern_type": "verb",
+        "short_name": "sculpere",
+        "translations_unstructured": {
+          "de": "einmeißeln, einritzen, einschneiden, schnitzen, zerschneiden, abschneiden, behauen, beschnitzen, ritzen, seinen Weg bahnen, tranchieren, transchieren, vorschneiden, zerlegen",
+          "en": "carve, engrave (inscription/face), fashion/work into form by carving/engraving"
+        },
+        "type": {
+          "label": "Verb",
+          "name": "verb"
+        },
+        "url": "https://www.latin-is-simple.com/en/vocabulary/verb/6278/"
       }
     ],
     "diagnostic": {
@@ -1678,7 +1749,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": 400,
-      "latency_ms": 178,
+      "latency_ms": 152,
       "message": "latin_is_simple returned HTTP 400",
       "reason": "LIS_HTTP_ERROR",
       "retryable": false,
@@ -1690,7 +1761,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 69,
+      "latency_ms": 63,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -1722,7 +1793,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 154,
+      "latency_ms": 150,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1754,7 +1825,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 149,
+      "latency_ms": 152,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1786,7 +1857,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 71,
+      "latency_ms": 68,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1837,7 +1908,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 60,
+      "latency_ms": 56,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1869,7 +1940,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 65,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1920,7 +1991,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 54,
+      "latency_ms": 55,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -1952,7 +2023,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 53,
+      "latency_ms": 48,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2003,7 +2074,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 60,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2035,7 +2106,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 152,
+      "latency_ms": 148,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2116,9 +2187,9 @@
       }
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2150,7 +2221,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 63,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2182,7 +2253,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 66,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2214,7 +2285,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 58,
+      "latency_ms": 52,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2278,7 +2349,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 54,
+      "latency_ms": 50,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2308,9 +2379,9 @@
       }
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 54,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2361,7 +2432,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 66,
+      "latency_ms": 61,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2393,7 +2464,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 153,
+      "latency_ms": 152,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2423,9 +2494,9 @@
       }
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 57,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2455,9 +2526,9 @@
       }
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 44,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2489,7 +2560,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 148,
+      "latency_ms": 156,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2501,7 +2572,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 49,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -2533,7 +2604,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 56,
+      "latency_ms": 51,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2563,9 +2634,9 @@
       }
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 67,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2629,7 +2700,39 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 57,
+      "latency_ms": 54,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "latin_wordnet:lapis": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "lapis",
+        "morpho": "n-s---cn3-",
+        "phonological_transcription": [
+          {
+            "ipa": "'la.pɪs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "n",
+        "principal_parts": "lapid",
+        "prosody": "lapis",
+        "uri": "l0270",
+        "validated": true
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 51,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2661,7 +2764,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 60,
+      "latency_ms": 55,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2725,7 +2828,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 153,
+      "latency_ms": 156,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2737,11 +2840,43 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 141,
+      "latency_ms": 160,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
       "status": "not_found"
+    }
+  },
+  "latin_wordnet:sculptus": {
+    "data": [
+      {
+        "alternative_forms": "",
+        "irregular_forms": "",
+        "lemma": "sculptus",
+        "morpho": "aps---mn1-",
+        "phonological_transcription": [
+          {
+            "ipa": "'skʊɫp.t̪ʊs",
+            "period": {
+              "abbrev": "cla"
+            }
+          }
+        ],
+        "pos": "a",
+        "principal_parts": "sculpt sculpt sculpt",
+        "prosody": "sculptus",
+        "uri": "126509",
+        "validated": false
+      }
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 51,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
     }
   },
   "latin_wordnet:si": {
@@ -2749,7 +2884,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 153,
+      "latency_ms": 156,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -2781,7 +2916,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2813,7 +2948,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 68,
+      "latency_ms": 60,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2845,7 +2980,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 66,
+      "latency_ms": 69,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2877,7 +3012,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2909,7 +3044,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 51,
+      "latency_ms": 50,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2941,7 +3076,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 56,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2973,7 +3108,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 55,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3005,7 +3140,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 54,
+      "latency_ms": 51,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3056,7 +3191,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 52,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3088,7 +3223,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 56,
+      "latency_ms": 53,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3100,7 +3235,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 70,
+      "latency_ms": 69,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -3114,7 +3249,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 109,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3128,7 +3263,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 110,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3141,9 +3276,9 @@
       "frigo"
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 109,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3157,7 +3292,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3171,7 +3306,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3186,7 +3321,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3200,7 +3335,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 432,
+      "latency_ms": 446,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3216,7 +3351,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3228,7 +3363,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3257,7 +3392,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 442,
+      "latency_ms": 445,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3271,7 +3406,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3285,7 +3420,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3299,7 +3434,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 116,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3313,7 +3448,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 116,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3327,7 +3462,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 110,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3339,9 +3474,9 @@
       "et"
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3355,7 +3490,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3383,7 +3518,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3397,7 +3532,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3411,7 +3546,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 113,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3426,7 +3561,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 464,
+      "latency_ms": 437,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3438,9 +3573,9 @@
       "hic"
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3454,7 +3589,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 442,
+      "latency_ms": 437,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3464,9 +3599,9 @@
   "morpheus:hyems": {
     "data": [],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 110,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3479,9 +3614,9 @@
       "ille"
     ],
     "diagnostic": {
-      "cached": false,
+      "cached": true,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": null,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3502,6 +3637,21 @@
       "status": "ok"
     }
   },
+  "morpheus:lapis": {
+    "data": [
+      "lapio",
+      "lapis"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 112,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "morpheus:mihi": {
     "data": [
       "ego"
@@ -3509,7 +3659,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 441,
+      "latency_ms": 436,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3523,7 +3673,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3540,7 +3690,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3554,7 +3704,22 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 431,
+      "latency_ms": 444,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:sculptus": {
+    "data": [
+      "sculpo",
+      "sculptus"
+    ],
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 108,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3568,7 +3733,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 442,
+      "latency_ms": 439,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3582,7 +3747,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 116,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3598,7 +3763,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 120,
+      "latency_ms": 117,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3612,7 +3777,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3626,7 +3791,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 110,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3654,7 +3819,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 118,
+      "latency_ms": 117,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3668,7 +3833,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3683,7 +3848,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3699,7 +3864,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 111,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3711,7 +3876,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 67,
+      "latency_ms": 87,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3723,7 +3888,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 102,
+      "latency_ms": 98,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3735,7 +3900,19 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 53,
+      "latency_ms": 80,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "udpipe:Friget hyems. lapis haec sculptus, et illa lapis.": {
+    "data": "# generator = UDPipe 2, https://lindat.mff.cuni.cz/services/udpipe\n# udpipe_model = latin-ittb-ud-2.17-251125\n# udpipe_model_licence = CC BY-NC-SA\n# newdoc\n# newpar\n# sent_id = 1\n# text = Friget hyems.\n1\tFriget\tfrigeo\tVERB\tL3|modA|tem3|gen6\tAspect=Imp|InflClass=LatX|Mood=Ind|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin|Voice=Act\t0\troot\t_\t_\n2\thyems\thyems\tNOUN\tC1|grn1|casA|gen1|vgr1\tCase=Nom|Gender=Fem|InflClass=IndEurI|Number=Sing\t1\tnsubj\t_\tSpaceAfter=No\n3\t.\t.\tPUNCT\tPunc\t_\t1\tpunct\t_\t_\n\n# sent_id = 2\n# text = lapis haec sculptus, et illa lapis.\n1\tlapis\tlapis\tNOUN\tC1|grn1|casA|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurX|Number=Sing\t0\troot\t_\t_\n2\thaec\thic\tDET\tF1|grn1|casA|gen2|vgr1\tCase=Acc|Gender=Neut|InflClass=LatPron|Number=Plur|PronType=Dem\t1\tdet\t_\t_\n3\tsculptus\tsculptus\tNOUN\tL2|modM|tem4|grp1|casA|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurU|Number=Sing\t1\tconj\t_\tSpaceAfter=No\n4\t,\t,\tPUNCT\tPunc\t_\t7\tpunct\t_\t_\n5\tet\tet\tCCONJ\tO4\t_\t7\tcc\t_\t_\n6\tilla\tille\tDET\tF1|grn1|casA|gen2\tCase=Nom|Gender=Fem|InflClass=LatPron|Number=Sing|PronType=Dem\t7\tdet\t_\t_\n7\tlapis\tlapis\tNOUN\tC1|grn1|casA|gen1\tCase=Nom|Gender=Masc|InflClass=IndEurX|Number=Sing\t1\tconj\t_\tSpaceAfter=No\n8\t.\t.\tPUNCT\tPunc\t_\t1\tpunct\t_\tSpaceAfter=No\n\n",
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 103,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3747,7 +3924,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 86,
+      "latency_ms": 108,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3759,7 +3936,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 62,
+      "latency_ms": 58,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3783,7 +3960,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 99,
+      "latency_ms": 87,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3795,7 +3972,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 58,
+      "latency_ms": 64,
       "message": null,
       "reason": null,
       "retryable": false,
