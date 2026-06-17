@@ -42,6 +42,22 @@ class DownstreamClient:
             self._client = None
 
     async def get_json(self, service: str, url: str, extra_headers: dict[str, str] | None = None) -> DownstreamResult:
+        return await self._send_json(service, "GET", url, None, extra_headers)
+
+    async def post_json(
+        self, service: str, url: str, data: dict[str, str], extra_headers: dict[str, str] | None = None
+    ) -> DownstreamResult:
+        """POST form-encoded *data* (in the request body, not the URL).
+
+        Used for UDPipe, whose input text would otherwise overflow the GET query
+        string — lindat returns HTTP 414/error past ~8 KB (e.g. stanza mode on a
+        document with no blank lines, where the whole text is one group)."""
+        return await self._send_json(service, "POST", url, data, extra_headers)
+
+    async def _send_json(
+        self, service: str, method: str, url: str,
+        data: dict[str, str] | None, extra_headers: dict[str, str] | None,
+    ) -> DownstreamResult:
         if self._client is None:
             return DownstreamResult(
                 diagnostic=DownstreamDiagnostic(
@@ -58,7 +74,10 @@ class DownstreamClient:
         async with self._semaphore:
             for attempt in range(attempts):
                 try:
-                    response = await self._client.get(url, headers=extra_headers)
+                    if method == "POST":
+                        response = await self._client.post(url, data=data, headers=extra_headers)
+                    else:
+                        response = await self._client.get(url, headers=extra_headers)
                     latency_ms = int((time.perf_counter() - start) * 1000)
                     if response.status_code == 429:
                         last_result = DownstreamResult(
@@ -228,9 +247,12 @@ class UDPipeClient:
             "model": model,
             "data": text,
         }
-        result = await self.http.get_json(
+        # POST so the text travels in the body — a GET query string overflows for
+        # large inputs (stanza mode / long documents) and lindat then errors out.
+        result = await self.http.post_json(
             self.service_name,
-            f"{self.settings.udpipe_base_url}/process?{httpx.QueryParams(params)}",
+            f"{self.settings.udpipe_base_url}/process",
+            data=params,
         )
         if result.diagnostic.status == DownstreamStatus.OK and isinstance(result.data, dict):
             conllu = result.data.get("result", "")
