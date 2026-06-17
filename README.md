@@ -48,8 +48,10 @@ Analyse a multi-line Latin text (file contents) and stream results sentence by s
 Semicolons are intentionally not treated as boundaries (often used mid-sentence in Latin).
 
 Translated fields: `morphology.pos`, `morphology.case`, `morphology.number`, `morphology.gender`,
-`morphology.tense`, `morphology.mood`, `morphology.voice`, `syntactic_role`, `confidence`.
+`morphology.tense`, `morphology.mood`, `morphology.voice`, `syntactic_role`.
 Free-text fields (`meaning`, `dictionary_form`, `form`, `lemma`) are always in English/Latin.
+`confidence` is a stable machine code (`full` / `no_meaning` / `form_only`) and is **never**
+translated — the client branches on it (warning markers), so the frontend localises its label.
 
 **Response:** `Content-Type: application/x-ndjson` — one JSON object per sentence group or blank line, in input order.
 

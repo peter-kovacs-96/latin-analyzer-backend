@@ -85,10 +85,6 @@ _HU: dict[str, str] = {
     "parataxis":                "mellérendelés",
     "dislocated":               "kiemelt elem",
     "expletive":                "töltelékszó",
-    # Confidence (confidence)
-    "full":         "teljes",
-    "no_meaning":   "hiányzó jelentés",
-    "form_only":    "csak alak",
 }
 
 _TABLES: dict[str, dict[str, str]] = {"hu": _HU}
@@ -121,7 +117,10 @@ def translate_word_dict(word: dict, table: dict[str, str]) -> dict:
             # person stays as "1" / "2" / "3" in all languages
         },
         "syntactic_role": _t(word.get("syntactic_role"), table),
-        "confidence":     _t(word.get("confidence"),     table),
+        # confidence stays a stable machine code (full / no_meaning / form_only):
+        # the client branches on it (warning badges/markers), so it must not be
+        # language-dependent.  The frontend localises the displayed label.
+        "confidence":     word.get("confidence"),
     }
 
 

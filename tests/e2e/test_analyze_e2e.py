@@ -311,7 +311,9 @@ def test_hungarian_labels_returned_by_default(backend_url: str) -> None:
     assert amor["morphology"]["pos"] == "főnév"
     assert amor["morphology"]["case"] == "alanyeset"
     assert amor["syntactic_role"] == "alany"
-    assert amor["confidence"] == "teljes"
+    # confidence is a stable machine code, never translated (the client branches
+    # on it); the frontend localises the displayed label.
+    assert amor["confidence"] == "full"
 
     vincit = words["vincit"]
     assert vincit["syntactic_role"] == "állítmány"
