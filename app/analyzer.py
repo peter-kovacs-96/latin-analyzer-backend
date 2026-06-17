@@ -14,6 +14,7 @@ from app.latin import (
     extract_wordnet_lemma,
     extract_wordnet_morpho,
     parse_conllu,
+    strip_edges,
     tokenize,
     ud_to_morphology,
     wn_to_morphology,
@@ -305,11 +306,14 @@ class AnalyzerService:
         parsed = parse_conllu(result.data)
         if len(parsed) == len(words):
             return parsed
+        # Count mismatch: UDPipe glued punctuation onto a word (e.g. ';surdis',
+        # 'accipe”') and our tokeniser split it.  Match on the punctuation-stripped
+        # form so the bare word still aligns to its UDPipe token.
         by_form: dict[str, list[dict[str, str]]] = {}
         for token in parsed:
-            by_form.setdefault(token["form"], []).append(token)
+            by_form.setdefault(strip_edges(token["form"]) or token["form"], []).append(token)
         aligned: list[dict[str, str] | None] = []
         for word in words:
-            matches = by_form.get(word)
+            matches = by_form.get(strip_edges(word) or word)
             aligned.append(matches.pop(0) if matches else None)
         return aligned

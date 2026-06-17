@@ -248,7 +248,29 @@ def find_lis_match(results: list, lemma: str, upos: str = "", form: str = "") ->
             best_score = total
             best_item = item
 
-    return best_item
+    if best_item is not None:
+        return best_item
+
+    # POS fallback: a forms_only=true search already guarantees every result is
+    # an inflected-form match for the query, so when nothing matched by lemma or
+    # surface-form *name* we may still have the right entry under a different
+    # headword.  This happens when UDPipe's lemma differs from the LIS headword
+    # (e.g. lemma 'fauces' vs LIS 'faux') or UDPipe lemmatised wrongly altogether
+    # (e.g. 'Venerem'→'venio', while LIS has 'Venus').  Accept the result only
+    # when exactly one entry matches the expected POS, to avoid guessing among
+    # ambiguous candidates.
+    if expected_type:
+        pos_hits = [
+            item
+            for item in results
+            if item.get("intern_type") == expected_type
+            and (en := _en_translation(item))
+            and "still in translation" not in en
+        ]
+        if len(pos_hits) == 1:
+            return pos_hits[0]
+
+    return None
 
 
 def extract_lis_meaning(result: list | dict | str | None, lemma: str = "", upos: str = "", form: str = "") -> str:
@@ -295,6 +317,21 @@ def tokenize(text: str) -> list[str]:
     return re.findall(r"[A-Za-zÀ-ÿ]+|[^\w\s]", text)
 
 
+_EDGE_PUNCT_RE = re.compile(r"^[^A-Za-zÀ-ÿ]+|[^A-Za-zÀ-ÿ]+$")
+
+
+def strip_edges(s: str) -> str:
+    """Strip leading/trailing non-letter characters from a token or lemma.
+
+    UDPipe sometimes glues adjacent punctuation onto a word when there is no
+    surrounding whitespace (e.g. ';surdis', 'accipe”'), and lemmatises the
+    glued form into garbage ('; surdus', 'accipeio').  Stripping the edges
+    recovers the bare word so it aligns with our own tokenisation and so the
+    lemma is usable for downstream lookups.
+    """
+    return _EDGE_PUNCT_RE.sub("", s)
+
+
 def _feats(value: str) -> dict[str, str]:
     """Parse a CoNLL-U FEATS string ('Key=Val|Key=Val') into a dict."""
     result: dict[str, str] = {}
@@ -306,16 +343,60 @@ def _feats(value: str) -> dict[str, str]:
     return result
 
 
+def _row_to_token(col: list[str], form: str | None = None) -> dict[str, str]:
+    return {
+        "form": form if form is not None else col[1],
+        "lemma": strip_edges(col[2]) or col[2],
+        "upos": col[3],
+        "feats": col[5],
+        "deprel": col[7],
+    }
+
+
 def parse_conllu(conllu: str) -> list[dict[str, str]]:
-    tokens: list[dict[str, str]] = []
+    """Parse CoNLL-U into one token dict per *input* word.
+
+    Multi-word tokens (range lines like '1-2 gregesque', where UDPipe splits an
+    enclitic such as '-que' into separate syntactic sub-tokens) are collapsed
+    back into a single unit: the surface form comes from the range line, while
+    lemma/upos/feats/deprel come from the syntactic *head* sub-token (the one
+    whose HEAD points outside the range — e.g. 'greges'→grex, not the enclitic
+    'que').  This keeps our token count aligned with the original text.
+
+    Empty nodes ('1.1') and malformed rows are skipped.
+    """
+    rows: list[list[str]] = []
     for line in conllu.splitlines():
         if not line.strip() or line.startswith("#"):
             continue
         col = line.split("\t")
-        # Skip malformed rows, CoNLL-U multi-word tokens ("10-11"), empty nodes ("1.1")
-        if len(col) < 8 or not col[0].isdigit():
+        if len(col) < 8:
             continue
-        tokens.append({"form": col[1], "lemma": col[2], "upos": col[3], "feats": col[5], "deprel": col[7]})
+        rows.append(col)
+
+    tokens: list[dict[str, str]] = []
+    n = len(rows)
+    i = 0
+    while i < n:
+        tid = rows[i][0]
+        if "-" in tid:
+            lo, hi = (int(x) for x in tid.split("-", 1))
+            surface = rows[i][1]
+            subs = []
+            j = i + 1
+            while j < n and rows[j][0].isdigit() and lo <= int(rows[j][0]) <= hi:
+                subs.append(rows[j])
+                j += 1
+            if subs:
+                ids = {s[0] for s in subs}
+                head = next((s for s in subs if s[6] not in ids), subs[0])
+                tokens.append(_row_to_token(head, form=surface))
+            i = j
+        elif tid.isdigit():
+            tokens.append(_row_to_token(rows[i]))
+            i += 1
+        else:
+            i += 1  # empty node "1.1" or other non-token row
     return tokens
 
 

@@ -328,3 +328,89 @@ def test_english_labels_with_lang_en(backend_url: str) -> None:
     assert amor["morphology"]["case"] == "nominative"
     assert amor["syntactic_role"] == "subject"
     assert amor["confidence"] == "full"
+
+
+# ---------------------------------------------------------------------------
+# Regression: real-world problematic words (from progihoz.docx)
+#
+# Each test below pins a word that exposed a distinct pipeline bug.  Keep them
+# green so later changes don't silently reintroduce the failure.  See the
+# analyzer/latin source comments for the mechanism behind each fix.
+# ---------------------------------------------------------------------------
+
+def _word(result: dict, form: str) -> dict:
+    return next(w for w in result["words"] if w["form"] == form)
+
+
+def test_enclitic_que_is_analysed(backend_url: str) -> None:
+    """'gregesque' = greges (grex) + enclitic -que.  UDPipe emits a multiword
+    token ('1-2 gregesque' → greges + que); the analyzer must collapse it to the
+    head sub-token instead of dropping the word as unrecognised."""
+    result = stream_line(backend_url, "Quid mihi, si pereunt homines, armenta, gregesque;?")
+    greg = _word(result, "gregesque")
+    assert greg["lemma"] == "grex"
+    assert greg["upos"] == "NOUN"
+    assert greg["confidence"] == "full"
+    assert "flock" in greg["meaning"].lower() or "herd" in greg["meaning"].lower()
+
+
+def test_punctuation_glued_word_after_semicolon(backend_url: str) -> None:
+    """'ferit;surdis' has no space, so UDPipe glues ';' onto 'surdis'.  The
+    alignment must strip edge punctuation so the bare 'surdis' is recognised."""
+    result = stream_line(backend_url, "Haec ferit, illa ferit;surdis haec auribus, illa")
+    surdis = _word(result, "surdis")
+    assert surdis["lemma"] == "surdus"
+    assert surdis["confidence"] == "full"
+    assert "deaf" in surdis["meaning"].lower()
+
+
+def test_ferit_morpheus_correction_preserved(backend_url: str) -> None:
+    """README invariant: UDPipe lemmatises 'ferit' as 'fero'; Morpheus corrects
+    it to 'ferio' (to strike).  The alignment fixes must not break this."""
+    result = stream_line(backend_url, "Haec ferit, illa ferit;surdis haec auribus, illa")
+    ferits = [w for w in result["words"] if w["form"] == "ferit"]
+    assert len(ferits) == 2
+    for word in ferits:
+        assert word["lemma"] == "ferio"
+        assert word["confidence"] == "full"
+
+
+def test_word_wrapped_in_typographic_quotes(backend_url: str) -> None:
+    """'„accipe”' — UDPipe glues the closing curly quote onto the word.  The bare
+    'accipe' must still resolve (lemma corrected by Morpheus)."""
+    result = stream_line(backend_url, "Quum Venerem aspicerem sine flammis; „accipe”, dixi,")
+    accipe = _word(result, "accipe")
+    assert accipe["lemma"] == "accipio"
+    assert accipe["confidence"] == "full"
+    assert "accept" in accipe["meaning"].lower() or "receive" in accipe["meaning"].lower()
+
+
+def test_lis_headword_differs_from_lemma(backend_url: str) -> None:
+    """'faucibus' → UDPipe lemma 'fauces', but the LIS headword is 'faux'.  The
+    LIS matcher's POS fallback must accept the single matching noun result."""
+    result = stream_line(backend_url, "Insidet et siccis faucibus atra fames?")
+    fauc = _word(result, "faucibus")
+    assert fauc["confidence"] == "full"
+    assert fauc["meaning"]  # non-empty
+    assert "faux" in fauc["dictionary_form"].lower()
+
+
+def test_wrong_udpipe_lemma_recovered_via_lis(backend_url: str) -> None:
+    """'Venerem' (acc. of Venus) → UDPipe mis-lemmatises as 'venio' and Morpheus
+    returns nothing for the capitalised form, but LIS finds 'Venus'.  The POS
+    fallback must surface the meaning even though the lemma stays UDPipe's."""
+    result = stream_line(backend_url, "Quum Venerem aspicerem sine flammis; „accipe”, dixi,")
+    ven = _word(result, "Venerem")
+    assert ven["confidence"] == "full"
+    assert "venus" in ven["meaning"].lower()
+    assert "venus" in ven["dictionary_form"].lower()
+
+
+def test_eiusdem_form_based_lis_lookup_still_works(backend_url: str) -> None:
+    """Guard the surface-form LIS lookup: 'eiusdem' (a form of 'idem') only
+    resolves because LIS is queried by surface form, not by lemma."""
+    result = stream_line(backend_url, "De statua eiusdem")
+    eiusdem = _word(result, "eiusdem")
+    assert eiusdem["lemma"] == "idem"
+    assert eiusdem["confidence"] == "full"
+    assert "same" in eiusdem["meaning"].lower()
