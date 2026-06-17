@@ -250,7 +250,12 @@ class AnalyzerService:
             line_rows = all_rows[word_offset:word_offset + count]
             word_offset += count
 
-            if count == 0:
+            # A line with no alphabetic token (only digits/punctuation, e.g. "123 !!!")
+            # carries no analysable words. Report it as wordless — but still advance
+            # word_offset above so multi-line slicing stays aligned.
+            has_word = any(any(c.isalpha() for c in tok) for tok in words)
+
+            if count == 0 or not has_word:
                 responses.append(AnalysisResponse(
                     text=line,
                     request_id=request_id,
