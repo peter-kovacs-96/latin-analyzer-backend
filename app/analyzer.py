@@ -60,6 +60,15 @@ class _TokenEntry(NamedTuple):
     ud_diag: DownstreamDiagnostic
 
 
+def _morph_field(morph: DownstreamResult | None, key: str) -> list[str]:
+    """Read a list field ('lemmata' / 'upos') from a Morpheus result payload."""
+    if morph and morph.diagnostic.status == DownstreamStatus.OK and isinstance(morph.data, dict):
+        value = morph.data.get(key)
+        if isinstance(value, list):
+            return value
+    return []
+
+
 def _lis_has_results(result: DownstreamResult) -> bool:
     """True when a LIS call returned a non-empty list of entries."""
     return (
@@ -149,17 +158,18 @@ class AnalyzerService:
             morpheus_results = await self._load_morpheus(udpipe_forms)
             preliminary = [
                 (
-                    entry._replace(internal_lemma=morph.data[0])
+                    entry._replace(internal_lemma=lemmata[0])
                     if (
                         entry.source == _Source.UDPIPE
-                        and (morph := morpheus_results.get(entry.form)) is not None
-                        and morph.diagnostic.status == DownstreamStatus.OK
-                        and isinstance(morph.data, list)
-                        and morph.data
-                        and entry.internal_lemma not in morph.data
+                        and (lemmata := _morph_field(morpheus_results.get(entry.form), "lemmata"))
+                        and entry.internal_lemma not in lemmata
                     )
                     else entry
                 )
+                for entry in preliminary
+            ]
+            preliminary = [
+                self._morpheus_pos_fix(entry, _morph_field(morpheus_results.get(entry.form), "upos"))
                 for entry in preliminary
             ]
 
@@ -218,8 +228,7 @@ class AnalyzerService:
             # Morpheus lemmata as extra LIS name-match candidates: UDPipe can
             # mis-tag a word and keep a lemma LIS files under a different headword
             # (e.g. participle "sculptus" → LIS verb "sculpo", a Morpheus analysis).
-            morph = morpheus_results.get(entry.form)
-            extra_lemmas = tuple(morph.data) if morph and morph.diagnostic.status == DownstreamStatus.OK and isinstance(morph.data, list) else ()
+            extra_lemmas = tuple(_morph_field(morpheus_results.get(entry.form), "lemmata"))
 
             # Derive effective LIS status from whether we actually extracted a
             # meaning: HTTP 200 with no matching entry still means no translation.
@@ -307,6 +316,36 @@ class AnalyzerService:
                 )
 
         return responses
+
+    # UDPipe dumps unrecognised (often rare/poetic/Greek) content words into ADV/X.
+    # Only such guesses are corrected, and only towards a content POS — never the
+    # other way, so UDPipe's (reliable) function-word tags (ADP/SCONJ/PART…) and
+    # its fine-grained distinctions (SCONJ vs CCONJ) are left untouched.
+    _POS_FIX_FROM = frozenset({"ADV", "X"})
+    _POS_FIX_TO = frozenset({"NOUN", "PROPN", "VERB", "ADJ", "PRON", "NUM"})
+
+    def _morpheus_pos_fix(self, entry: _TokenEntry, morph_upos: list[str]) -> _TokenEntry:
+        """Correct a UDPipe part-of-speech guess using Morpheus's POS tags.
+
+        Fires only when UDPipe dumped a word into ADV/X with NO morphological
+        features (i.e. it could not place a rare/poetic/Greek form, e.g.
+        'tigride'→ADV, 'telumque'→ADV) and Morpheus unambiguously assigns a
+        single *content* POS.  Confidently-tagged words (with features) and all
+        function words are never touched.
+        """
+        if entry.source != _Source.UDPIPE or entry.upos not in self._POS_FIX_FROM:
+            return entry
+        m = entry.morphology
+        if any([m.case, m.number, m.gender, m.person, m.tense, m.mood, m.voice]):
+            return entry  # UDPipe produced real features — trust it
+        distinct = list(dict.fromkeys(morph_upos))
+        if len(distinct) != 1:
+            return entry
+        new_upos = distinct[0]
+        if new_upos == entry.upos or new_upos not in self._POS_FIX_TO:
+            return entry
+        new_morphology, _ = ud_to_morphology(new_upos, "", "")
+        return entry._replace(upos=new_upos, morphology=new_morphology)
 
     async def _load_morpheus(self, forms: list[str]) -> dict[str, DownstreamResult]:
         results = await asyncio.gather(*(self.morpheus.lemmatize(form) for form in forms))

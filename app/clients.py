@@ -283,6 +283,32 @@ def _parse_morpheus_response(data: Any) -> list[str]:
     return lemmata
 
 
+_MORPH_POFS_TO_UPOS = {
+    "noun": "NOUN", "verb": "VERB", "adjective": "ADJ", "adverb": "ADV",
+    "pronoun": "PRON", "conjunction": "CCONJ", "preposition": "ADP",
+    "numeral": "NUM", "article": "DET", "exclamation": "INTJ",
+    "interjection": "INTJ", "particle": "PART",
+}
+
+
+def _parse_morpheus_pos(data: Any) -> list[str]:
+    """Extract the distinct UPOS tags Morpheus assigns to a surface form."""
+    if not isinstance(data, dict):
+        return []
+    body = data.get("RDF", {}).get("Annotation", {}).get("Body", {})
+    bodies = body if isinstance(body, list) else ([body] if body else [])
+    out: list[str] = []
+    for b in bodies:
+        if not isinstance(b, dict):
+            continue
+        pofs = b.get("rest", {}).get("entry", {}).get("dict", {}).get("pofs", {})
+        name = pofs.get("$", "") if isinstance(pofs, dict) else ""
+        upos = _MORPH_POFS_TO_UPOS.get(name)
+        if upos and upos not in out:
+            out.append(upos)
+    return out
+
+
 class MorpheusClient:
     """Perseids Morpheus morphological analysis — used to cross-validate UDPipe lemmata."""
     service_name = "morpheus"
@@ -291,12 +317,13 @@ class MorpheusClient:
     def __init__(self, http: DownstreamClient, settings: Settings) -> None:
         self.http = http
         self.settings = settings
+        # caches the parsed payload {"lemmata": [...], "upos": [...]}
         self.cache: TTLCache[str, Any] = TTLCache(settings.cache_max_items, settings.cache_ttl_seconds)
 
     async def lemmatize(self, form: str) -> DownstreamResult:
         cached = self.cache.get(form)
         if cached is not None:
-            _log.info("span=%s morpheus form=%r status=ok cached=L1 lemmata=%r", _span.current(), form, cached)
+            _log.info("span=%s morpheus form=%r status=ok cached=L1 data=%r", _span.current(), form, cached)
             return DownstreamResult(
                 data=cached,
                 diagnostic=DownstreamDiagnostic(status=DownstreamStatus.OK, cached=True),
@@ -304,10 +331,13 @@ class MorpheusClient:
         url = f"{self._BASE}?lang=lat&engine=morpheuslat&word={quote(form)}"
         result = await self.http.get_json(self.service_name, url)
         if result.diagnostic.status == DownstreamStatus.OK:
-            lemmata = _parse_morpheus_response(result.data)
-            self.cache.set(form, lemmata)
-            _log.info("span=%s morpheus form=%r status=ok lemmata=%r ms=%s", _span.current(), form, lemmata, result.diagnostic.latency_ms)
-            return DownstreamResult(data=lemmata, diagnostic=result.diagnostic)
+            payload = {
+                "lemmata": _parse_morpheus_response(result.data),
+                "upos": _parse_morpheus_pos(result.data),
+            }
+            self.cache.set(form, payload)
+            _log.info("span=%s morpheus form=%r status=ok lemmata=%r upos=%r ms=%s", _span.current(), form, payload["lemmata"], payload["upos"], result.diagnostic.latency_ms)
+            return DownstreamResult(data=payload, diagnostic=result.diagnostic)
         _log.info("span=%s morpheus form=%r status=%s ms=%s", _span.current(), form, result.diagnostic.status, result.diagnostic.latency_ms)
         return result
 

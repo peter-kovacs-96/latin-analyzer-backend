@@ -252,6 +252,14 @@ def test_uv_spelling_variant_resolves_via_lis_fallback(analyses: dict) -> None:
     assert "move" in mouet.meaning.lower()
 
 
+def test_morpheus_corrects_udpipe_pos_guess(analyses: dict) -> None:
+    """'telumque' — UDPipe couldn't place the unsplit enclitic and dumped it into
+    ADV (no features).  Morpheus knows the head is the noun 'telum', so the POS
+    correction must fix the part of speech from ADV to NOUN."""
+    telumque = _word(analyses, SYLUAS, "telumque")
+    assert telumque.upos == "NOUN"
+
+
 def test_udpipe_pos_error_recovered_via_morpheus_lemma(analyses: dict) -> None:
     """'sculptus' — UDPipe mis-tags the participle as a NOUN and keeps lemma
     'sculptus', but LIS files it under the verb 'sculpo' (one of Morpheus's

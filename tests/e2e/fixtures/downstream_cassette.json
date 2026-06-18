@@ -4,7 +4,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": 400,
-      "latency_ms": 648,
+      "latency_ms": 542,
       "message": "latin_is_simple returned HTTP 400",
       "reason": "LIS_HTTP_ERROR",
       "retryable": false,
@@ -2757,7 +2757,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": 400,
-      "latency_ms": 711,
+      "latency_ms": 180,
       "message": "latin_is_simple returned HTTP 400",
       "reason": "LIS_HTTP_ERROR",
       "retryable": false,
@@ -2769,7 +2769,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 67,
+      "latency_ms": 68,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -2801,7 +2801,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 147,
+      "latency_ms": 161,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2833,7 +2833,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 147,
+      "latency_ms": 190,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2948,7 +2948,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 58,
+      "latency_ms": 66,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -2980,7 +2980,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 68,
+      "latency_ms": 79,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3012,7 +3012,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 69,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3095,7 +3095,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 49,
+      "latency_ms": 53,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3127,7 +3127,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 59,
+      "latency_ms": 64,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3210,7 +3210,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 76,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3242,7 +3242,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 141,
+      "latency_ms": 182,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3293,7 +3293,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 49,
+      "latency_ms": 58,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3357,7 +3357,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 67,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3389,7 +3389,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 67,
+      "latency_ms": 72,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3453,7 +3453,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 60,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3485,7 +3485,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 48,
+      "latency_ms": 57,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3517,7 +3517,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 50,
+      "latency_ms": 67,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3600,7 +3600,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 62,
+      "latency_ms": 70,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3632,7 +3632,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 143,
+      "latency_ms": 191,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3728,7 +3728,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 136,
+      "latency_ms": 184,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3740,7 +3740,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 48,
+      "latency_ms": 59,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -3772,7 +3772,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 49,
+      "latency_ms": 57,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3868,7 +3868,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 50,
+      "latency_ms": 58,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3900,7 +3900,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 49,
+      "latency_ms": 54,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3932,7 +3932,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 61,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -3996,7 +3996,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 68,
+      "latency_ms": 69,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4028,7 +4028,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 64,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4060,7 +4060,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 66,
+      "latency_ms": 61,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4092,7 +4092,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 58,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4124,7 +4124,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 138,
+      "latency_ms": 194,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4136,7 +4136,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 139,
+      "latency_ms": 195,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -4168,7 +4168,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 48,
+      "latency_ms": 56,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4180,7 +4180,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 135,
+      "latency_ms": 182,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -4212,7 +4212,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 74,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4244,7 +4244,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 71,
+      "latency_ms": 72,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4276,7 +4276,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 65,
+      "latency_ms": 71,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4308,7 +4308,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 70,
+      "latency_ms": 69,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4340,7 +4340,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 61,
+      "latency_ms": 66,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4372,7 +4372,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 52,
+      "latency_ms": 56,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4404,7 +4404,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 70,
+      "latency_ms": 86,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4436,7 +4436,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 61,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4468,7 +4468,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 54,
+      "latency_ms": 67,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4500,7 +4500,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 58,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4512,7 +4512,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 59,
+      "latency_ms": 58,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -4544,7 +4544,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 71,
+      "latency_ms": 62,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4576,7 +4576,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 57,
+      "latency_ms": 58,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4627,7 +4627,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 59,
+      "latency_ms": 58,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4729,7 +4729,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 55,
+      "latency_ms": 56,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4741,7 +4741,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 75,
+      "latency_ms": 76,
       "message": "latin_wordnet has no entry for this lemma",
       "reason": "WORDNET_LEMMA_NOT_FOUND",
       "retryable": false,
@@ -4749,9 +4749,71 @@
     }
   },
   "morpheus:Caelia": {
-    "data": [
-      "celia"
-    ],
+    "data": {
+      "lemmata": [
+        "celia"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 127,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:De": {
+    "data": {
+      "lemmata": [
+        "de"
+      ],
+      "upos": [
+        "ADV"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Flatilis": {
+    "data": {
+      "lemmata": [
+        "flatilis"
+      ],
+      "upos": [
+        "ADJ"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 116,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:Flens": {
+    "data": {
+      "lemmata": [
+        "fleo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -4762,53 +4824,16 @@
       "status": "ok"
     }
   },
-  "morpheus:De": {
-    "data": [
-      "de"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 111,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:Flatilis": {
-    "data": [
-      "flatilis"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 113,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:Flens": {
-    "data": [
-      "fleo"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 114,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
   "morpheus:Friget": {
-    "data": [
-      "frigeo",
-      "frigo"
-    ],
+    "data": {
+      "lemmata": [
+        "frigeo",
+        "frigo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -4820,13 +4845,18 @@
     }
   },
   "morpheus:Haec": {
-    "data": [
-      "hic"
-    ],
+    "data": {
+      "lemmata": [
+        "hic"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4834,13 +4864,18 @@
     }
   },
   "morpheus:Hanc": {
-    "data": [
-      "hic"
-    ],
+    "data": {
+      "lemmata": [
+        "hic"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 116,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4848,13 +4883,18 @@
     }
   },
   "morpheus:Ibat": {
-    "data": [
-      "eo"
-    ],
+    "data": {
+      "lemmata": [
+        "eo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4862,14 +4902,19 @@
     }
   },
   "morpheus:Insidet": {
-    "data": [
-      "insideo",
-      "insido"
-    ],
+    "data": {
+      "lemmata": [
+        "insideo",
+        "insido"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 116,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4877,9 +4922,14 @@
     }
   },
   "morpheus:Palluit": {
-    "data": [
-      "palleo"
-    ],
+    "data": {
+      "lemmata": [
+        "palleo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -4891,13 +4941,19 @@
     }
   },
   "morpheus:Quid": {
-    "data": [
-      "quis"
-    ],
+    "data": {
+      "lemmata": [
+        "quis"
+      ],
+      "upos": [
+        "NOUN",
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 582,
+      "latency_ms": 554,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4905,15 +4961,22 @@
     }
   },
   "morpheus:Quum": {
-    "data": [
-      "cum",
-      "qui",
-      "quis"
-    ],
+    "data": {
+      "lemmata": [
+        "cum",
+        "qui",
+        "quis"
+      ],
+      "upos": [
+        "CCONJ",
+        "NOUN",
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 118,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -4921,7 +4984,10 @@
     }
   },
   "morpheus:Venerem": {
-    "data": [],
+    "data": {
+      "lemmata": [],
+      "upos": []
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -4933,9 +4999,53 @@
     }
   },
   "morpheus:accipe": {
-    "data": [
-      "accipio"
-    ],
+    "data": {
+      "lemmata": [
+        "accipio"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 123,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:armenta": {
+    "data": {
+      "lemmata": [
+        "armenta",
+        "armentum"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 551,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:aspicerem": {
+    "data": {
+      "lemmata": [
+        "aspicio"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -4946,111 +5056,15 @@
       "status": "ok"
     }
   },
-  "morpheus:armenta": {
-    "data": [
-      "armenta",
-      "armentum"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 575,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:aspicerem": {
-    "data": [
-      "aspicio"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 121,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
   "morpheus:atra": {
-    "data": [
-      "ater"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 111,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:auribus": {
-    "data": [
-      "auris"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 113,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:comae": {
-    "data": [
-      "coma",
-      "come",
-      "complaceo"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 111,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:deam": {
-    "data": [
-      "dea"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 113,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:dispar": {
-    "data": [
-      "dispar"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 115,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:dixi": {
-    "data": [
-      "dico"
-    ],
+    "data": {
+      "lemmata": [
+        "ater"
+      ],
+      "upos": [
+        "ADJ"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -5061,10 +5075,75 @@
       "status": "ok"
     }
   },
-  "morpheus:dixit": {
-    "data": [
-      "dico"
-    ],
+  "morpheus:auribus": {
+    "data": {
+      "lemmata": [
+        "auris"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:comae": {
+    "data": {
+      "lemmata": [
+        "coma",
+        "come",
+        "complaceo"
+      ],
+      "upos": [
+        "NOUN",
+        "VERB"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:deam": {
+    "data": {
+      "lemmata": [
+        "dea"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 122,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:dispar": {
+    "data": {
+      "lemmata": [
+        "dispar"
+      ],
+      "upos": [
+        "ADJ"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -5075,14 +5154,57 @@
       "status": "ok"
     }
   },
-  "morpheus:eiusdem": {
-    "data": [
-      "idem"
-    ],
+  "morpheus:dixi": {
+    "data": {
+      "lemmata": [
+        "dico"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 109,
+      "latency_ms": 120,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:dixit": {
+    "data": {
+      "lemmata": [
+        "dico"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 131,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:eiusdem": {
+    "data": {
+      "lemmata": [
+        "idem"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 112,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5090,14 +5212,19 @@
     }
   },
   "morpheus:est": {
-    "data": [
-      "edo",
-      "sum"
-    ],
+    "data": {
+      "lemmata": [
+        "edo",
+        "sum"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5105,9 +5232,14 @@
     }
   },
   "morpheus:et": {
-    "data": [
-      "et"
-    ],
+    "data": {
+      "lemmata": [
+        "et"
+      ],
+      "upos": [
+        "CCONJ"
+      ]
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -5119,13 +5251,18 @@
     }
   },
   "morpheus:fames": {
-    "data": [
-      "fames"
-    ],
+    "data": {
+      "lemmata": [
+        "fames"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 113,
+      "latency_ms": 122,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5133,13 +5270,18 @@
     }
   },
   "morpheus:faucibus": {
-    "data": [
-      "fauces"
-    ],
+    "data": {
+      "lemmata": [
+        "fauces"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 122,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5147,13 +5289,18 @@
     }
   },
   "morpheus:ferire": {
-    "data": [
-      "ferio"
-    ],
+    "data": {
+      "lemmata": [
+        "ferio"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5161,37 +5308,14 @@
     }
   },
   "morpheus:ferit": {
-    "data": [
-      "ferio"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 114,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:flammis": {
-    "data": [
-      "flamma"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 114,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:gerebat": {
-    "data": [
-      "gero"
-    ],
+    "data": {
+      "lemmata": [
+        "ferio"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -5202,15 +5326,59 @@
       "status": "ok"
     }
   },
-  "morpheus:gregesque": {
-    "data": [
-      "grego",
-      "grex"
-    ],
+  "morpheus:flammis": {
+    "data": {
+      "lemmata": [
+        "flamma"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 573,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:gerebat": {
+    "data": {
+      "lemmata": [
+        "gero"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 120,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:gregesque": {
+    "data": {
+      "lemmata": [
+        "grego",
+        "grex"
+      ],
+      "upos": [
+        "VERB",
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 545,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5218,9 +5386,14 @@
     }
   },
   "morpheus:haec": {
-    "data": [
-      "hic"
-    ],
+    "data": {
+      "lemmata": [
+        "hic"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -5232,13 +5405,18 @@
     }
   },
   "morpheus:homines": {
-    "data": [
-      "homo"
-    ],
+    "data": {
+      "lemmata": [
+        "homo"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 573,
+      "latency_ms": 553,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5246,7 +5424,10 @@
     }
   },
   "morpheus:hyems": {
-    "data": [],
+    "data": {
+      "lemmata": [],
+      "upos": []
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -5258,10 +5439,16 @@
     }
   },
   "morpheus:illa": {
-    "data": [
-      "illa",
-      "ille"
-    ],
+    "data": {
+      "lemmata": [
+        "illa",
+        "ille"
+      ],
+      "upos": [
+        "ADV",
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -5273,9 +5460,14 @@
     }
   },
   "morpheus:in": {
-    "data": [
-      "in"
-    ],
+    "data": {
+      "lemmata": [
+        "in"
+      ],
+      "upos": [
+        "ADP"
+      ]
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -5287,14 +5479,20 @@
     }
   },
   "morpheus:lapis": {
-    "data": [
-      "lapio",
-      "lapis"
-    ],
+    "data": {
+      "lemmata": [
+        "lapio",
+        "lapis"
+      ],
+      "upos": [
+        "VERB",
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5302,13 +5500,18 @@
     }
   },
   "morpheus:mihi": {
-    "data": [
-      "ego"
-    ],
+    "data": {
+      "lemmata": [
+        "ego"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 582,
+      "latency_ms": 545,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5316,13 +5519,18 @@
     }
   },
   "morpheus:mouet": {
-    "data": [
-      "moveo"
-    ],
+    "data": {
+      "lemmata": [
+        "moveo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 110,
+      "latency_ms": 114,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5330,9 +5538,14 @@
     }
   },
   "morpheus:non": {
-    "data": [
-      "non"
-    ],
+    "data": {
+      "lemmata": [
+        "non"
+      ],
+      "upos": [
+        "ADV"
+      ]
+    },
     "diagnostic": {
       "cached": true,
       "http_status": null,
@@ -5344,13 +5557,18 @@
     }
   },
   "morpheus:obriguere": {
-    "data": [
-      "obrigesco"
-    ],
+    "data": {
+      "lemmata": [
+        "obrigesco"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5358,16 +5576,22 @@
     }
   },
   "morpheus:ora": {
-    "data": [
-      "aurum",
-      "ora",
-      "oro",
-      "os"
-    ],
+    "data": {
+      "lemmata": [
+        "aurum",
+        "ora",
+        "oro",
+        "os"
+      ],
+      "upos": [
+        "NOUN",
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 112,
+      "latency_ms": 117,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5375,14 +5599,20 @@
     }
   },
   "morpheus:parce": {
-    "data": [
-      "parco",
-      "parcus"
-    ],
+    "data": {
+      "lemmata": [
+        "parco",
+        "parcus"
+      ],
+      "upos": [
+        "VERB",
+        "ADJ"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 115,
+      "latency_ms": 122,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5390,13 +5620,18 @@
     }
   },
   "morpheus:pereunt": {
-    "data": [
-      "pereo"
-    ],
+    "data": {
+      "lemmata": [
+        "pereo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 579,
+      "latency_ms": 546,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5404,14 +5639,20 @@
     }
   },
   "morpheus:sculptus": {
-    "data": [
-      "sculpo",
-      "sculptus"
-    ],
+    "data": {
+      "lemmata": [
+        "sculpo",
+        "sculptus"
+      ],
+      "upos": [
+        "VERB",
+        "ADJ"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 111,
+      "latency_ms": 109,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5419,13 +5660,18 @@
     }
   },
   "morpheus:si": {
-    "data": [
-      "si"
-    ],
+    "data": {
+      "lemmata": [
+        "si"
+      ],
+      "upos": [
+        "CCONJ"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 573,
+      "latency_ms": 548,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5433,13 +5679,18 @@
     }
   },
   "morpheus:siccis": {
-    "data": [
-      "siccus"
-    ],
+    "data": {
+      "lemmata": [
+        "siccus"
+      ],
+      "upos": [
+        "ADJ"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 116,
+      "latency_ms": 119,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5447,9 +5698,14 @@
     }
   },
   "morpheus:silex": {
-    "data": [
-      "silex"
-    ],
+    "data": {
+      "lemmata": [
+        "silex"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -5461,15 +5717,22 @@
     }
   },
   "morpheus:sine": {
-    "data": [
-      "sine",
-      "sino",
-      "sinum"
-    ],
+    "data": {
+      "lemmata": [
+        "sine",
+        "sino",
+        "sinum"
+      ],
+      "upos": [
+        "ADV",
+        "VERB",
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 119,
+      "latency_ms": 122,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5477,79 +5740,14 @@
     }
   },
   "morpheus:spiritus": {
-    "data": [
-      "spiritus"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 114,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:statua": {
-    "data": [
-      "statua"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 111,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:surdis": {
-    "data": [
-      "surdus"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 114,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:syluas": {
-    "data": [
-      "silva"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 115,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:tandem": {
-    "data": [
-      "tandem"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 115,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:te": {
-    "data": [
-      "tu"
-    ],
+    "data": {
+      "lemmata": [
+        "spiritus"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -5560,38 +5758,110 @@
       "status": "ok"
     }
   },
+  "morpheus:statua": {
+    "data": {
+      "lemmata": [
+        "statua"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:surdis": {
+    "data": {
+      "lemmata": [
+        "surdus"
+      ],
+      "upos": [
+        "ADJ"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 120,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:syluas": {
+    "data": {
+      "lemmata": [
+        "silva"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 122,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:tandem": {
+    "data": {
+      "lemmata": [
+        "tandem"
+      ],
+      "upos": [
+        "ADV"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 117,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:te": {
+    "data": {
+      "lemmata": [
+        "tu"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 119,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
   "morpheus:telumque": {
-    "data": [
-      "telum"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 111,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:tibi": {
-    "data": [
-      "tu"
-    ],
-    "diagnostic": {
-      "cached": false,
-      "http_status": null,
-      "latency_ms": 449,
-      "message": null,
-      "reason": null,
-      "retryable": false,
-      "status": "ok"
-    }
-  },
-  "morpheus:utque": {
-    "data": [
-      "ut"
-    ],
+    "data": {
+      "lemmata": [
+        "telum"
+      ],
+      "upos": [
+        "NOUN"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
@@ -5602,15 +5872,59 @@
       "status": "ok"
     }
   },
-  "morpheus:venatum": {
-    "data": [
-      "venatus",
-      "venor"
-    ],
+  "morpheus:tibi": {
+    "data": {
+      "lemmata": [
+        "tu"
+      ],
+      "upos": [
+        "PRON"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 461,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:utque": {
+    "data": {
+      "lemmata": [
+        "ut"
+      ],
+      "upos": [
+        "ADV"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
       "latency_ms": 114,
+      "message": null,
+      "reason": null,
+      "retryable": false,
+      "status": "ok"
+    }
+  },
+  "morpheus:venatum": {
+    "data": {
+      "lemmata": [
+        "venatus",
+        "venor"
+      ],
+      "upos": [
+        "NOUN",
+        "VERB"
+      ]
+    },
+    "diagnostic": {
+      "cached": false,
+      "http_status": null,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5618,15 +5932,21 @@
     }
   },
   "morpheus:venis": {
-    "data": [
-      "vena",
-      "venio",
-      "venum"
-    ],
+    "data": {
+      "lemmata": [
+        "vena",
+        "venio",
+        "venum"
+      ],
+      "upos": [
+        "NOUN",
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 117,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5634,14 +5954,19 @@
     }
   },
   "morpheus:volui": {
-    "data": [
-      "volo",
-      "volvo"
-    ],
+    "data": {
+      "lemmata": [
+        "volo",
+        "volvo"
+      ],
+      "upos": [
+        "VERB"
+      ]
+    },
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 114,
+      "latency_ms": 115,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5653,7 +5978,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 74,
+      "latency_ms": 79,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5665,7 +5990,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 82,
+      "latency_ms": 63,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5677,7 +6002,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 61,
+      "latency_ms": 69,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5689,7 +6014,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 66,
+      "latency_ms": 50,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5701,7 +6026,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 61,
+      "latency_ms": 84,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5713,7 +6038,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 64,
+      "latency_ms": 95,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5725,7 +6050,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 63,
+      "latency_ms": 67,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5737,7 +6062,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 57,
+      "latency_ms": 88,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5749,7 +6074,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 84,
+      "latency_ms": 59,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5761,7 +6086,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 72,
+      "latency_ms": 97,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5773,7 +6098,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 86,
+      "latency_ms": 87,
       "message": null,
       "reason": null,
       "retryable": false,
@@ -5785,7 +6110,7 @@
     "diagnostic": {
       "cached": false,
       "http_status": null,
-      "latency_ms": 60,
+      "latency_ms": 84,
       "message": null,
       "reason": null,
       "retryable": false,

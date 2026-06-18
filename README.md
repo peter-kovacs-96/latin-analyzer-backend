@@ -223,3 +223,7 @@ Required environment variables on Render:
 - Morpheus morpheme hyphens are stripped (`ob-rigesco` → `obrigesco`), and the
   personal-pronoun paradigm (`ego, tu, -`) is matched on any principal part so
   2nd/3rd-person forms (`tibi`, `te`) resolve. See ADR-0012.
+- Morpheus also corrects UDPipe POS guesses: when UDPipe dumps a rare/poetic form
+  into `ADV`/`X` with no features and Morpheus gives a single content POS, the
+  part of speech is fixed (`tigride`/`telumque`→NOUN, `gravique`→ADJ). Function
+  words and confidently-tagged words are never touched. See ADR-0013.
